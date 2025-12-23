@@ -161,7 +161,7 @@ export default function MockExam() {
 
   if (questions.length === 0) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="text-2xl text-black">Loading exam...</div>
       </div>
     );
@@ -169,50 +169,54 @@ export default function MockExam() {
 
   if (!examStarted) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center p-6">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6">
         <div className="max-w-3xl w-full">
-          <div className="mb-12">
-            <h1 className="text-5xl font-bold mb-4 text-black">
+          <div className="mb-8">
+            <h1 className="text-4xl font-bold mb-2 text-black">
               Mock Exam
             </h1>
-            <p className="text-lg text-slate-600">
+            <p className="text-slate-600">
               ITIL 4 Foundation Practice Test
             </p>
           </div>
 
-          <div className="bg-white border-2 border-black p-10 mb-8">
-            <h2 className="text-2xl font-bold mb-8 text-black">Exam Information</h2>
-            <div className="space-y-6 text-slate-700">
-              <div className="flex items-start gap-4">
-                <div className="w-8 h-8 border-2 border-black flex items-center justify-center shrink-0 mt-1">
-                  <span className="text-sm font-bold">40</span>
+          <div className="bg-white rounded-xl border border-slate-200 shadow-lg p-8 mb-6">
+            <h2 className="text-2xl font-bold mb-6 text-black">Exam Information</h2>
+            <div className="space-y-4 text-slate-700">
+              <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
+                <div className="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center shrink-0 font-bold">
+                  40
                 </div>
                 <div>
                   <div className="font-semibold text-black mb-1">Questions</div>
-                  <div className="text-sm">Randomly selected from 487 total questions</div>
+                  <div className="text-sm text-slate-600">Randomly selected from 487 total questions</div>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <Clock className="w-8 h-8 shrink-0 mt-1 text-black" />
+              <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
+                <div className="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center shrink-0">
+                  <Clock className="w-5 h-5" />
+                </div>
                 <div>
                   <div className="font-semibold text-black mb-1">60 Minutes</div>
-                  <div className="text-sm">Time limit for completion</div>
+                  <div className="text-sm text-slate-600">Time limit for completion</div>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <div className="w-8 h-8 border-2 border-black flex items-center justify-center shrink-0 mt-1">
-                  <span className="text-sm font-bold">65%</span>
+              <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
+                <div className="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center shrink-0 font-bold">
+                  65%
                 </div>
                 <div>
                   <div className="font-semibold text-black mb-1">Passing Score</div>
-                  <div className="text-sm">26 out of 40 questions correct</div>
+                  <div className="text-sm text-slate-600">26 out of 40 questions correct</div>
                 </div>
               </div>
-              <div className="flex items-start gap-4">
-                <CheckCircle className="w-8 h-8 shrink-0 mt-1 text-black" />
+              <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
+                <div className="w-10 h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center shrink-0">
+                  <CheckCircle className="w-5 h-5" />
+                </div>
                 <div>
                   <div className="font-semibold text-black mb-1">Detailed Results</div>
-                  <div className="text-sm">Review all questions with correct answers at the end</div>
+                  <div className="text-sm text-slate-600">Review all questions with correct answers at the end</div>
                 </div>
               </div>
             </div>
@@ -221,13 +225,13 @@ export default function MockExam() {
           <div className="flex gap-4">
             <button
               onClick={() => setExamStarted(true)}
-              className="flex-1 bg-black text-white px-8 py-5 font-bold text-lg hover:bg-slate-800 transition-colors"
+              className="flex-1 bg-black text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-800 transition-colors shadow-lg"
             >
               Start Exam
             </button>
             <Link
               href="/"
-              className="flex items-center justify-center gap-2 px-8 py-5 border-2 border-black font-semibold hover:bg-slate-50 transition-colors text-black"
+              className="flex items-center justify-center gap-2 px-8 py-4 border-2 border-slate-300 rounded-lg font-semibold hover:bg-white hover:border-black transition-colors text-black"
             >
               <Home className="w-5 h-5" />
               Home
@@ -244,63 +248,63 @@ export default function MockExam() {
     const passed = isPassed();
 
     return (
-      <div className="min-h-screen bg-white p-6">
+      <div className="min-h-screen bg-slate-50 p-6">
         <div className="container mx-auto max-w-5xl py-12">
           {/* Results Header */}
-          <div className="mb-16">
-            <h1 className="text-5xl font-bold mb-8 text-black">Exam Results</h1>
+          <div className="mb-12">
+            <h1 className="text-4xl font-bold mb-6 text-black">Exam Results</h1>
 
-            <div className="bg-white border-2 border-black p-12">
-              <div className="grid grid-cols-3 gap-8 mb-8">
-                <div className="text-center">
-                  <div className="text-sm text-slate-600 uppercase tracking-wider mb-2">Score</div>
-                  <div className={`text-6xl font-bold ${passed ? 'text-black' : 'text-slate-400'}`}>
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-lg p-10">
+              <div className="grid grid-cols-3 gap-6 mb-8">
+                <div className="text-center p-6 bg-slate-50 rounded-xl">
+                  <div className="text-xs text-slate-600 uppercase tracking-wider mb-2">Score</div>
+                  <div className={`text-5xl font-bold ${passed ? 'text-green-600' : 'text-red-500'}`}>
                     {percentage}%
                   </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-sm text-slate-600 uppercase tracking-wider mb-2">Correct</div>
-                  <div className="text-6xl font-bold text-black">
+                <div className="text-center p-6 bg-slate-50 rounded-xl">
+                  <div className="text-xs text-slate-600 uppercase tracking-wider mb-2">Correct</div>
+                  <div className="text-5xl font-bold text-black">
                     {score}
                   </div>
                 </div>
-                <div className="text-center">
-                  <div className="text-sm text-slate-600 uppercase tracking-wider mb-2">Total</div>
-                  <div className="text-6xl font-bold text-black">
+                <div className="text-center p-6 bg-slate-50 rounded-xl">
+                  <div className="text-xs text-slate-600 uppercase tracking-wider mb-2">Total</div>
+                  <div className="text-5xl font-bold text-black">
                     {questions.length}
                   </div>
                 </div>
               </div>
 
-              <div className="text-center pt-8 border-t-2 border-black">
+              <div className={`text-center p-6 rounded-xl ${passed ? 'bg-green-50' : 'bg-red-50'}`}>
                 {passed ? (
-                  <div className="text-2xl font-bold text-black">
+                  <div className="text-2xl font-bold text-green-600">
                     ✓ PASSED — Congratulations!
                   </div>
                 ) : (
-                  <div className="text-2xl font-bold text-slate-400">
+                  <div className="text-2xl font-bold text-red-500">
                     ✗ NOT PASSED — Keep Studying (Need 65%)
                   </div>
                 )}
               </div>
             </div>
 
-            <div className="flex gap-4 mt-8">
+            <div className="flex gap-4 mt-6">
               <Link
                 href="/mock-exam"
-                className="flex-1 bg-black text-white px-8 py-4 font-bold text-center hover:bg-slate-800 transition-colors"
+                className="flex-1 bg-black text-white px-8 py-4 rounded-lg font-bold text-center hover:bg-slate-800 transition-colors shadow-lg"
               >
                 Retake Exam
               </Link>
               <Link
                 href="/practice"
-                className="flex-1 border-2 border-black px-8 py-4 font-bold text-center hover:bg-slate-100 transition-colors text-black"
+                className="flex-1 border-2 border-slate-300 px-8 py-4 rounded-lg font-bold text-center hover:bg-white hover:border-black transition-colors text-black"
               >
                 Practice Mode
               </Link>
               <Link
                 href="/"
-                className="flex-1 border-2 border-black px-8 py-4 font-bold text-center hover:bg-slate-100 transition-colors text-black"
+                className="flex-1 border-2 border-slate-300 px-8 py-4 rounded-lg font-bold text-center hover:bg-white hover:border-black transition-colors text-black"
               >
                 Home
               </Link>
@@ -309,8 +313,8 @@ export default function MockExam() {
 
           {/* Review Section */}
           <div>
-            <h2 className="text-3xl font-bold mb-8 text-black">Review Answers</h2>
-            <div className="space-y-6">
+            <h2 className="text-2xl font-bold mb-6 text-black">Review Answers</h2>
+            <div className="space-y-4">
               {questions.map((q, index) => {
                 const userAnswer = selectedAnswers[index];
                 const isCorrect = userAnswer === q.correctAnswer;
@@ -318,31 +322,31 @@ export default function MockExam() {
                 const correctLetter = String.fromCharCode(65 + q.correctAnswer);
 
                 return (
-                  <div key={q.id} className="bg-white border-2 border-black p-8">
-                    <div className="flex items-start gap-6 mb-6">
-                      <div className={`w-14 h-14 border-2 flex items-center justify-center font-bold text-xl ${
+                  <div key={q.id} className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+                    <div className="flex items-start gap-4 mb-4">
+                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center font-bold text-lg shrink-0 ${
                         isCorrect
-                          ? 'border-black bg-black text-white'
-                          : 'border-slate-300 text-slate-400'
+                          ? 'bg-green-100 text-green-600'
+                          : 'bg-red-100 text-red-500'
                       }`}>
                         {index + 1}
                       </div>
                       <div className="flex-1">
-                        <div className="text-xs text-slate-600 uppercase tracking-wider mb-3">
+                        <div className="inline-block px-2 py-1 bg-slate-100 rounded text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
                           {q.category}
                         </div>
-                        <div className="text-lg font-semibold mb-6 text-black">{q.question}</div>
+                        <div className="text-base font-semibold mb-4 text-black">{q.question}</div>
 
-                        <div className="grid grid-cols-2 gap-4 mb-6">
-                          <div>
+                        <div className="grid grid-cols-2 gap-3 mb-4">
+                          <div className="p-3 bg-slate-50 rounded-lg">
                             <div className="text-xs text-slate-600 mb-1">Your Answer</div>
-                            <div className={`text-xl font-bold ${isCorrect ? 'text-black' : 'text-slate-400'}`}>
+                            <div className={`text-lg font-bold ${isCorrect ? 'text-green-600' : 'text-red-500'}`}>
                               {optionLetter}
                             </div>
                           </div>
-                          <div>
+                          <div className="p-3 bg-slate-50 rounded-lg">
                             <div className="text-xs text-slate-600 mb-1">Correct Answer</div>
-                            <div className="text-xl font-bold text-black">
+                            <div className="text-lg font-bold text-green-600">
                               {correctLetter}
                             </div>
                           </div>
@@ -357,25 +361,27 @@ export default function MockExam() {
                             return (
                               <div
                                 key={optIndex}
-                                className={`p-3 border-2 ${
+                                className={`p-3 rounded-lg border ${
                                   isCorrectAnswer
-                                    ? 'border-black bg-slate-50'
+                                    ? 'border-green-200 bg-green-50'
                                     : isUserAnswer
-                                    ? 'border-slate-300 bg-slate-50'
-                                    : 'border-slate-200'
+                                    ? 'border-red-200 bg-red-50'
+                                    : 'border-slate-200 bg-white'
                                 }`}
                               >
                                 <div className="flex items-center gap-3">
-                                  <div className={`w-7 h-7 border-2 flex items-center justify-center font-bold text-xs ${
+                                  <div className={`w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs ${
                                     isCorrectAnswer
-                                      ? 'border-black bg-black text-white'
-                                      : 'border-slate-300 text-slate-400'
+                                      ? 'bg-green-600 text-white'
+                                      : isUserAnswer
+                                      ? 'bg-red-500 text-white'
+                                      : 'bg-slate-100 text-slate-400'
                                   }`}>
                                     {letter}
                                   </div>
-                                  <span className="text-black text-sm">{option}</span>
-                                  {isCorrectAnswer && <span className="ml-auto text-xs font-semibold text-black">✓ CORRECT</span>}
-                                  {isUserAnswer && !isCorrectAnswer && <span className="ml-auto text-xs font-semibold text-slate-400">✗ WRONG</span>}
+                                  <span className="text-black text-sm flex-1">{option}</span>
+                                  {isCorrectAnswer && <span className="text-xs font-semibold text-green-600">✓ CORRECT</span>}
+                                  {isUserAnswer && !isCorrectAnswer && <span className="text-xs font-semibold text-red-500">✗ WRONG</span>}
                                 </div>
                               </div>
                             );
@@ -400,32 +406,32 @@ export default function MockExam() {
   const flaggedQuestionsArray = getFlaggedQuestions();
 
   return (
-    <div className="min-h-screen bg-white flex">
+    <div className="min-h-screen bg-slate-50 flex">
       {/* Sidebar */}
-      <div className={`${showSidebar ? 'w-72' : 'w-0'} border-r-2 border-black transition-all duration-300 overflow-hidden shrink-0`}>
-        <div className="w-72 h-screen overflow-y-auto bg-slate-50">
+      <div className={`${showSidebar ? 'w-72' : 'w-0'} border-r border-slate-200 transition-all duration-300 overflow-hidden shrink-0 bg-white`}>
+        <div className="w-72 h-screen overflow-y-auto">
           {/* Sidebar Header */}
-          <div className="p-5 border-b-2 border-black bg-white">
+          <div className="p-5 border-b border-slate-200">
             <h2 className="text-lg font-bold text-black mb-4">Questions</h2>
 
             {/* Filter Buttons */}
             <div className="grid grid-cols-2 gap-2 mb-3">
               <button
                 onClick={() => setFilterType('all')}
-                className={`px-2 py-2 text-xs font-semibold border-2 transition-colors ${
+                className={`px-2 py-2 text-xs font-semibold rounded-lg transition-colors ${
                   filterType === 'all'
-                    ? 'bg-black text-white border-black'
-                    : 'border-black text-black hover:bg-slate-100'
+                    ? 'bg-black text-white'
+                    : 'bg-slate-100 text-black hover:bg-slate-200'
                 }`}
               >
                 All ({questions.length})
               </button>
               <button
                 onClick={() => setFilterType('flagged')}
-                className={`px-2 py-2 text-xs font-semibold border-2 transition-colors ${
+                className={`px-2 py-2 text-xs font-semibold rounded-lg transition-colors ${
                   filterType === 'flagged'
-                    ? 'bg-black text-white border-black'
-                    : 'border-black text-black hover:bg-slate-100'
+                    ? 'bg-black text-white'
+                    : 'bg-slate-100 text-black hover:bg-slate-200'
                 }`}
               >
                 <Flag className="w-3 h-3 inline mr-1" />
@@ -433,20 +439,20 @@ export default function MockExam() {
               </button>
               <button
                 onClick={() => setFilterType('answered')}
-                className={`px-2 py-2 text-xs font-semibold border-2 transition-colors ${
+                className={`px-2 py-2 text-xs font-semibold rounded-lg transition-colors ${
                   filterType === 'answered'
-                    ? 'bg-black text-white border-black'
-                    : 'border-black text-black hover:bg-slate-100'
+                    ? 'bg-black text-white'
+                    : 'bg-slate-100 text-black hover:bg-slate-200'
                 }`}
               >
                 Done ({answeredCount})
               </button>
               <button
                 onClick={() => setFilterType('unanswered')}
-                className={`px-2 py-2 text-xs font-semibold border-2 transition-colors ${
+                className={`px-2 py-2 text-xs font-semibold rounded-lg transition-colors ${
                   filterType === 'unanswered'
-                    ? 'bg-black text-white border-black'
-                    : 'border-black text-black hover:bg-slate-100'
+                    ? 'bg-black text-white'
+                    : 'bg-slate-100 text-black hover:bg-slate-200'
                 }`}
               >
                 Todo ({questions.length - answeredCount})
@@ -458,7 +464,7 @@ export default function MockExam() {
               <button
                 onClick={goToFirstUnanswered}
                 disabled={unansweredQuestions.length === 0}
-                className="w-full px-3 py-2 text-xs font-semibold border-2 border-black text-black hover:bg-slate-100 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+                className="w-full px-3 py-2 text-xs font-semibold rounded-lg border border-slate-300 text-black hover:bg-slate-100 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
               >
                 <SkipForward className="w-3 h-3 inline mr-2" />
                 First Unanswered
@@ -466,14 +472,14 @@ export default function MockExam() {
               <button
                 onClick={goToFirstFlagged}
                 disabled={flaggedQuestionsArray.length === 0}
-                className="w-full px-3 py-2 text-xs font-semibold border-2 border-black text-black hover:bg-slate-100 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+                className="w-full px-3 py-2 text-xs font-semibold rounded-lg border border-slate-300 text-black hover:bg-slate-100 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
               >
                 <Flag className="w-3 h-3 inline mr-2" />
                 First Flagged
               </button>
               <button
                 onClick={handleRandomize}
-                className="w-full px-3 py-2 text-xs font-semibold border-2 border-black text-black hover:bg-slate-100 transition-colors"
+                className="w-full px-3 py-2 text-xs font-semibold rounded-lg border border-slate-300 text-black hover:bg-slate-100 transition-colors"
               >
                 <Shuffle className="w-3 h-3 inline mr-2" />
                 Randomize
@@ -482,7 +488,7 @@ export default function MockExam() {
           </div>
 
           {/* Question Grid */}
-          <div className="p-4 bg-white">
+          <div className="p-4">
             <div className="grid grid-cols-5 gap-1.5">
               {(filterType === 'all' ? questions : filteredIndices.map(i => questions[i])).map((_, idx) => {
                 const actualIndex = filterType === 'all' ? idx : filteredIndices[idx];
@@ -494,12 +500,12 @@ export default function MockExam() {
                   <button
                     key={actualIndex}
                     onClick={() => setCurrentQuestionIndex(actualIndex)}
-                    className={`relative aspect-square border-2 font-bold text-xs transition-all ${
+                    className={`relative aspect-square rounded-lg font-bold text-xs transition-all ${
                       isCurrent
-                        ? 'bg-black text-white border-black'
+                        ? 'bg-black text-white shadow-lg'
                         : isAnswered
-                        ? 'border-black bg-slate-100 text-black'
-                        : 'border-slate-300 text-slate-400 hover:border-black'
+                        ? 'bg-slate-200 text-black hover:bg-slate-300'
+                        : 'bg-slate-100 text-slate-400 hover:bg-slate-200'
                     }`}
                   >
                     {actualIndex + 1}
@@ -517,42 +523,42 @@ export default function MockExam() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
         {/* Top Header */}
-        <div className="border-b-2 border-black bg-white sticky top-0 z-10">
+        <div className="border-b border-slate-200 bg-white sticky top-0 z-10 shadow-sm">
           <div className="px-6 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <button
                   onClick={() => setShowSidebar(!showSidebar)}
-                  className="p-2 border-2 border-black hover:bg-slate-100 transition-colors"
+                  className="p-2 rounded-lg border border-slate-300 hover:bg-slate-100 transition-colors"
                   title={showSidebar ? "Hide sidebar" : "Show sidebar"}
                 >
                   {showSidebar ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
                 <div>
-                  <div className="text-xs text-slate-600 uppercase tracking-wider">Question</div>
+                  <div className="text-xs text-slate-500 uppercase tracking-wider">Question</div>
                   <div className="text-2xl font-bold text-black">
                     {currentQuestionIndex + 1} <span className="text-slate-400">/ {questions.length}</span>
                   </div>
                 </div>
               </div>
 
-              <div className="flex items-center gap-6">
-                <div className="text-center">
-                  <div className="text-xs text-slate-600 uppercase tracking-wider mb-1">Progress</div>
-                  <div className="text-lg font-bold text-black">
+              <div className="flex items-center gap-4">
+                <div className="px-4 py-2 bg-slate-100 rounded-lg">
+                  <div className="text-xs text-slate-600 mb-1">Progress</div>
+                  <div className="text-sm font-bold text-black">
                     {answeredCount}/{questions.length}
                   </div>
                 </div>
-                <div className={`text-center ${timeLeft < 300 ? 'text-red-600' : 'text-black'}`}>
-                  <div className="text-xs text-slate-600 uppercase tracking-wider mb-1">Time</div>
-                  <div className="text-lg font-bold flex items-center gap-2">
-                    <Clock className="w-5 h-5" />
+                <div className={`px-4 py-2 rounded-lg ${timeLeft < 300 ? 'bg-red-100' : 'bg-slate-100'}`}>
+                  <div className="text-xs text-slate-600 mb-1">Time Left</div>
+                  <div className={`text-sm font-bold flex items-center gap-2 ${timeLeft < 300 ? 'text-red-600' : 'text-black'}`}>
+                    <Clock className="w-4 h-4" />
                     {formatTime(timeLeft)}
                   </div>
                 </div>
                 <Link
                   href="/"
-                  className="p-2 border-2 border-black hover:bg-slate-100 transition-colors"
+                  className="p-2 rounded-lg border border-slate-300 hover:bg-slate-100 transition-colors"
                   title="Exit to home"
                 >
                   <Home className="w-4 h-4" />
@@ -563,32 +569,35 @@ export default function MockExam() {
         </div>
 
         {/* Main Content Area - Split into Question and Tabs */}
-        <div className="flex-1 flex overflow-hidden">
+        <div className="flex-1 flex overflow-hidden bg-slate-50">
           {/* Question Section - Left Side */}
-          <div className="flex-1 overflow-y-auto p-8">
-            <div className="max-w-3xl">
-              {/* Category Badge */}
-              <div className="inline-block px-3 py-1 border-2 border-black text-xs font-semibold mb-6 text-black uppercase tracking-wider">
-                {currentQuestion.category}
+          <div className="flex-1 overflow-y-auto p-6">
+            <div className="max-w-3xl mx-auto">
+              {/* Question Card */}
+              <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 mb-6">
+                {/* Category Badge */}
+                <div className="inline-block px-3 py-1 bg-slate-100 rounded-full text-xs font-semibold mb-4 text-black uppercase tracking-wider">
+                  {currentQuestion.category}
+                </div>
+
+                {/* Question */}
+                <h2 className="text-xl font-bold mb-4 text-black leading-relaxed">
+                  {currentQuestion.question}
+                </h2>
+
+                {/* Flag Button */}
+                <button
+                  onClick={() => toggleFlag(currentQuestionIndex)}
+                  className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center gap-2 ${
+                    flaggedQuestions.has(currentQuestionIndex)
+                      ? 'bg-black text-white'
+                      : 'bg-slate-100 text-black hover:bg-slate-200'
+                  }`}
+                >
+                  <Flag className="w-3 h-3" />
+                  {flaggedQuestions.has(currentQuestionIndex) ? 'Flagged for Review' : 'Flag Question'}
+                </button>
               </div>
-
-              {/* Question */}
-              <h2 className="text-xl font-bold mb-4 text-black leading-relaxed">
-                {currentQuestion.question}
-              </h2>
-
-              {/* Flag Button */}
-              <button
-                onClick={() => toggleFlag(currentQuestionIndex)}
-                className={`mb-8 px-4 py-2 border-2 text-xs font-semibold transition-colors flex items-center gap-2 ${
-                  flaggedQuestions.has(currentQuestionIndex)
-                    ? 'bg-black text-white border-black'
-                    : 'border-black text-black hover:bg-slate-100'
-                }`}
-              >
-                <Flag className="w-3 h-3" />
-                {flaggedQuestions.has(currentQuestionIndex) ? 'Flagged for Review' : 'Flag Question'}
-              </button>
 
               {/* Options */}
               <div className="space-y-3">
@@ -600,17 +609,17 @@ export default function MockExam() {
                     <button
                       key={index}
                       onClick={() => handleAnswerSelect(index)}
-                      className={`w-full text-left p-4 border-2 transition-all ${
+                      className={`w-full text-left p-4 rounded-xl border transition-all ${
                         isSelected
-                          ? 'border-black bg-slate-50'
-                          : 'border-slate-300 hover:border-black'
+                          ? 'border-black bg-white shadow-md'
+                          : 'border-slate-200 bg-white hover:border-slate-400 hover:shadow-sm'
                       }`}
                     >
                       <div className="flex items-start gap-3">
-                        <div className={`w-8 h-8 border-2 flex items-center justify-center font-bold text-sm shrink-0 ${
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm shrink-0 ${
                           isSelected
-                            ? 'border-black bg-black text-white'
-                            : 'border-slate-300 text-slate-400'
+                            ? 'bg-black text-white'
+                            : 'bg-slate-100 text-slate-600'
                         }`}>
                           {optionLetter}
                         </div>
@@ -624,12 +633,12 @@ export default function MockExam() {
           </div>
 
           {/* Tabs Section - Right Side */}
-          <div className="w-80 border-l-2 border-black overflow-y-auto bg-slate-50">
+          <div className="w-80 border-l border-slate-200 overflow-y-auto bg-white">
             {/* Tab Headers */}
-            <div className="flex border-b-2 border-black bg-white">
+            <div className="flex border-b border-slate-200 bg-white p-2 gap-1">
               <button
                 onClick={() => setActiveTab('tips')}
-                className={`flex-1 px-4 py-3 text-xs font-semibold border-r-2 border-black transition-colors ${
+                className={`flex-1 px-3 py-2 text-xs font-semibold rounded-lg transition-colors ${
                   activeTab === 'tips' ? 'bg-black text-white' : 'text-black hover:bg-slate-100'
                 }`}
               >
@@ -638,7 +647,7 @@ export default function MockExam() {
               </button>
               <button
                 onClick={() => setActiveTab('rules')}
-                className={`flex-1 px-4 py-3 text-xs font-semibold border-r-2 border-black transition-colors ${
+                className={`flex-1 px-3 py-2 text-xs font-semibold rounded-lg transition-colors ${
                   activeTab === 'rules' ? 'bg-black text-white' : 'text-black hover:bg-slate-100'
                 }`}
               >
@@ -647,7 +656,7 @@ export default function MockExam() {
               </button>
               <button
                 onClick={() => setActiveTab('review')}
-                className={`flex-1 px-4 py-3 text-xs font-semibold transition-colors ${
+                className={`flex-1 px-3 py-2 text-xs font-semibold rounded-lg transition-colors ${
                   activeTab === 'review' ? 'bg-black text-white' : 'text-black hover:bg-slate-100'
                 }`}
               >
@@ -657,28 +666,28 @@ export default function MockExam() {
             </div>
 
             {/* Tab Content */}
-            <div className="p-5">
+            <div className="p-4">
               {activeTab === 'tips' && (
-                <div className="space-y-4 text-sm">
+                <div className="space-y-3 text-sm">
                   <h3 className="font-bold text-black mb-3">Exam Tips</h3>
-                  <div className="space-y-3">
-                    <div className="p-3 bg-white border-2 border-slate-200">
+                  <div className="space-y-2">
+                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                       <div className="font-semibold text-black mb-1">Read Carefully</div>
                       <div className="text-xs text-slate-600">Pay attention to keywords like "NOT", "EXCEPT", "BEST", "MOST"</div>
                     </div>
-                    <div className="p-3 bg-white border-2 border-slate-200">
+                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                       <div className="font-semibold text-black mb-1">Flag & Move On</div>
                       <div className="text-xs text-slate-600">Don't spend too much time on one question. Flag it and come back later</div>
                     </div>
-                    <div className="p-3 bg-white border-2 border-slate-200">
+                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                       <div className="font-semibold text-black mb-1">Eliminate Wrong Answers</div>
                       <div className="text-xs text-slate-600">Cross out obviously wrong options to narrow down choices</div>
                     </div>
-                    <div className="p-3 bg-white border-2 border-slate-200">
+                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                       <div className="font-semibold text-black mb-1">Time Management</div>
                       <div className="text-xs text-slate-600">You have ~1.5 minutes per question. Keep an eye on the timer</div>
                     </div>
-                    <div className="p-3 bg-white border-2 border-slate-200">
+                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                       <div className="font-semibold text-black mb-1">Review Flagged</div>
                       <div className="text-xs text-slate-600">Save 10-15 minutes at the end to review flagged questions</div>
                     </div>
@@ -687,26 +696,26 @@ export default function MockExam() {
               )}
 
               {activeTab === 'rules' && (
-                <div className="space-y-4 text-sm">
+                <div className="space-y-3 text-sm">
                   <h3 className="font-bold text-black mb-3">Exam Rules</h3>
-                  <div className="space-y-3">
-                    <div className="p-3 bg-white border-2 border-slate-200">
+                  <div className="space-y-2">
+                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                       <div className="font-semibold text-black mb-1">40 Questions</div>
                       <div className="text-xs text-slate-600">Multiple choice format with 4 options each</div>
                     </div>
-                    <div className="p-3 bg-white border-2 border-slate-200">
+                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                       <div className="font-semibold text-black mb-1">60 Minutes</div>
                       <div className="text-xs text-slate-600">Total time limit for the exam</div>
                     </div>
-                    <div className="p-3 bg-white border-2 border-slate-200">
+                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                       <div className="font-semibold text-black mb-1">65% to Pass</div>
                       <div className="text-xs text-slate-600">You need 26 correct answers out of 40</div>
                     </div>
-                    <div className="p-3 bg-white border-2 border-slate-200">
+                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                       <div className="font-semibold text-black mb-1">No Negative Marking</div>
                       <div className="text-xs text-slate-600">Wrong answers don't deduct points. Always answer every question</div>
                     </div>
-                    <div className="p-3 bg-white border-2 border-slate-200">
+                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                       <div className="font-semibold text-black mb-1">One Answer Only</div>
                       <div className="text-xs text-slate-600">Select only one option per question</div>
                     </div>
@@ -715,17 +724,17 @@ export default function MockExam() {
               )}
 
               {activeTab === 'review' && (
-                <div className="space-y-4 text-sm">
+                <div className="space-y-3 text-sm">
                   <h3 className="font-bold text-black mb-3">Review List</h3>
 
                   {/* Unanswered Questions */}
-                  <div>
+                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                     <div className="font-semibold text-black mb-2 flex items-center justify-between">
                       <span>Unanswered ({unansweredQuestions.length})</span>
                       {unansweredQuestions.length > 0 && (
                         <button
                           onClick={goToFirstUnanswered}
-                          className="text-xs px-2 py-1 border border-black hover:bg-slate-100"
+                          className="text-xs px-2 py-1 bg-black text-white rounded hover:bg-slate-800"
                         >
                           Go
                         </button>
@@ -739,7 +748,7 @@ export default function MockExam() {
                           <button
                             key={index}
                             onClick={() => setCurrentQuestionIndex(index)}
-                            className="w-8 h-8 border-2 border-slate-300 text-xs font-semibold hover:border-black transition-colors"
+                            className="w-8 h-8 rounded-lg bg-white border border-slate-300 text-xs font-semibold hover:border-black transition-colors"
                           >
                             {index + 1}
                           </button>
@@ -749,13 +758,13 @@ export default function MockExam() {
                   </div>
 
                   {/* Flagged Questions */}
-                  <div>
+                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
                     <div className="font-semibold text-black mb-2 flex items-center justify-between">
                       <span>Flagged ({flaggedQuestionsArray.length})</span>
                       {flaggedQuestionsArray.length > 0 && (
                         <button
                           onClick={goToFirstFlagged}
-                          className="text-xs px-2 py-1 border border-black hover:bg-slate-100"
+                          className="text-xs px-2 py-1 bg-black text-white rounded hover:bg-slate-800"
                         >
                           Go
                         </button>
@@ -769,7 +778,7 @@ export default function MockExam() {
                           <button
                             key={index}
                             onClick={() => setCurrentQuestionIndex(index)}
-                            className="w-8 h-8 border-2 border-black bg-slate-100 text-xs font-semibold hover:bg-slate-200 transition-colors relative"
+                            className="w-8 h-8 rounded-lg bg-slate-200 border border-slate-300 text-xs font-semibold hover:bg-slate-300 transition-colors relative"
                           >
                             {index + 1}
                             <Flag className="w-2 h-2 absolute top-0.5 right-0.5 fill-current" />
@@ -785,12 +794,12 @@ export default function MockExam() {
         </div>
 
         {/* Bottom Navigation */}
-        <div className="border-t-2 border-black bg-white">
+        <div className="border-t border-slate-200 bg-white shadow-lg">
           <div className="px-6 py-4 flex items-center justify-between">
             <button
               onClick={handlePrevious}
               disabled={currentQuestionIndex === 0}
-              className="px-6 py-3 border-2 border-black font-semibold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-100 transition-colors text-black flex items-center gap-2"
+              className="px-6 py-3 rounded-lg border border-slate-300 font-semibold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-100 transition-colors text-black flex items-center gap-2"
             >
               <ChevronLeft className="w-4 h-4" />
               Previous
@@ -799,14 +808,14 @@ export default function MockExam() {
             {currentQuestionIndex === questions.length - 1 ? (
               <button
                 onClick={handleSubmit}
-                className="px-8 py-3 bg-black text-white font-bold hover:bg-slate-800 transition-colors"
+                className="px-8 py-3 bg-black text-white font-bold rounded-lg hover:bg-slate-800 transition-colors shadow-lg"
               >
                 Submit Exam
               </button>
             ) : (
               <button
                 onClick={handleNext}
-                className="px-6 py-3 border-2 border-black font-semibold hover:bg-slate-100 transition-colors text-black flex items-center gap-2"
+                className="px-6 py-3 rounded-lg border border-slate-300 font-semibold hover:bg-slate-100 transition-colors text-black flex items-center gap-2"
               >
                 Next
                 <ChevronRight className="w-4 h-4" />
