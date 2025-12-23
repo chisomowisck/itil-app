@@ -45,19 +45,19 @@ export default function Categories() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-      <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 sticky top-0 z-10 shadow-md">
+    <div className="min-h-screen bg-slate-50">
+      <header className="bg-white border-b border-slate-200 sticky top-0 z-10 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold">Study by Category</h1>
-              <p className="text-sm text-slate-600 dark:text-slate-400">
+              <h1 className="text-2xl font-bold text-black">Study by Category</h1>
+              <p className="text-sm text-slate-600">
                 Focus on specific ITIL 4 topics
               </p>
             </div>
             <Link
               href="/"
-              className="flex items-center gap-2 px-4 py-2 border-2 border-slate-300 dark:border-slate-600 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 border-2 border-slate-300 rounded-lg hover:bg-slate-100 transition-colors"
             >
               <Home className="w-5 h-5" />
               Home
@@ -74,23 +74,23 @@ export default function Categories() {
               <Link
                 key={category}
                 href={`/categories/${encodeURIComponent(category)}`}
-                className="group relative overflow-hidden bg-white dark:bg-slate-800 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                className="group relative overflow-hidden bg-white rounded-2xl p-6 shadow-lg border border-slate-200 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
               >
-                <div className={`absolute inset-0 bg-gradient-to-br ${categoryColors[index % categoryColors.length]} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
+                <div className={`absolute inset-0 bg-black opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
                 
-                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${categoryColors[index % categoryColors.length]} text-white mb-4`}>
+                <div className="inline-flex p-3 rounded-xl bg-black text-white mb-4">
                   <BookOpen className="w-8 h-8" />
                 </div>
                 
-                <h3 className="text-xl font-bold mb-2 text-slate-800 dark:text-white">
+                <h3 className="text-xl font-bold mb-2 text-black">
                   {category}
                 </h3>
                 
-                <p className="text-slate-600 dark:text-slate-300 mb-4">
+                <p className="text-slate-600 mb-4">
                   {count} question{count !== 1 ? 's' : ''}
                 </p>
                 
-                <div className="flex items-center text-sm font-semibold text-blue-600 dark:text-blue-400">
+                <div className="flex items-center text-sm font-semibold text-black">
                   Start Practice
                   <svg className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -100,12 +100,12 @@ export default function Categories() {
             ))}
         </div>
 
-        <div className="mt-12 bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-lg">
-          <h2 className="text-2xl font-bold mb-4">About Categories</h2>
-          <p className="text-slate-600 dark:text-slate-300 mb-4">
+        <div className="mt-12 bg-white rounded-2xl p-8 shadow-lg border border-slate-200">
+          <h2 className="text-2xl font-bold mb-4 text-black">About Categories</h2>
+          <p className="text-slate-600 mb-4">
             Questions are organized into the following ITIL 4 Foundation topics:
           </p>
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-slate-600 dark:text-slate-300">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-slate-600">
             <li>• Incident Management</li>
             <li>• Problem Management</li>
             <li>• Change Control & Enablement</li>

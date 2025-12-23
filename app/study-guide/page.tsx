@@ -3,14 +3,14 @@ import { Home, BookOpen } from 'lucide-react';
 
 export default function StudyGuide() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
-      <header className="bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
+    <div className="min-h-screen bg-slate-50">
+      <header className="bg-white border-b border-slate-200 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold">ITIL 4 Study Guide</h1>
+            <h1 className="text-2xl font-bold text-black">ITIL 4 Study Guide</h1>
             <Link
               href="/"
-              className="flex items-center gap-2 px-4 py-2 border-2 border-slate-300 dark:border-slate-600 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 border-2 border-slate-300 rounded-lg hover:bg-slate-100 transition-colors"
             >
               <Home className="w-5 h-5" />
               Home
@@ -20,14 +20,14 @@ export default function StudyGuide() {
       </header>
 
       <main className="container mx-auto px-4 py-12 max-w-4xl">
-        <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8">
+        <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
           <BookOpen className="w-16 h-16 mx-auto mb-4 text-indigo-500" />
-          <h2 className="text-3xl font-bold mb-6 text-center">Quick Reference Guide</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center text-black">Quick Reference Guide</h2>
           
           <div className="space-y-6">
             <section>
-              <h3 className="text-2xl font-bold mb-3 text-blue-600 dark:text-blue-400">ITIL 4 Guiding Principles</h3>
-              <ul className="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300">
+              <h3 className="text-2xl font-bold mb-3 text-black">ITIL 4 Guiding Principles</h3>
+              <ul className="list-disc list-inside space-y-2 text-slate-700">
                 <li><strong>Focus on Value</strong> - Everything should link to value for stakeholders</li>
                 <li><strong>Start Where You Are</strong> - Don't start from scratch, use what you have</li>
                 <li><strong>Progress Iteratively with Feedback</strong> - Work in small steps with feedback</li>
@@ -39,8 +39,8 @@ export default function StudyGuide() {
             </section>
 
             <section>
-              <h3 className="text-2xl font-bold mb-3 text-purple-600 dark:text-purple-400">Four Dimensions of Service Management</h3>
-              <ul className="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300">
+              <h3 className="text-2xl font-bold mb-3 text-black">Four Dimensions of Service Management</h3>
+              <ul className="list-disc list-inside space-y-2 text-slate-700">
                 <li><strong>Organizations and People</strong> - Roles, responsibilities, culture, staffing</li>
                 <li><strong>Information and Technology</strong> - Information, knowledge, technologies</li>
                 <li><strong>Partners and Suppliers</strong> - Relationships with other organizations</li>
@@ -49,8 +49,8 @@ export default function StudyGuide() {
             </section>
 
             <section>
-              <h3 className="text-2xl font-bold mb-3 text-green-600 dark:text-green-400">Service Value Chain Activities</h3>
-              <ul className="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300">
+              <h3 className="text-2xl font-bold mb-3 text-black">Service Value Chain Activities</h3>
+              <ul className="list-disc list-inside space-y-2 text-slate-700">
                 <li><strong>Plan</strong> - Shared understanding of vision and direction</li>
                 <li><strong>Improve</strong> - Continual improvement of products and services</li>
                 <li><strong>Engage</strong> - Understanding stakeholder needs</li>
@@ -61,8 +61,8 @@ export default function StudyGuide() {
             </section>
 
             <section>
-              <h3 className="text-2xl font-bold mb-3 text-orange-600 dark:text-orange-400">Key Practices</h3>
-              <ul className="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300">
+              <h3 className="text-2xl font-bold mb-3 text-black">Key Practices</h3>
+              <ul className="list-disc list-inside space-y-2 text-slate-700">
                 <li><strong>Incident Management</strong> - Minimize negative impact of incidents</li>
                 <li><strong>Problem Management</strong> - Reduce likelihood and impact of incidents</li>
                 <li><strong>Change Enablement</strong> - Maximize successful service and product changes</li>
@@ -73,8 +73,8 @@ export default function StudyGuide() {
             </section>
 
             <section>
-              <h3 className="text-2xl font-bold mb-3 text-red-600 dark:text-red-400">Exam Tips</h3>
-              <ul className="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300">
+              <h3 className="text-2xl font-bold mb-3 text-black">Exam Tips</h3>
+              <ul className="list-disc list-inside space-y-2 text-slate-700">
                 <li>40 questions, 60 minutes</li>
                 <li>65% passing score (26 out of 40)</li>
                 <li>Multiple choice format</li>
@@ -85,21 +85,21 @@ export default function StudyGuide() {
             </section>
           </div>
 
-          <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl">
-            <h3 className="text-xl font-bold mb-3">Ready to Practice?</h3>
-            <p className="text-slate-700 dark:text-slate-300 mb-4">
+          <div className="mt-8 p-6 bg-slate-50 rounded-xl border border-slate-200">
+            <h3 className="text-xl font-bold mb-3 text-black">Ready to Practice?</h3>
+            <p className="text-slate-700 mb-4">
               Now that you've reviewed the key concepts, test your knowledge with our practice questions!
             </p>
             <div className="flex gap-4">
               <Link
                 href="/practice"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all"
+                className="bg-black text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 hover:shadow-md transition-all"
               >
                 Practice Mode
               </Link>
               <Link
                 href="/mock-exam"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all"
+                className="border-2 border-black text-black px-6 py-3 rounded-xl font-semibold hover:bg-slate-50 transition-all"
               >
                 Mock Exam
               </Link>
