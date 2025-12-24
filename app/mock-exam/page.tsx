@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Clock, Home, CheckCircle, XCircle, AlertCircle, Flag, Shuffle, Filter, List, Eye, EyeOff, ChevronLeft, ChevronRight, SkipForward, BookOpen, FileText, ClipboardList } from 'lucide-react';
+import { Clock, Home, CheckCircle, XCircle, AlertCircle, Flag, Shuffle, Filter, List, Eye, EyeOff, ChevronLeft, ChevronRight, SkipForward, BookOpen, FileText, ClipboardList, Star, TrendingUp, Award, ChevronDown, ChevronUp } from 'lucide-react';
 
 interface Question {
   id: number;
@@ -13,7 +13,32 @@ interface Question {
   explanation: string;
 }
 
-type FilterType = 'all' | 'flagged' | 'answered' | 'unanswered';
+interface QuestionResult {
+  questionId: number;
+  question: string;
+  category: string;
+  selectedAnswer: number | null;
+  correctAnswer: number;
+  isCorrect: boolean;
+  isFlagged: boolean;
+  isImportant: boolean;
+}
+
+interface ExamScore {
+  id: string;
+  date: string;
+  score: number;
+  percentage: number;
+  correct: number;
+  total: number;
+  passed: boolean;
+  timeSpent: number;
+  flaggedCount: number;
+  importantCount: number;
+  questionResults: QuestionResult[];
+}
+
+type FilterType = 'all' | 'flagged' | 'answered' | 'unanswered' | 'important';
 type TabType = 'tips' | 'rules' | 'review';
 
 export default function MockExam() {
@@ -21,12 +46,16 @@ export default function MockExam() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<(number | null)[]>([]);
   const [flaggedQuestions, setFlaggedQuestions] = useState<Set<number>>(new Set());
+  const [importantQuestions, setImportantQuestions] = useState<Set<number>>(new Set());
   const [showResults, setShowResults] = useState(false);
   const [timeLeft, setTimeLeft] = useState(60 * 60); // 60 minutes in seconds
   const [examStarted, setExamStarted] = useState(false);
   const [filterType, setFilterType] = useState<FilterType>('all');
   const [showSidebar, setShowSidebar] = useState(true);
   const [activeTab, setActiveTab] = useState<TabType>('tips');
+  const [showScore, setShowScore] = useState(false);
+  const [showTabs, setShowTabs] = useState(true);
+  const [startTime, setStartTime] = useState<number>(0);
 
   useEffect(() => {
     // Load questions
@@ -58,6 +87,13 @@ export default function MockExam() {
     return () => clearInterval(timer);
   }, [examStarted, showResults]);
 
+  // Set start time when exam starts
+  useEffect(() => {
+    if (examStarted && startTime === 0) {
+      setStartTime(Date.now());
+    }
+  }, [examStarted, startTime]);
+
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
@@ -82,7 +118,50 @@ export default function MockExam() {
     }
   };
 
+  const saveScore = async () => {
+    const score = calculateScore();
+    const percentage = getScorePercentage();
+    const timeSpent = Math.floor((Date.now() - startTime) / 1000);
+
+    // Create detailed question results
+    const questionResults: QuestionResult[] = questions.map((q, index) => ({
+      questionId: q.id,
+      question: q.question,
+      category: q.category,
+      selectedAnswer: selectedAnswers[index],
+      correctAnswer: q.correctAnswer,
+      isCorrect: selectedAnswers[index] === q.correctAnswer,
+      isFlagged: flaggedQuestions.has(index),
+      isImportant: importantQuestions.has(index),
+    }));
+
+    const examScore: ExamScore = {
+      id: Date.now().toString(),
+      date: new Date().toISOString(),
+      score,
+      percentage,
+      correct: score,
+      total: questions.length,
+      passed: percentage >= 65,
+      timeSpent,
+      flaggedCount: flaggedQuestions.size,
+      importantCount: importantQuestions.size,
+      questionResults,
+    };
+
+    try {
+      // Save to localStorage for now (since we don't have a backend)
+      const existingScores = localStorage.getItem('examScores');
+      const scores: ExamScore[] = existingScores ? JSON.parse(existingScores) : [];
+      scores.unshift(examScore); // Add to beginning
+      localStorage.setItem('examScores', JSON.stringify(scores));
+    } catch (error) {
+      console.error('Error saving score:', error);
+    }
+  };
+
   const handleSubmit = () => {
+    saveScore();
     setShowResults(true);
   };
 
@@ -94,6 +173,16 @@ export default function MockExam() {
       newFlagged.add(index);
     }
     setFlaggedQuestions(newFlagged);
+  };
+
+  const toggleImportant = (index: number) => {
+    const newImportant = new Set(importantQuestions);
+    if (newImportant.has(index)) {
+      newImportant.delete(index);
+    } else {
+      newImportant.add(index);
+    }
+    setImportantQuestions(newImportant);
   };
 
   const handleRandomize = () => {
@@ -109,6 +198,8 @@ export default function MockExam() {
       switch (filterType) {
         case 'flagged':
           return flaggedQuestions.has(index);
+        case 'important':
+          return importantQuestions.has(index);
         case 'answered':
           return selectedAnswers[index] !== null;
         case 'unanswered':
@@ -139,6 +230,20 @@ export default function MockExam() {
 
   const getFlaggedQuestions = () => {
     return Array.from(flaggedQuestions).sort((a, b) => a - b);
+  };
+
+  const getImportantQuestions = () => {
+    return Array.from(importantQuestions).sort((a, b) => a - b);
+  };
+
+  const getCurrentScore = () => {
+    let correct = 0;
+    questions.forEach((q, index) => {
+      if (selectedAnswers[index] !== null && selectedAnswers[index] === q.correctAnswer) {
+        correct++;
+      }
+    });
+    return correct;
   };
 
   const calculateScore = () => {
@@ -404,21 +509,24 @@ export default function MockExam() {
   const filteredIndices = getFilteredQuestions();
   const unansweredQuestions = getUnansweredQuestions();
   const flaggedQuestionsArray = getFlaggedQuestions();
+  const importantQuestionsArray = getImportantQuestions();
+  const currentScore = getCurrentScore();
+  const currentPercentage = answeredCount > 0 ? Math.round((currentScore / answeredCount) * 100) : 0;
 
   return (
     <div className="min-h-screen bg-slate-50 flex">
       {/* Sidebar */}
-      <div className={`${showSidebar ? 'w-72' : 'w-0'} border-r border-slate-200 transition-all duration-300 overflow-hidden shrink-0 bg-white`}>
-        <div className="w-72 h-screen overflow-y-auto">
+      <div className={`${showSidebar ? 'w-64' : 'w-0'} border-r border-slate-200 transition-all duration-300 overflow-hidden shrink-0 bg-white`}>
+        <div className="w-64 h-screen overflow-y-auto">
           {/* Sidebar Header */}
-          <div className="p-5 border-b border-slate-200">
-            <h2 className="text-lg font-bold text-black mb-4">Questions</h2>
+          <div className="p-4 border-b border-slate-200">
+            <h2 className="text-base font-bold text-black mb-3">Questions</h2>
 
             {/* Filter Buttons */}
-            <div className="grid grid-cols-2 gap-2 mb-3">
+            <div className="grid grid-cols-2 gap-1.5 mb-3">
               <button
                 onClick={() => setFilterType('all')}
-                className={`px-2 py-2 text-xs font-semibold rounded-lg transition-colors ${
+                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
                   filterType === 'all'
                     ? 'bg-black text-white'
                     : 'bg-slate-100 text-black hover:bg-slate-200'
@@ -428,7 +536,7 @@ export default function MockExam() {
               </button>
               <button
                 onClick={() => setFilterType('flagged')}
-                className={`px-2 py-2 text-xs font-semibold rounded-lg transition-colors ${
+                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
                   filterType === 'flagged'
                     ? 'bg-black text-white'
                     : 'bg-slate-100 text-black hover:bg-slate-200'
@@ -438,24 +546,25 @@ export default function MockExam() {
                 {flaggedQuestions.size}
               </button>
               <button
+                onClick={() => setFilterType('important')}
+                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
+                  filterType === 'important'
+                    ? 'bg-black text-white'
+                    : 'bg-slate-100 text-black hover:bg-slate-200'
+                }`}
+              >
+                <Star className="w-3 h-3 inline mr-1" />
+                {importantQuestions.size}
+              </button>
+              <button
                 onClick={() => setFilterType('answered')}
-                className={`px-2 py-2 text-xs font-semibold rounded-lg transition-colors ${
+                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
                   filterType === 'answered'
                     ? 'bg-black text-white'
                     : 'bg-slate-100 text-black hover:bg-slate-200'
                 }`}
               >
                 Done ({answeredCount})
-              </button>
-              <button
-                onClick={() => setFilterType('unanswered')}
-                className={`px-2 py-2 text-xs font-semibold rounded-lg transition-colors ${
-                  filterType === 'unanswered'
-                    ? 'bg-black text-white'
-                    : 'bg-slate-100 text-black hover:bg-slate-200'
-                }`}
-              >
-                Todo ({questions.length - answeredCount})
               </button>
             </div>
 
@@ -542,26 +651,53 @@ export default function MockExam() {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4">
-                <div className="px-4 py-2 bg-slate-100 rounded-lg">
-                  <div className="text-xs text-slate-600 mb-1">Progress</div>
-                  <div className="text-sm font-bold text-black">
+              <div className="flex items-center gap-3">
+                {showScore && (
+                  <div className={`px-4 py-2 rounded-lg border-2 ${
+                    currentPercentage >= 65 ? 'bg-green-50 border-green-300' : 'bg-orange-50 border-orange-300'
+                  }`}>
+                    <div className={`text-xs font-semibold mb-1 ${
+                      currentPercentage >= 65 ? 'text-green-700' : 'text-orange-700'
+                    }`}>Current Score</div>
+                    <div className={`text-lg font-bold ${
+                      currentPercentage >= 65 ? 'text-green-600' : 'text-orange-600'
+                    }`}>
+                      {currentScore}/{answeredCount} <span className="text-sm">({currentPercentage}%)</span>
+                    </div>
+                  </div>
+                )}
+                <button
+                  onClick={() => setShowScore(!showScore)}
+                  className="p-2.5 rounded-lg border-2 border-slate-300 hover:bg-slate-100 hover:border-black transition-all"
+                  title={showScore ? "Hide score" : "Show score"}
+                >
+                  {showScore ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
+                </button>
+                <div className="px-4 py-2 bg-blue-50 border-2 border-blue-200 rounded-lg">
+                  <div className="text-xs text-blue-700 font-semibold mb-1">Progress</div>
+                  <div className="text-lg font-bold text-blue-600">
                     {answeredCount}/{questions.length}
                   </div>
                 </div>
-                <div className={`px-4 py-2 rounded-lg ${timeLeft < 300 ? 'bg-red-100' : 'bg-slate-100'}`}>
-                  <div className="text-xs text-slate-600 mb-1">Time Left</div>
-                  <div className={`text-sm font-bold flex items-center gap-2 ${timeLeft < 300 ? 'text-red-600' : 'text-black'}`}>
-                    <Clock className="w-4 h-4" />
+                <div className={`px-4 py-2 rounded-lg border-2 ${
+                  timeLeft < 300 ? 'bg-red-50 border-red-300' : 'bg-slate-50 border-slate-200'
+                }`}>
+                  <div className={`text-xs font-semibold mb-1 ${
+                    timeLeft < 300 ? 'text-red-700' : 'text-slate-600'
+                  }`}>Time Left</div>
+                  <div className={`text-lg font-bold flex items-center gap-2 ${
+                    timeLeft < 300 ? 'text-red-600' : 'text-black'
+                  }`}>
+                    <Clock className="w-5 h-5" />
                     {formatTime(timeLeft)}
                   </div>
                 </div>
                 <Link
                   href="/"
-                  className="p-2 rounded-lg border border-slate-300 hover:bg-slate-100 transition-colors"
+                  className="p-2.5 rounded-lg border-2 border-slate-300 hover:bg-slate-100 hover:border-black transition-all"
                   title="Exit to home"
                 >
-                  <Home className="w-4 h-4" />
+                  <Home className="w-5 h-5" />
                 </Link>
               </div>
             </div>
@@ -569,10 +705,20 @@ export default function MockExam() {
         </div>
 
         {/* Main Content Area - Split into Question and Tabs */}
-        <div className="flex-1 flex overflow-hidden bg-slate-50">
-          {/* Question Section - Left Side */}
-          <div className="flex-1 overflow-y-auto p-6">
-            <div className="max-w-3xl mx-auto">
+        <div className="flex-1 flex overflow-hidden bg-slate-50 relative">
+          {/* Question Section - Centered and Narrower */}
+          <div className="flex-1 overflow-y-auto p-6 flex justify-center">
+            <div className="w-full max-w-3xl">
+              {/* Show Tabs Button - Fixed Position */}
+              {!showTabs && (
+                <button
+                  onClick={() => setShowTabs(true)}
+                  className="fixed right-4 top-24 p-3 bg-black text-white rounded-lg shadow-lg hover:bg-slate-800 transition-colors z-20"
+                  title="Show help panel"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+              )}
               {/* Question Card */}
               <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 mb-6">
                 {/* Category Badge */}
@@ -585,18 +731,31 @@ export default function MockExam() {
                   {currentQuestion.question}
                 </h2>
 
-                {/* Flag Button */}
-                <button
-                  onClick={() => toggleFlag(currentQuestionIndex)}
-                  className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center gap-2 ${
-                    flaggedQuestions.has(currentQuestionIndex)
-                      ? 'bg-black text-white'
-                      : 'bg-slate-100 text-black hover:bg-slate-200'
-                  }`}
-                >
-                  <Flag className="w-3 h-3" />
-                  {flaggedQuestions.has(currentQuestionIndex) ? 'Flagged for Review' : 'Flag Question'}
-                </button>
+                {/* Flag Buttons */}
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => toggleFlag(currentQuestionIndex)}
+                    className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center gap-2 ${
+                      flaggedQuestions.has(currentQuestionIndex)
+                        ? 'bg-orange-100 text-orange-600 border border-orange-300'
+                        : 'bg-slate-100 text-black hover:bg-slate-200'
+                    }`}
+                  >
+                    <Flag className="w-3 h-3" />
+                    {flaggedQuestions.has(currentQuestionIndex) ? 'Review' : 'Flag'}
+                  </button>
+                  <button
+                    onClick={() => toggleImportant(currentQuestionIndex)}
+                    className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center gap-2 ${
+                      importantQuestions.has(currentQuestionIndex)
+                        ? 'bg-yellow-100 text-yellow-600 border border-yellow-300'
+                        : 'bg-slate-100 text-black hover:bg-slate-200'
+                    }`}
+                  >
+                    <Star className="w-3 h-3" />
+                    {importantQuestions.has(currentQuestionIndex) ? 'Important' : 'Mark'}
+                  </button>
+                </div>
               </div>
 
               {/* Options */}
@@ -632,38 +791,51 @@ export default function MockExam() {
             </div>
           </div>
 
-          {/* Tabs Section - Right Side */}
-          <div className="w-80 border-l border-slate-200 overflow-y-auto bg-white">
-            {/* Tab Headers */}
-            <div className="flex border-b border-slate-200 bg-white p-2 gap-1">
-              <button
-                onClick={() => setActiveTab('tips')}
-                className={`flex-1 px-3 py-2 text-xs font-semibold rounded-lg transition-colors ${
-                  activeTab === 'tips' ? 'bg-black text-white' : 'text-black hover:bg-slate-100'
-                }`}
-              >
-                <BookOpen className="w-4 h-4 mx-auto mb-1" />
-                Tips
-              </button>
-              <button
-                onClick={() => setActiveTab('rules')}
-                className={`flex-1 px-3 py-2 text-xs font-semibold rounded-lg transition-colors ${
-                  activeTab === 'rules' ? 'bg-black text-white' : 'text-black hover:bg-slate-100'
-                }`}
-              >
-                <FileText className="w-4 h-4 mx-auto mb-1" />
-                Rules
-              </button>
-              <button
-                onClick={() => setActiveTab('review')}
-                className={`flex-1 px-3 py-2 text-xs font-semibold rounded-lg transition-colors ${
-                  activeTab === 'review' ? 'bg-black text-white' : 'text-black hover:bg-slate-100'
-                }`}
-              >
-                <ClipboardList className="w-4 h-4 mx-auto mb-1" />
-                Review
-              </button>
-            </div>
+          {/* Tabs Section - Right Side - Collapsible */}
+          <div className={`${showTabs ? 'w-80' : 'w-0'} border-l border-slate-200 overflow-hidden transition-all duration-300 bg-white`}>
+            <div className="w-80 h-full overflow-y-auto">
+              {/* Tab Headers with Collapse Button */}
+              <div className="border-b border-slate-200 bg-white p-2">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="text-xs font-bold text-black px-2">HELP & REVIEW</h3>
+                  <button
+                    onClick={() => setShowTabs(!showTabs)}
+                    className="p-1 rounded hover:bg-slate-100"
+                    title="Hide panel"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
+                <div className="flex gap-1">
+                  <button
+                    onClick={() => setActiveTab('tips')}
+                    className={`flex-1 px-3 py-2 text-xs font-semibold rounded-lg transition-colors ${
+                      activeTab === 'tips' ? 'bg-black text-white' : 'text-black hover:bg-slate-100'
+                    }`}
+                  >
+                    <BookOpen className="w-4 h-4 mx-auto mb-1" />
+                    Tips
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('rules')}
+                    className={`flex-1 px-3 py-2 text-xs font-semibold rounded-lg transition-colors ${
+                      activeTab === 'rules' ? 'bg-black text-white' : 'text-black hover:bg-slate-100'
+                    }`}
+                  >
+                    <FileText className="w-4 h-4 mx-auto mb-1" />
+                    Rules
+                  </button>
+                  <button
+                    onClick={() => setActiveTab('review')}
+                    className={`flex-1 px-3 py-2 text-xs font-semibold rounded-lg transition-colors ${
+                      activeTab === 'review' ? 'bg-black text-white' : 'text-black hover:bg-slate-100'
+                    }`}
+                  >
+                    <ClipboardList className="w-4 h-4 mx-auto mb-1" />
+                    Review
+                  </button>
+                </div>
+              </div>
 
             {/* Tab Content */}
             <div className="p-4">
@@ -758,9 +930,12 @@ export default function MockExam() {
                   </div>
 
                   {/* Flagged Questions */}
-                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
+                  <div className="p-3 bg-orange-50 rounded-lg border border-orange-200">
                     <div className="font-semibold text-black mb-2 flex items-center justify-between">
-                      <span>Flagged ({flaggedQuestionsArray.length})</span>
+                      <span className="flex items-center gap-1">
+                        <Flag className="w-3 h-3 text-orange-600" />
+                        Flagged ({flaggedQuestionsArray.length})
+                      </span>
                       {flaggedQuestionsArray.length > 0 && (
                         <button
                           onClick={goToFirstFlagged}
@@ -778,10 +953,44 @@ export default function MockExam() {
                           <button
                             key={index}
                             onClick={() => setCurrentQuestionIndex(index)}
-                            className="w-8 h-8 rounded-lg bg-slate-200 border border-slate-300 text-xs font-semibold hover:bg-slate-300 transition-colors relative"
+                            className="w-8 h-8 rounded-lg bg-orange-100 border border-orange-300 text-xs font-semibold hover:bg-orange-200 transition-colors relative"
                           >
                             {index + 1}
-                            <Flag className="w-2 h-2 absolute top-0.5 right-0.5 fill-current" />
+                            <Flag className="w-2 h-2 absolute top-0.5 right-0.5 fill-current text-orange-600" />
+                          </button>
+                        ))
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Important Questions */}
+                  <div className="p-3 bg-yellow-50 rounded-lg border border-yellow-200">
+                    <div className="font-semibold text-black mb-2 flex items-center justify-between">
+                      <span className="flex items-center gap-1">
+                        <Star className="w-3 h-3 text-yellow-600" />
+                        Important ({importantQuestionsArray.length})
+                      </span>
+                      {importantQuestionsArray.length > 0 && (
+                        <button
+                          onClick={() => importantQuestionsArray.length > 0 && setCurrentQuestionIndex(importantQuestionsArray[0])}
+                          className="text-xs px-2 py-1 bg-black text-white rounded hover:bg-slate-800"
+                        >
+                          Go
+                        </button>
+                      )}
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {importantQuestionsArray.length === 0 ? (
+                        <div className="text-xs text-slate-500 italic">No important questions</div>
+                      ) : (
+                        importantQuestionsArray.map(index => (
+                          <button
+                            key={index}
+                            onClick={() => setCurrentQuestionIndex(index)}
+                            className="w-8 h-8 rounded-lg bg-yellow-100 border border-yellow-300 text-xs font-semibold hover:bg-yellow-200 transition-colors relative"
+                          >
+                            {index + 1}
+                            <Star className="w-2 h-2 absolute top-0.5 right-0.5 fill-current text-yellow-600" />
                           </button>
                         ))
                       )}
@@ -790,35 +999,44 @@ export default function MockExam() {
                 </div>
               )}
             </div>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Navigation */}
-        <div className="border-t border-slate-200 bg-white shadow-lg">
-          <div className="px-6 py-4 flex items-center justify-between">
+        {/* Bottom Navigation - Centered and Prominent */}
+        <div className="border-t-2 border-slate-200 bg-white shadow-lg">
+          <div className="px-6 py-5 flex items-center justify-between max-w-4xl mx-auto">
             <button
               onClick={handlePrevious}
               disabled={currentQuestionIndex === 0}
-              className="px-6 py-3 rounded-lg border border-slate-300 font-semibold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-100 transition-colors text-black flex items-center gap-2"
+              className="px-10 py-4 rounded-xl border-2 border-slate-300 font-bold text-base disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-100 hover:border-black transition-all text-black flex items-center gap-2 shadow-sm"
             >
-              <ChevronLeft className="w-4 h-4" />
+              <ChevronLeft className="w-5 h-5" />
               Previous
             </button>
+
+            <div className="flex flex-col items-center gap-1">
+              <div className="text-xs text-slate-500 uppercase tracking-wider">Question</div>
+              <div className="text-lg text-slate-700 font-bold">
+                {currentQuestionIndex + 1} <span className="text-slate-400">of</span> {questions.length}
+              </div>
+            </div>
 
             {currentQuestionIndex === questions.length - 1 ? (
               <button
                 onClick={handleSubmit}
-                className="px-8 py-3 bg-black text-white font-bold rounded-lg hover:bg-slate-800 transition-colors shadow-lg"
+                className="px-12 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all shadow-lg text-base flex items-center gap-2"
               >
+                <CheckCircle className="w-5 h-5" />
                 Submit Exam
               </button>
             ) : (
               <button
                 onClick={handleNext}
-                className="px-6 py-3 rounded-lg border border-slate-300 font-semibold hover:bg-slate-100 transition-colors text-black flex items-center gap-2"
+                className="px-10 py-4 rounded-xl bg-black text-white font-bold text-base hover:bg-slate-800 transition-all flex items-center gap-2 shadow-md"
               >
                 Next
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className="w-5 h-5" />
               </button>
             )}
           </div>
