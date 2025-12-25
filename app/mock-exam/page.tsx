@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Clock, Home, CheckCircle, XCircle, AlertCircle, Flag, Shuffle, Filter, List, Eye, EyeOff, ChevronLeft, ChevronRight, SkipForward, BookOpen, FileText, ClipboardList, Star, TrendingUp, Award, ChevronDown, ChevronUp } from 'lucide-react';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import UserProfile from '@/components/auth/UserProfile';
+import Navigation from '@/components/Navigation';
 import { useAuth } from '@/contexts/AuthContext';
 
 interface Question {
@@ -758,14 +759,8 @@ function MockExamContent() {
                     {formatTime(timeLeft)}
                   </div>
                 </div>
+                <Navigation />
                 <UserProfile />
-                <Link
-                  href="/"
-                  className="p-2.5 rounded-lg border-2 border-slate-300 hover:bg-slate-100 hover:border-black transition-all"
-                  title="Exit to home"
-                >
-                  <Home className="w-5 h-5" />
-                </Link>
               </div>
             </div>
           </div>
@@ -1070,43 +1065,55 @@ function MockExamContent() {
           </div>
         </div>
 
-        {/* Bottom Navigation - Centered, Prominent, and Sticky */}
-        <div className="border-t-2 border-slate-200 bg-white shadow-lg sticky bottom-0 z-10">
-          <div className="px-6 py-5 flex items-center justify-between max-w-4xl mx-auto">
-            <button
-              onClick={handlePrevious}
-              disabled={currentQuestionIndex === 0}
-              className="px-10 py-4 rounded-xl border-2 border-slate-300 font-bold text-base disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-100 hover:border-black transition-all text-black flex items-center gap-2 shadow-sm"
-            >
-              <ChevronLeft className="w-5 h-5" />
+        {/* Floating Navigation - Right Side */}
+        <div className="fixed right-6 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-3">
+          {/* Previous Button */}
+          <button
+            onClick={handlePrevious}
+            disabled={currentQuestionIndex === 0}
+            className="group relative p-4 rounded-full bg-white border-2 border-slate-300 font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-100 hover:border-black transition-all shadow-lg hover:shadow-xl"
+            title="Previous question"
+          >
+            <ChevronLeft className="w-6 h-6 text-black" />
+            <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-black text-white text-sm font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
               Previous
-            </button>
+            </span>
+          </button>
 
-            <div className="flex flex-col items-center gap-1">
-              <div className="text-xs text-slate-500 uppercase tracking-wider">Question</div>
-              <div className="text-lg text-slate-700 font-bold">
-                {currentQuestionIndex + 1} <span className="text-slate-400">of</span> {questions.length}
+          {/* Question Counter */}
+          <div className="bg-white border-2 border-slate-300 rounded-full px-4 py-3 shadow-lg">
+            <div className="text-center">
+              <div className="text-xs text-slate-500 font-semibold">Question</div>
+              <div className="text-lg font-bold text-black">
+                {currentQuestionIndex + 1}/{questions.length}
               </div>
             </div>
-
-            {currentQuestionIndex === questions.length - 1 ? (
-              <button
-                onClick={handleSubmit}
-                className="px-12 py-4 bg-green-600 text-white font-bold rounded-xl hover:bg-green-700 transition-all shadow-lg text-base flex items-center gap-2"
-              >
-                <CheckCircle className="w-5 h-5" />
-                Submit Exam
-              </button>
-            ) : (
-              <button
-                onClick={handleNext}
-                className="px-10 py-4 rounded-xl bg-black text-white font-bold text-base hover:bg-slate-800 transition-all flex items-center gap-2 shadow-md"
-              >
-                Next
-                <ChevronRight className="w-5 h-5" />
-              </button>
-            )}
           </div>
+
+          {/* Next/Submit Button */}
+          {currentQuestionIndex === questions.length - 1 ? (
+            <button
+              onClick={handleSubmit}
+              className="group relative p-4 rounded-full bg-green-600 text-white font-bold hover:bg-green-700 transition-all shadow-lg hover:shadow-xl"
+              title="Submit exam"
+            >
+              <CheckCircle className="w-6 h-6" />
+              <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-black text-white text-sm font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                Submit Exam
+              </span>
+            </button>
+          ) : (
+            <button
+              onClick={handleNext}
+              className="group relative p-4 rounded-full bg-black text-white font-bold hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl"
+              title="Next question"
+            >
+              <ChevronRight className="w-6 h-6" />
+              <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-black text-white text-sm font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                Next
+              </span>
+            </button>
+          )}
         </div>
       </div>
     </div>

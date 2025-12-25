@@ -6,6 +6,7 @@ import { use } from 'react';
 import { Home, ArrowLeft, CheckCircle, XCircle } from 'lucide-react';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import UserProfile from '@/components/auth/UserProfile';
+import Navigation from '@/components/Navigation';
 
 interface Question {
   id: number;
@@ -97,6 +98,7 @@ function CategoryPracticeContent({ params }: { params: Promise<{ category: strin
                 <div className="text-sm text-slate-600">Incorrect</div>
                 <div className="text-xl font-bold text-red-600">{stats.incorrect}</div>
               </div>
+              <Navigation />
               <UserProfile />
               <Link
                 href="/categories"

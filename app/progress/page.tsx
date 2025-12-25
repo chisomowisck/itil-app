@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Home, TrendingUp, Award, Clock, Flag, Star, CheckCircle, XCircle, Calendar, Trash2, Filter, BarChart3, Target, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import UserProfile from '@/components/auth/UserProfile';
+import Navigation from '@/components/Navigation';
 import { useAuth } from '@/contexts/AuthContext';
 
 interface QuestionResult {
@@ -182,14 +183,8 @@ function ProgressContent() {
               <p className="text-slate-600 text-sm mt-1">View your exam history and analytics</p>
             </div>
             <div className="flex items-center gap-4">
+              <Navigation />
               <UserProfile />
-              <Link
-                href="/"
-                className="flex items-center gap-2 px-4 py-2 border border-slate-300 rounded-lg hover:bg-slate-100 transition-colors text-black"
-              >
-                <Home className="w-4 h-4" />
-                Home
-              </Link>
             </div>
           </div>
         </div>

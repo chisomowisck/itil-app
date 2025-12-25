@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Home, RotateCcw, ChevronLeft, ChevronRight } from 'lucide-react';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import UserProfile from '@/components/auth/UserProfile';
+import Navigation from '@/components/Navigation';
 
 interface Question {
   id: number;
@@ -75,6 +76,7 @@ function FlashcardsContent() {
               </p>
             </div>
             <div className="flex items-center gap-4">
+              <Navigation />
               <UserProfile />
               <button
                 onClick={handleShuffle}
@@ -83,13 +85,6 @@ function FlashcardsContent() {
                 <RotateCcw className="w-5 h-5" />
                 Shuffle
               </button>
-              <Link
-                href="/"
-                className="flex items-center gap-2 px-4 py-2 border-2 border-slate-300 rounded-lg hover:bg-slate-100 transition-colors"
-              >
-                <Home className="w-5 h-5" />
-                Home
-              </Link>
             </div>
           </div>
         </div>
