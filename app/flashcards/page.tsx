@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Home, RotateCcw, ChevronLeft, ChevronRight } from 'lucide-react';
+import ProtectedRoute from '@/components/auth/ProtectedRoute';
+import UserProfile from '@/components/auth/UserProfile';
 
 interface Question {
   id: number;
@@ -12,7 +14,7 @@ interface Question {
   category: string;
 }
 
-export default function Flashcards() {
+function FlashcardsContent() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
@@ -73,6 +75,7 @@ export default function Flashcards() {
               </p>
             </div>
             <div className="flex items-center gap-4">
+              <UserProfile />
               <button
                 onClick={handleShuffle}
                 className="flex items-center gap-2 px-4 py-2 border-2 border-slate-300 rounded-lg hover:bg-slate-100 transition-colors"
@@ -181,3 +184,10 @@ export default function Flashcards() {
   );
 }
 
+export default function Flashcards() {
+  return (
+    <ProtectedRoute>
+      <FlashcardsContent />
+    </ProtectedRoute>
+  );
+}

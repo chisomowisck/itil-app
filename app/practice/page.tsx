@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Home, CheckCircle, XCircle, ArrowRight, ArrowLeft } from 'lucide-react';
+import ProtectedRoute from '@/components/auth/ProtectedRoute';
+import UserProfile from '@/components/auth/UserProfile';
 
 interface Question {
   id: number;
@@ -13,7 +15,7 @@ interface Question {
   explanation: string;
 }
 
-export default function Practice() {
+function PracticeContent() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
@@ -92,6 +94,7 @@ export default function Practice() {
                 <div className="text-sm text-slate-600">Incorrect</div>
                 <div className="text-xl font-bold text-red-600">{stats.incorrect}</div>
               </div>
+              <UserProfile />
               <Link
                 href="/"
                 className="flex items-center gap-2 px-4 py-2 border-2 border-slate-300 rounded-lg hover:bg-slate-100 transition-colors"
@@ -206,3 +209,10 @@ export default function Practice() {
   );
 }
 
+export default function Practice() {
+  return (
+    <ProtectedRoute>
+      <PracticeContent />
+    </ProtectedRoute>
+  );
+}

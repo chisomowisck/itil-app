@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Home, BookOpen } from 'lucide-react';
+import ProtectedRoute from '@/components/auth/ProtectedRoute';
+import UserProfile from '@/components/auth/UserProfile';
 
 interface Question {
   id: number;
@@ -12,7 +14,7 @@ interface Question {
   category: string;
 }
 
-export default function Categories() {
+function CategoriesContent() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [categories, setCategories] = useState<{ [key: string]: number }>({});
 
@@ -55,13 +57,16 @@ export default function Categories() {
                 Focus on specific ITIL 4 topics
               </p>
             </div>
-            <Link
-              href="/"
-              className="flex items-center gap-2 px-4 py-2 border-2 border-slate-300 rounded-lg hover:bg-slate-100 transition-colors"
-            >
-              <Home className="w-5 h-5" />
-              Home
-            </Link>
+            <div className="flex items-center gap-4">
+              <UserProfile />
+              <Link
+                href="/"
+                className="flex items-center gap-2 px-4 py-2 border-2 border-slate-300 rounded-lg hover:bg-slate-100 transition-colors"
+              >
+                <Home className="w-5 h-5" />
+                Home
+              </Link>
+            </div>
           </div>
         </div>
       </header>
@@ -129,3 +134,10 @@ export default function Categories() {
   );
 }
 
+export default function Categories() {
+  return (
+    <ProtectedRoute>
+      <CategoriesContent />
+    </ProtectedRoute>
+  );
+}

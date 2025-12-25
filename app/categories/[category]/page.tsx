@@ -4,6 +4,8 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { use } from 'react';
 import { Home, ArrowLeft, CheckCircle, XCircle } from 'lucide-react';
+import ProtectedRoute from '@/components/auth/ProtectedRoute';
+import UserProfile from '@/components/auth/UserProfile';
 
 interface Question {
   id: number;
@@ -13,7 +15,7 @@ interface Question {
   category: string;
 }
 
-export default function CategoryPractice({ params }: { params: Promise<{ category: string }> }) {
+function CategoryPracticeContent({ params }: { params: Promise<{ category: string }> }) {
   const resolvedParams = use(params);
   const category = decodeURIComponent(resolvedParams.category);
   
@@ -95,6 +97,7 @@ export default function CategoryPractice({ params }: { params: Promise<{ categor
                 <div className="text-sm text-slate-600">Incorrect</div>
                 <div className="text-xl font-bold text-red-600">{stats.incorrect}</div>
               </div>
+              <UserProfile />
               <Link
                 href="/categories"
                 className="flex items-center gap-2 px-4 py-2 border-2 border-slate-300 rounded-lg hover:bg-slate-100 transition-colors"
@@ -201,3 +204,10 @@ export default function CategoryPractice({ params }: { params: Promise<{ categor
   );
 }
 
+export default function CategoryPractice({ params }: { params: Promise<{ category: string }> }) {
+  return (
+    <ProtectedRoute>
+      <CategoryPracticeContent params={params} />
+    </ProtectedRoute>
+  );
+}
