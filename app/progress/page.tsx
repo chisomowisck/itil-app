@@ -41,6 +41,7 @@ function ProgressContent() {
   const [scores, setScores] = useState<ExamScore[]>([]);
   const [filterType, setFilterType] = useState<FilterType>('all');
   const [expandedExamId, setExpandedExamId] = useState<string | null>(null);
+  const [questionFilter, setQuestionFilter] = useState<'all' | 'correct' | 'incorrect' | 'flagged' | 'important'>('all');
 
   useEffect(() => {
     // Load scores from Firebase first, fallback to localStorage
@@ -262,44 +263,39 @@ function ProgressContent() {
             <div className="flex gap-2 flex-wrap">
               <button
                 onClick={() => setFilterType('all')}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${
-                  filterType === 'all' ? 'bg-black text-white' : 'bg-slate-100 text-black hover:bg-slate-200'
-                }`}
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${filterType === 'all' ? 'bg-black text-white' : 'bg-slate-100 text-black hover:bg-slate-200'
+                  }`}
               >
                 All ({scores.length})
               </button>
               <button
                 onClick={() => setFilterType('passed')}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${
-                  filterType === 'passed' ? 'bg-green-600 text-white' : 'bg-green-100 text-green-600 hover:bg-green-200'
-                }`}
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${filterType === 'passed' ? 'bg-green-600 text-white' : 'bg-green-100 text-green-600 hover:bg-green-200'
+                  }`}
               >
                 <CheckCircle className="w-4 h-4" />
                 Passed ({passedCount})
               </button>
               <button
                 onClick={() => setFilterType('failed')}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${
-                  filterType === 'failed' ? 'bg-red-600 text-white' : 'bg-red-100 text-red-600 hover:bg-red-200'
-                }`}
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${filterType === 'failed' ? 'bg-red-600 text-white' : 'bg-red-100 text-red-600 hover:bg-red-200'
+                  }`}
               >
                 <XCircle className="w-4 h-4" />
                 Failed ({failedCount})
               </button>
               <button
                 onClick={() => setFilterType('flagged')}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${
-                  filterType === 'flagged' ? 'bg-orange-600 text-white' : 'bg-orange-100 text-orange-600 hover:bg-orange-200'
-                }`}
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${filterType === 'flagged' ? 'bg-orange-600 text-white' : 'bg-orange-100 text-orange-600 hover:bg-orange-200'
+                  }`}
               >
                 <Flag className="w-4 h-4" />
                 Flagged ({flaggedExamsCount})
               </button>
               <button
                 onClick={() => setFilterType('important')}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${
-                  filterType === 'important' ? 'bg-yellow-600 text-white' : 'bg-yellow-100 text-yellow-600 hover:bg-yellow-200'
-                }`}
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${filterType === 'important' ? 'bg-yellow-600 text-white' : 'bg-yellow-100 text-yellow-600 hover:bg-yellow-200'
+                  }`}
               >
                 <Star className="w-4 h-4" />
                 Important ({importantExamsCount})
@@ -344,169 +340,221 @@ function ProgressContent() {
               const hasDetails = score.questionResults && score.questionResults.length > 0;
 
               return (
-              <div
-                key={score.id}
-                className={`bg-white rounded-xl border-2 shadow-sm hover:shadow-md transition-all ${
-                  score.passed ? 'border-green-200' : 'border-red-200'
-                }`}
-              >
-                <div className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex items-center gap-3">
-                      <div className={`p-3 rounded-lg ${score.passed ? 'bg-green-100' : 'bg-red-100'}`}>
-                        {score.passed ? (
-                          <CheckCircle className="w-6 h-6 text-green-600" />
-                        ) : (
-                          <XCircle className="w-6 h-6 text-red-600" />
-                        )}
-                      </div>
-                      <div>
-                        <div className={`text-2xl font-bold ${score.passed ? 'text-green-600' : 'text-red-600'}`}>
-                          {score.percentage}%
+                <div
+                  key={score.id}
+                  className={`bg-white rounded-xl border-2 shadow-sm hover:shadow-md transition-all ${score.passed ? 'border-green-200' : 'border-red-200'
+                    }`}
+                >
+                  <div className="p-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <div className={`p-3 rounded-lg ${score.passed ? 'bg-green-100' : 'bg-red-100'}`}>
+                          {score.passed ? (
+                            <CheckCircle className="w-6 h-6 text-green-600" />
+                          ) : (
+                            <XCircle className="w-6 h-6 text-red-600" />
+                          )}
                         </div>
-                        <div className="text-sm text-slate-600">
-                          {score.correct} / {score.total} correct
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      {hasDetails && (
-                        <button
-                          onClick={() => setExpandedExamId(isExpanded ? null : score.id)}
-                          className="p-2 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors"
-                          title={isExpanded ? "Hide details" : "Show details"}
-                        >
-                          {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
-                        </button>
-                      )}
-                      <button
-                        onClick={() => deleteScore(score.id)}
-                        className="p-2 rounded-lg hover:bg-red-100 text-red-600 transition-colors"
-                        title="Delete this score"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                  <div className="flex items-center gap-2">
-                    <Calendar className="w-4 h-4 text-slate-400" />
-                    <div>
-                      <div className="text-xs text-slate-500">Date</div>
-                      <div className="text-sm font-semibold text-black">{formatDate(score.date)}</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-slate-400" />
-                    <div>
-                      <div className="text-xs text-slate-500">Time Spent</div>
-                      <div className="text-sm font-semibold text-black">{formatTime(score.timeSpent)}</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Flag className="w-4 h-4 text-orange-400" />
-                    <div>
-                      <div className="text-xs text-slate-500">Flagged</div>
-                      <div className="text-sm font-semibold text-black">{score.flaggedCount}</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Star className="w-4 h-4 text-yellow-400" />
-                    <div>
-                      <div className="text-xs text-slate-500">Important</div>
-                      <div className="text-sm font-semibold text-black">{score.importantCount}</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className={`mt-4 px-4 py-2 rounded-lg text-center font-semibold ${
-                  score.passed
-                    ? 'bg-green-50 text-green-600 border border-green-200'
-                    : 'bg-red-50 text-red-600 border border-red-200'
-                }`}>
-                  {score.passed ? '✓ PASSED' : '✗ FAILED'} - {score.passed ? 'Pass mark is 65%' : 'Need 65% to pass'}
-                </div>
-                </div>
-
-                {/* Expandable Question Details */}
-                {isExpanded && hasDetails && (
-                  <div className="border-t border-slate-200 p-6 bg-slate-50">
-                    <h4 className="text-lg font-bold text-black mb-4">Question Details</h4>
-
-                    {/* Category Breakdown */}
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-                      <div className="bg-white rounded-lg p-3 border border-slate-200">
-                        <div className="text-xs text-slate-500 mb-1">Correct</div>
-                        <div className="text-xl font-bold text-green-600">
-                          {score.questionResults!.filter(q => q.isCorrect).length}
-                        </div>
-                      </div>
-                      <div className="bg-white rounded-lg p-3 border border-slate-200">
-                        <div className="text-xs text-slate-500 mb-1">Incorrect</div>
-                        <div className="text-xl font-bold text-red-600">
-                          {score.questionResults!.filter(q => !q.isCorrect && q.selectedAnswer !== null).length}
-                        </div>
-                      </div>
-                      <div className="bg-white rounded-lg p-3 border border-slate-200">
-                        <div className="text-xs text-slate-500 mb-1">Flagged</div>
-                        <div className="text-xl font-bold text-orange-600">
-                          {score.questionResults!.filter(q => q.isFlagged).length}
-                        </div>
-                      </div>
-                      <div className="bg-white rounded-lg p-3 border border-slate-200">
-                        <div className="text-xs text-slate-500 mb-1">Important</div>
-                        <div className="text-xl font-bold text-yellow-600">
-                          {score.questionResults!.filter(q => q.isImportant).length}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Question List */}
-                    <div className="space-y-2 max-h-96 overflow-y-auto">
-                      {score.questionResults!.map((result, idx) => (
-                        <div
-                          key={idx}
-                          className={`p-3 rounded-lg border-2 ${
-                            result.isCorrect
-                              ? 'bg-green-50 border-green-200'
-                              : result.selectedAnswer === null
-                              ? 'bg-slate-50 border-slate-200'
-                              : 'bg-red-50 border-red-200'
-                          }`}
-                        >
-                          <div className="flex items-start justify-between gap-3">
-                            <div className="flex-1">
-                              <div className="flex items-center gap-2 mb-1">
-                                <span className="text-xs font-bold text-slate-500">Q{idx + 1}</span>
-                                <span className="text-xs px-2 py-0.5 bg-white rounded-full text-slate-600 border border-slate-200">
-                                  {result.category}
-                                </span>
-                                {result.isFlagged && (
-                                  <Flag className="w-3 h-3 text-orange-500" />
-                                )}
-                                {result.isImportant && (
-                                  <Star className="w-3 h-3 text-yellow-500 fill-current" />
-                                )}
-                              </div>
-                              <div className="text-sm text-black line-clamp-2">{result.question}</div>
-                            </div>
-                            <div className="shrink-0">
-                              {result.isCorrect ? (
-                                <CheckCircle className="w-5 h-5 text-green-600" />
-                              ) : result.selectedAnswer === null ? (
-                                <AlertCircle className="w-5 h-5 text-slate-400" />
-                              ) : (
-                                <XCircle className="w-5 h-5 text-red-600" />
-                              )}
-                            </div>
+                        <div>
+                          <div className={`text-2xl font-bold ${score.passed ? 'text-green-600' : 'text-red-600'}`}>
+                            {score.percentage}%
+                          </div>
+                          <div className="text-sm text-slate-600">
+                            {score.correct} / {score.total} correct
                           </div>
                         </div>
-                      ))}
+                      </div>
+                      <div className="flex items-center gap-2">
+                        {hasDetails && (
+                          <button
+                            onClick={() => {
+                              setExpandedExamId(isExpanded ? null : score.id);
+                              setQuestionFilter('all');
+                            }}
+                            className="p-2 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors"
+                            title={isExpanded ? "Hide details" : "Show details"}
+                          >
+                            {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
+                          </button>
+                        )}
+                        <button
+                          onClick={() => deleteScore(score.id)}
+                          className="p-2 rounded-lg hover:bg-red-100 text-red-600 transition-colors"
+                          title="Delete this score"
+                        >
+                          <Trash2 className="w-4 h-4" />
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                      <div className="flex items-center gap-2">
+                        <Calendar className="w-4 h-4 text-slate-400" />
+                        <div>
+                          <div className="text-xs text-slate-500">Date</div>
+                          <div className="text-sm font-semibold text-black">{formatDate(score.date)}</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Clock className="w-4 h-4 text-slate-400" />
+                        <div>
+                          <div className="text-xs text-slate-500">Time Spent</div>
+                          <div className="text-sm font-semibold text-black">{formatTime(score.timeSpent)}</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Flag className="w-4 h-4 text-orange-400" />
+                        <div>
+                          <div className="text-xs text-slate-500">Flagged</div>
+                          <div className="text-sm font-semibold text-black">{score.flaggedCount}</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Star className="w-4 h-4 text-yellow-400" />
+                        <div>
+                          <div className="text-xs text-slate-500">Important</div>
+                          <div className="text-sm font-semibold text-black">{score.importantCount}</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className={`mt-4 px-4 py-2 rounded-lg text-center font-semibold ${score.passed
+                      ? 'bg-green-50 text-green-600 border border-green-200'
+                      : 'bg-red-50 text-red-600 border border-red-200'
+                      }`}>
+                      {score.passed ? '✓ PASSED' : '✗ FAILED'} - {score.passed ? 'Pass mark is 65%' : 'Need 65% to pass'}
                     </div>
                   </div>
-                )}
-              </div>
+
+                  {/* Expandable Question Details */}
+                  {isExpanded && hasDetails && (
+                    <div className="border-t border-slate-200 p-6 bg-slate-50">
+                      <h4 className="text-lg font-bold text-black mb-4">Question Details</h4>
+
+                      {/* Category Breakdown */}
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
+                        <div className="bg-white rounded-lg p-3 border border-slate-200">
+                          <div className="text-xs text-slate-500 mb-1">Correct</div>
+                          <div className="text-xl font-bold text-green-600">
+                            {score.questionResults!.filter(q => q.isCorrect).length}
+                          </div>
+                        </div>
+                        <div className="bg-white rounded-lg p-3 border border-slate-200">
+                          <div className="text-xs text-slate-500 mb-1">Incorrect</div>
+                          <div className="text-xl font-bold text-red-600">
+                            {score.questionResults!.filter(q => !q.isCorrect && q.selectedAnswer !== null).length}
+                          </div>
+                        </div>
+                        <div className="bg-white rounded-lg p-3 border border-slate-200">
+                          <div className="text-xs text-slate-500 mb-1">Flagged</div>
+                          <div className="text-xl font-bold text-orange-600">
+                            {score.questionResults!.filter(q => q.isFlagged).length}
+                          </div>
+                        </div>
+                        <div className="bg-white rounded-lg p-3 border border-slate-200">
+                          <div className="text-xs text-slate-500 mb-1">Important</div>
+                          <div className="text-xl font-bold text-yellow-600">
+                            {score.questionResults!.filter(q => q.isImportant).length}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Question Filters */}
+                      <div className="flex gap-2 mb-4 overflow-x-auto pb-2">
+                        <button
+                          onClick={() => setQuestionFilter('all')}
+                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${questionFilter === 'all' ? 'bg-black text-white' : 'bg-slate-200 text-slate-600 hover:bg-slate-300'
+                            }`}
+                        >
+                          All Questions
+                        </button>
+                        <button
+                          onClick={() => setQuestionFilter('incorrect')}
+                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap flex items-center gap-1 ${questionFilter === 'incorrect' ? 'bg-red-600 text-white' : 'bg-red-100 text-red-600 hover:bg-red-200'
+                            }`}
+                        >
+                          <XCircle className="w-3.5 h-3.5" />
+                          Incorrect
+                        </button>
+                        <button
+                          onClick={() => setQuestionFilter('correct')}
+                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap flex items-center gap-1 ${questionFilter === 'correct' ? 'bg-green-600 text-white' : 'bg-green-100 text-green-600 hover:bg-green-200'
+                            }`}
+                        >
+                          <CheckCircle className="w-3.5 h-3.5" />
+                          Correct
+                        </button>
+                        <button
+                          onClick={() => setQuestionFilter('flagged')}
+                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap flex items-center gap-1 ${questionFilter === 'flagged' ? 'bg-orange-600 text-white' : 'bg-orange-100 text-orange-600 hover:bg-orange-200'
+                            }`}
+                        >
+                          <Flag className="w-3.5 h-3.5" />
+                          Flagged
+                        </button>
+                        <button
+                          onClick={() => setQuestionFilter('important')}
+                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap flex items-center gap-1 ${questionFilter === 'important' ? 'bg-yellow-600 text-white' : 'bg-yellow-100 text-yellow-600 hover:bg-yellow-200'
+                            }`}
+                        >
+                          <Star className="w-3.5 h-3.5" />
+                          Important
+                        </button>
+                      </div>
+
+                      {/* Question List */}
+                      <div className="space-y-2 max-h-96 overflow-y-auto">
+                        {score.questionResults!
+                          .map((result, originalIndex) => ({ result, originalIndex }))
+                          .filter(({ result }) => {
+                            if (questionFilter === 'incorrect') return !result.isCorrect && result.selectedAnswer !== null;
+                            if (questionFilter === 'correct') return result.isCorrect;
+                            if (questionFilter === 'flagged') return result.isFlagged;
+                            if (questionFilter === 'important') return result.isImportant;
+                            return true;
+                          })
+                          .map(({ result, originalIndex }) => (
+                            <div
+                              key={originalIndex}
+                              className={`p-3 rounded-lg border-2 ${result.isCorrect
+                                ? 'bg-green-50 border-green-200'
+                                : result.selectedAnswer === null
+                                  ? 'bg-slate-50 border-slate-200'
+                                  : 'bg-red-50 border-red-200'
+                                }`}
+                            >
+                              <div className="flex items-start justify-between gap-3">
+                                <div className="flex-1">
+                                  <div className="flex items-center gap-2 mb-1">
+                                    <span className="text-xs font-bold text-slate-500">Q{originalIndex + 1}</span>
+                                    <span className="text-xs px-2 py-0.5 bg-white rounded-full text-slate-600 border border-slate-200">
+                                      {result.category}
+                                    </span>
+                                    {result.isFlagged && (
+                                      <Flag className="w-3 h-3 text-orange-500" />
+                                    )}
+                                    {result.isImportant && (
+                                      <Star className="w-3 h-3 text-yellow-500 fill-current" />
+                                    )}
+                                  </div>
+                                  <div className="text-sm text-black line-clamp-2">{result.question}</div>
+                                </div>
+                                <div className="shrink-0">
+                                  {result.isCorrect ? (
+                                    <CheckCircle className="w-5 h-5 text-green-600" />
+                                  ) : result.selectedAnswer === null ? (
+                                    <AlertCircle className="w-5 h-5 text-slate-400" />
+                                  ) : (
+                                    <XCircle className="w-5 h-5 text-red-600" />
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
               );
             })}
           </div>
@@ -590,9 +638,8 @@ function ProgressContent() {
                   </div>
                   <div className="w-full bg-slate-200 rounded-full h-4">
                     <div
-                      className={`h-4 rounded-full transition-all ${
-                        averageScore >= 65 ? 'bg-green-600' : 'bg-red-600'
-                      }`}
+                      className={`h-4 rounded-full transition-all ${averageScore >= 65 ? 'bg-green-600' : 'bg-red-600'
+                        }`}
                       style={{ width: `${averageScore}%` }}
                     />
                   </div>

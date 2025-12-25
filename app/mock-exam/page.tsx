@@ -56,7 +56,7 @@ function MockExamContent() {
   const [timeLeft, setTimeLeft] = useState(60 * 60); // 60 minutes in seconds
   const [examStarted, setExamStarted] = useState(false);
   const [filterType, setFilterType] = useState<FilterType>('all');
-  const [showSidebar, setShowSidebar] = useState(true);
+
   const [showScore, setShowScore] = useState(false);
   const [startTime, setStartTime] = useState<number>(0);
 
@@ -575,115 +575,8 @@ function MockExamContent() {
   const currentPercentage = answeredCount > 0 ? Math.round((currentScore / answeredCount) * 100) : 0;
 
   return (
-    <div className="min-h-screen bg-slate-50 flex">
-      {/* Sidebar */}
-      <div className={`${showSidebar ? 'w-64' : 'w-0'} border-r border-slate-200 transition-all duration-300 overflow-hidden shrink-0 bg-white`}>
-        <div className="w-64 h-screen overflow-y-auto">
-          {/* Sidebar Header */}
-          <div className="p-4 border-b border-slate-200">
-            <h2 className="text-base font-bold text-black mb-3">Questions</h2>
+    <div className="min-h-screen bg-slate-50">
 
-            {/* Filter Buttons */}
-            <div className="grid grid-cols-2 gap-1.5 mb-3">
-              <button
-                onClick={() => setFilterType('all')}
-                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${filterType === 'all'
-                  ? 'bg-black text-white'
-                  : 'bg-slate-100 text-black hover:bg-slate-200'
-                  }`}
-              >
-                All ({questions.length})
-              </button>
-              <button
-                onClick={() => setFilterType('flagged')}
-                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${filterType === 'flagged'
-                  ? 'bg-black text-white'
-                  : 'bg-slate-100 text-black hover:bg-slate-200'
-                  }`}
-              >
-                <Flag className="w-3 h-3 inline mr-1" />
-                {flaggedQuestions.size}
-              </button>
-              <button
-                onClick={() => setFilterType('important')}
-                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${filterType === 'important'
-                  ? 'bg-black text-white'
-                  : 'bg-slate-100 text-black hover:bg-slate-200'
-                  }`}
-              >
-                <Star className="w-3 h-3 inline mr-1" />
-                {importantQuestions.size}
-              </button>
-              <button
-                onClick={() => setFilterType('answered')}
-                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${filterType === 'answered'
-                  ? 'bg-black text-white'
-                  : 'bg-slate-100 text-black hover:bg-slate-200'
-                  }`}
-              >
-                Done ({answeredCount})
-              </button>
-            </div>
-
-            {/* Quick Navigation */}
-            <div className="space-y-2">
-              <button
-                onClick={goToFirstUnanswered}
-                disabled={unansweredQuestions.length === 0}
-                className="w-full px-3 py-2 text-xs font-semibold rounded-lg border border-slate-300 text-black hover:bg-slate-100 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-              >
-                <SkipForward className="w-3 h-3 inline mr-2" />
-                First Unanswered
-              </button>
-              <button
-                onClick={goToFirstFlagged}
-                disabled={flaggedQuestionsArray.length === 0}
-                className="w-full px-3 py-2 text-xs font-semibold rounded-lg border border-slate-300 text-black hover:bg-slate-100 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-              >
-                <Flag className="w-3 h-3 inline mr-2" />
-                First Flagged
-              </button>
-              <button
-                onClick={handleRandomize}
-                className="w-full px-3 py-2 text-xs font-semibold rounded-lg border border-slate-300 text-black hover:bg-slate-100 transition-colors"
-              >
-                <Shuffle className="w-3 h-3 inline mr-2" />
-                Randomize
-              </button>
-            </div>
-          </div>
-
-          {/* Question Grid */}
-          <div className="p-4">
-            <div className="grid grid-cols-5 gap-1.5">
-              {(filterType === 'all' ? questions : filteredIndices.map(i => questions[i])).map((_, idx) => {
-                const actualIndex = filterType === 'all' ? idx : filteredIndices[idx];
-                const isAnswered = selectedAnswers[actualIndex] !== null;
-                const isFlagged = flaggedQuestions.has(actualIndex);
-                const isCurrent = actualIndex === currentQuestionIndex;
-
-                return (
-                  <button
-                    key={actualIndex}
-                    onClick={() => setCurrentQuestionIndex(actualIndex)}
-                    className={`relative aspect-square rounded-lg font-bold text-xs transition-all ${isCurrent
-                      ? 'bg-black text-white shadow-lg'
-                      : isAnswered
-                        ? 'bg-slate-200 text-black hover:bg-slate-300'
-                        : 'bg-slate-100 text-slate-400 hover:bg-slate-200'
-                      }`}
-                  >
-                    {actualIndex + 1}
-                    {isFlagged && (
-                      <Flag className="w-2.5 h-2.5 absolute top-0.5 right-0.5 fill-current" />
-                    )}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
@@ -692,13 +585,7 @@ function MockExamContent() {
           <div className="px-6 py-4">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <button
-                  onClick={() => setShowSidebar(!showSidebar)}
-                  className="p-2 rounded-lg border border-slate-300 hover:bg-slate-100 transition-colors"
-                  title={showSidebar ? "Hide sidebar" : "Show sidebar"}
-                >
-                  {showSidebar ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                </button>
+
                 <div>
                   <div className="text-xs text-slate-500 uppercase tracking-wider">Question</div>
                   <div className="text-2xl font-bold text-black">
@@ -753,7 +640,7 @@ function MockExamContent() {
         <div className="flex-1 flex overflow-hidden bg-slate-50 relative">
           {/* Question Section - Centered and Narrower */}
           <div className="flex-1 overflow-y-auto p-6 flex justify-center">
-            <div className="w-full max-w-3xl">
+            <div className="w-full max-w-5xl">
               {/* Show Tabs Button - Fixed Position */}
 
               {/* Question Card */}
@@ -850,6 +737,111 @@ function MockExamContent() {
                   <ChevronRight className="w-5 h-5" />
                 </button>
               )}
+            </div>
+
+            {/* Question Navigator - Relocated and Redesigned */}
+            <div className="mt-16 pt-10 border-t border-slate-200">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center text-slate-700">
+                    <List className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-black">Question Navigator</h3>
+                    <p className="text-sm text-slate-500">Fast track your progress</p>
+                  </div>
+                </div>
+
+                {/* Filters */}
+                <div className="flex bg-slate-100 p-1.5 rounded-xl self-start md:self-auto">
+                  <button
+                    onClick={() => setFilterType('all')}
+                    className={`px-4 py-2 text-sm font-bold rounded-lg transition-all ${filterType === 'all'
+                      ? 'bg-white text-black shadow-sm'
+                      : 'text-slate-500 hover:text-black'
+                      }`}
+                  >
+                    All
+                  </button>
+                  <button
+                    onClick={() => setFilterType('flagged')}
+                    className={`px-4 py-2 text-sm font-bold rounded-lg transition-all flex items-center gap-2 ${filterType === 'flagged'
+                      ? 'bg-white text-black shadow-sm'
+                      : 'text-slate-500 hover:text-black'
+                      }`}
+                  >
+                    <Flag className="w-4 h-4" />
+                    Flagged
+                  </button>
+                  <button
+                    onClick={() => setFilterType('answered')}
+                    className={`px-4 py-2 text-sm font-bold rounded-lg transition-all flex items-center gap-2 ${filterType === 'answered'
+                      ? 'bg-white text-black shadow-sm'
+                      : 'text-slate-500 hover:text-black'
+                      }`}
+                  >
+                    <CheckCircle className="w-4 h-4" />
+                    Answered
+                  </button>
+                </div>
+              </div>
+
+              {/* Quick Actions */}
+              <div className="flex gap-3 mb-8 overflow-x-auto pb-2 scrollbar-hide">
+                <button
+                  onClick={goToFirstUnanswered}
+                  disabled={unansweredQuestions.length === 0}
+                  className="px-5 py-2.5 text-sm font-bold rounded-xl border-2 border-slate-100 text-slate-600 hover:bg-slate-50 hover:text-black hover:border-slate-300 transition-all disabled:opacity-30 disabled:cursor-not-allowed flex items-center gap-2 whitespace-nowrap"
+                >
+                  <SkipForward className="w-4 h-4" />
+                  Next Unanswered
+                </button>
+                <button
+                  onClick={goToFirstFlagged}
+                  disabled={flaggedQuestionsArray.length === 0}
+                  className="px-5 py-2.5 text-sm font-bold rounded-xl border-2 border-slate-100 text-slate-600 hover:bg-slate-50 hover:text-black hover:border-slate-300 transition-all disabled:opacity-30 disabled:cursor-not-allowed flex items-center gap-2 whitespace-nowrap"
+                >
+                  <Flag className="w-4 h-4" />
+                  Next Flagged
+                </button>
+                <button
+                  onClick={handleRandomize}
+                  className="px-5 py-2.5 text-sm font-bold rounded-xl border-2 border-slate-100 text-slate-600 hover:bg-slate-50 hover:text-black hover:border-slate-300 transition-all flex items-center gap-2 whitespace-nowrap ml-auto"
+                >
+                  <Shuffle className="w-4 h-4" />
+                  Shuffle Questions
+                </button>
+              </div>
+
+              {/* Grid - Expanded for full width */}
+              <div className="grid grid-cols-5 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-10 gap-3">
+                {(filterType === 'all' ? questions : filteredIndices.map(i => questions[i])).map((_, idx) => {
+                  const actualIndex = filterType === 'all' ? idx : filteredIndices[idx];
+                  const isAnswered = selectedAnswers[actualIndex] !== null;
+                  const isFlagged = flaggedQuestions.has(actualIndex);
+                  const isCurrent = actualIndex === currentQuestionIndex;
+
+                  return (
+                    <button
+                      key={actualIndex}
+                      onClick={() => setCurrentQuestionIndex(actualIndex)}
+                      className={`relative h-12 rounded-xl font-bold text-sm transition-all flex items-center justify-center ${isCurrent
+                        ? 'bg-black text-white shadow-lg ring-4 ring-black/10 scale-105 z-10'
+                        : isAnswered
+                          ? 'bg-green-50 text-green-700 border-2 border-green-200 hover:bg-green-100 hover:border-green-300'
+                          : 'bg-white border-2 border-slate-100 text-slate-400 hover:border-slate-300 hover:text-slate-700'
+                        }`}
+                    >
+                      {actualIndex + 1}
+                      {isFlagged && (
+                        <div className="absolute top-1 right-1">
+                          <div className="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
+                        </div>
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
         </div>

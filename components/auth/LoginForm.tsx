@@ -28,8 +28,8 @@ export default function LoginForm() {
     const result = await loginUser(email, password);
 
     if (result.success) {
-      // Redirect to mock exam page
-      router.push("/mock-exam");
+      // Redirect to home page
+      router.push("/");
     } else {
       setError(result.error || "Login failed. Please try again.");
       setLoading(false);
