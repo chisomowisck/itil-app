@@ -49,24 +49,97 @@ This means **Firebase Authentication is not enabled yet** in your Firebase Conso
 
 Now that authentication is enabled, you need to update your Firestore security rules:
 
-### Option A: Using Firebase Console (Recommended)
+### Using Firebase Console
 
 1. In Firebase Console, click **"Firestore Database"** in the left sidebar
-2. Click the **"Rules"** tab at the top
-3. You'll see the current rules in an editor
-4. **Delete all the existing rules**
-5. Open the `firestore.rules` file in your project (in VS Code)
-6. **Copy all the content** from that file
-7. **Paste it** into the Firebase Console rules editor
-8. Click **"Publish"** button
-9. Wait for the confirmation message
+2. If you see a "Create database" button, click it and choose:
+   - **Start in production mode** (we'll update the rules next)
+   - Choose a location (e.g., `us-central1`)
+   - Click "Enable"
+3. Click the **"Rules"** tab at the top
+4. You'll see the current rules in an editor
+5. **Delete all the existing rules**
+6. Open the `firestore.rules` file in your project (in VS Code)
+7. **Copy all the content** from that file (see below for the rules)
+8. **Paste it** into the Firebase Console rules editor
+9. Click **"Publish"** button
+10. Wait for the confirmation message
 
-### Option B: Using Firebase CLI
+### Firestore Rules to Copy
 
-If you have Firebase CLI installed:
+Here are the rules you need to copy from `firestore.rules`:
 
-```bash
-firebase deploy --only firestore:rules
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Helper function to check if user owns the resource
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Questions collection - Public read access (questions are public data)
+    // Write access is disabled (only allow writes through admin/migration tools)
+    match /questions/{questionId} {
+      allow read: if true; // Public read access
+      allow write: if false; // Only allow writes through admin/migration tools
+    }
+
+    // User profiles collection
+    match /users/{userId} {
+      // Users can read and write their own profile
+      allow read, write: if isOwner(userId);
+      // Allow creation during registration
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // Exam scores collection - User-specific access
+    match /examScores/{scoreId} {
+      // Users can only read their own scores
+      allow read: if isAuthenticated() &&
+                     (resource.data.userId == request.auth.uid ||
+                      !('userId' in resource.data)); // Backward compatibility for old scores
+
+      // Users can only create scores for themselves
+      allow create: if isAuthenticated() &&
+                       request.resource.data.userId == request.auth.uid;
+
+      // Users can only update their own scores
+      allow update: if isAuthenticated() &&
+                       resource.data.userId == request.auth.uid;
+
+      // Users can only delete their own scores
+      allow delete: if isAuthenticated() &&
+                       resource.data.userId == request.auth.uid;
+    }
+
+    // Exam results collection - Alternative name for exam scores (for compatibility)
+    match /examResults/{resultId} {
+      // Users can only read their own results
+      allow read: if isAuthenticated() &&
+                     (resource.data.userId == request.auth.uid ||
+                      !('userId' in resource.data)); // Backward compatibility for old results
+
+      // Users can only create results for themselves
+      allow create: if isAuthenticated() &&
+                       request.resource.data.userId == request.auth.uid;
+
+      // Users can only update their own results
+      allow update: if isAuthenticated() &&
+                       resource.data.userId == request.auth.uid;
+
+      // Users can only delete their own results
+      allow delete: if isAuthenticated() &&
+                       resource.data.userId == request.auth.uid;
+    }
+  }
+}
 ```
 
 ---
