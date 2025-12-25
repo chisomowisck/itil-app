@@ -39,6 +39,8 @@ export interface QuestionResult {
   isCorrect: boolean;
   isFlagged: boolean;
   isImportant: boolean;
+  options: string[];
+  explanation?: string;
 }
 
 export interface ExamScore {
@@ -68,7 +70,7 @@ export async function getAllQuestions(): Promise<Question[]> {
   try {
     const questionsRef = collection(db, "questions");
     const querySnapshot = await getDocs(questionsRef);
-    
+
     const questions: Question[] = [];
     querySnapshot.forEach((doc) => {
       const data = doc.data();
@@ -81,7 +83,7 @@ export async function getAllQuestions(): Promise<Question[]> {
         explanation: data.explanation,
       });
     });
-    
+
     // Sort by ID
     return questions.sort((a, b) => a.id - b.id);
   } catch (error) {
@@ -98,11 +100,11 @@ export async function getQuestionById(questionId: number): Promise<Question | nu
     const questionsRef = collection(db, "questions");
     const q = query(questionsRef, where("id", "==", questionId));
     const querySnapshot = await getDocs(q);
-    
+
     if (querySnapshot.empty) {
       return null;
     }
-    
+
     const data = querySnapshot.docs[0].data();
     return {
       id: data.id,
@@ -126,14 +128,14 @@ export async function addQuestion(question: Omit<Question, "id">): Promise<strin
     // Get the highest ID
     const questions = await getAllQuestions();
     const maxId = questions.length > 0 ? Math.max(...questions.map(q => q.id)) : 0;
-    
+
     const questionsRef = collection(db, "questions");
     const docRef = await addDoc(questionsRef, {
       ...question,
       id: maxId + 1,
       createdAt: Timestamp.now(),
     });
-    
+
     return docRef.id;
   } catch (error) {
     console.error("Error adding question:", error);
@@ -147,7 +149,7 @@ export async function addQuestion(question: Omit<Question, "id">): Promise<strin
 export async function bulkUploadQuestions(questions: Question[]): Promise<void> {
   try {
     const questionsRef = collection(db, "questions");
-    
+
     for (const question of questions) {
       await addDoc(questionsRef, {
         ...question,
@@ -196,7 +198,8 @@ export async function getAllExamScores(userId?: string): Promise<ExamScore[]> {
     let q;
 
     if (userId) {
-      q = query(scoresRef, where("userId", "==", userId), orderBy("createdAt", "desc"));
+      // Remove orderBy to avoid creating a composite index
+      q = query(scoresRef, where("userId", "==", userId));
     } else {
       q = query(scoresRef, orderBy("createdAt", "desc"));
     }
@@ -223,7 +226,12 @@ export async function getAllExamScores(userId?: string): Promise<ExamScore[]> {
       });
     });
 
-    return scores;
+    // Sort manually in client to handle the missing index
+    return scores.sort((a, b) => {
+      const dateA = a.createdAt ? a.createdAt.toMillis() : new Date(a.date).getTime();
+      const dateB = b.createdAt ? b.createdAt.toMillis() : new Date(b.date).getTime();
+      return dateB - dateA;
+    });
   } catch (error) {
     console.error("Error fetching exam scores:", error);
     throw error;

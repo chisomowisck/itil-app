@@ -31,34 +31,12 @@ export default function UserProfile() {
     <div className="relative">
       <button
         onClick={() => setShowDropdown(!showDropdown)}
-        className="flex items-center space-x-3 bg-white dark:bg-gray-800 rounded-lg px-4 py-2 shadow-md hover:shadow-lg transition-shadow"
+        className="p-2 rounded-lg border border-slate-300 hover:bg-slate-100 transition-colors"
+        title="My Profile"
       >
-        <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold">
+        <div className="w-5 h-5 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center text-white font-bold text-xs">
           {userProfile?.displayName?.charAt(0).toUpperCase() || user.email?.charAt(0).toUpperCase()}
         </div>
-        <div className="text-left hidden md:block">
-          <p className="text-sm font-semibold text-gray-900 dark:text-white">
-            {userProfile?.displayName || "User"}
-          </p>
-          <p className="text-xs text-gray-500 dark:text-gray-400">
-            {user.email}
-          </p>
-        </div>
-        <svg
-          className={`w-4 h-4 text-gray-500 transition-transform ${
-            showDropdown ? "rotate-180" : ""
-          }`}
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
       </button>
 
       {showDropdown && (

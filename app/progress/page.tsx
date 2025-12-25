@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Home, TrendingUp, Award, Clock, Flag, Star, CheckCircle, XCircle, Calendar, Trash2, Filter, BarChart3, Target, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { Home, TrendingUp, Award, Clock, Flag, Star, CheckCircle, XCircle, Calendar, Trash2, Filter, BarChart3, Target, AlertCircle, ChevronDown, ChevronUp, ChevronRight } from 'lucide-react';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import UserProfile from '@/components/auth/UserProfile';
 import Navigation from '@/components/Navigation';
 import { useAuth } from '@/contexts/AuthContext';
+import { getAllExamScores, deleteExamScore, deleteAllExamScores } from '@/lib/firebase/services';
 
 interface QuestionResult {
   questionId: number;
@@ -17,10 +18,12 @@ interface QuestionResult {
   isCorrect: boolean;
   isFlagged: boolean;
   isImportant: boolean;
+  options: string[];
+  explanation?: string;
 }
 
 interface ExamScore {
-  id: string;
+  id?: string;
   userId?: string;
   date: string;
   score: number;
@@ -40,8 +43,6 @@ function ProgressContent() {
   const { user } = useAuth();
   const [scores, setScores] = useState<ExamScore[]>([]);
   const [filterType, setFilterType] = useState<FilterType>('all');
-  const [expandedExamId, setExpandedExamId] = useState<string | null>(null);
-  const [questionFilter, setQuestionFilter] = useState<'all' | 'correct' | 'incorrect' | 'flagged' | 'important'>('all');
 
   useEffect(() => {
     // Load scores from Firebase first, fallback to localStorage
@@ -49,18 +50,22 @@ function ProgressContent() {
       if (!user) return;
 
       try {
-        // Try loading from Firebase with userId filter
-        const response = await fetch(`/api/exam-scores?userId=${user.uid}`);
-        const result = await response.json();
+        // Load directly using client SDK to pass auth context
+        const data = await getAllExamScores(user.uid);
 
-        if (result.success && result.data && result.data.length > 0) {
-          // Successfully loaded from Firebase
-          setScores(result.data);
+        if (data.length > 0) {
+          setScores(data);
         } else {
-          // Fallback to localStorage
+          // Fallback to localStorage logic is a bit weird here since we want cloud sync
+          // But if cloud is empty, maybe check local? 
+          // For now, let's prioritize cloud, and if empty there, check local just in case
           const savedScores = localStorage.getItem('examScores');
           if (savedScores) {
-            setScores(JSON.parse(savedScores));
+            const localScores = JSON.parse(savedScores);
+            // In a real app we might merge, but here let's just show local if cloud is empty
+            // or maybe better to migrate local to cloud?
+            // Let's keep existing behavior: if cloud empty, show local
+            setScores(localScores);
           }
         }
       } catch (error) {
@@ -95,23 +100,15 @@ function ProgressContent() {
 
   const deleteScore = async (id: string) => {
     try {
-      // Try deleting from Firebase
-      const response = await fetch(`/api/exam-scores?id=${id}`, {
-        method: 'DELETE',
-      });
+      // Try deleting from Firebase using client SDK
+      await deleteExamScore(id);
 
-      const result = await response.json();
+      // Update local state
+      const updatedScores = scores.filter(s => s.id !== id);
+      setScores(updatedScores);
 
-      if (result.success) {
-        // Successfully deleted from Firebase
-        const updatedScores = scores.filter(s => s.id !== id);
-        setScores(updatedScores);
-      } else {
-        // Fallback to localStorage
-        const updatedScores = scores.filter(s => s.id !== id);
-        setScores(updatedScores);
-        localStorage.setItem('examScores', JSON.stringify(updatedScores));
-      }
+      // Also update localStorage to keep in sync
+      localStorage.setItem('examScores', JSON.stringify(updatedScores));
     } catch (error) {
       console.error('Error deleting score from Firebase:', error);
       // Fallback to localStorage
@@ -123,22 +120,15 @@ function ProgressContent() {
 
   const clearAllScores = async () => {
     if (confirm('Are you sure you want to delete all exam scores?')) {
+      if (!user) return;
+
       try {
-        // Try deleting all from Firebase
-        const response = await fetch('/api/exam-scores?deleteAll=true', {
-          method: 'DELETE',
-        });
+        // Try deleting all from Firebase using client SDK
+        await deleteAllExamScores(user.uid);
 
-        const result = await response.json();
-
-        if (result.success) {
-          // Successfully deleted from Firebase
-          setScores([]);
-        } else {
-          // Fallback to localStorage
-          setScores([]);
-          localStorage.removeItem('examScores');
-        }
+        // Update state
+        setScores([]);
+        localStorage.removeItem('examScores');
       } catch (error) {
         console.error('Error deleting all scores from Firebase:', error);
         // Fallback to localStorage
@@ -336,7 +326,7 @@ function ProgressContent() {
           <div className="space-y-4">
             <p className="text-sm text-slate-600">Showing {filteredScores.length} exam{filteredScores.length !== 1 ? 's' : ''}</p>
             {filteredScores.map((score) => {
-              const isExpanded = expandedExamId === score.id;
+
               const hasDetails = score.questionResults && score.questionResults.length > 0;
 
               return (
@@ -365,20 +355,22 @@ function ProgressContent() {
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
+                      </div>
+                      <div className="flex items-center gap-2">
                         {hasDetails && (
-                          <button
-                            onClick={() => {
-                              setExpandedExamId(isExpanded ? null : score.id);
-                              setQuestionFilter('all');
-                            }}
-                            className="p-2 rounded-lg hover:bg-slate-100 text-slate-600 transition-colors"
-                            title={isExpanded ? "Hide details" : "Show details"}
+                          <Link
+                            href={`/progress/${score.id}`}
+                            className="flex items-center gap-1.5 px-3 py-1.5 bg-black text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition-colors"
                           >
-                            {isExpanded ? <ChevronUp className="w-5 h-5" /> : <ChevronDown className="w-5 h-5" />}
-                          </button>
+                            Review
+                            <ChevronRight className="w-4 h-4" />
+                          </Link>
                         )}
                         <button
-                          onClick={() => deleteScore(score.id)}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            score.id && deleteScore(score.id);
+                          }}
                           className="p-2 rounded-lg hover:bg-red-100 text-red-600 transition-colors"
                           title="Delete this score"
                         >
@@ -426,134 +418,7 @@ function ProgressContent() {
                     </div>
                   </div>
 
-                  {/* Expandable Question Details */}
-                  {isExpanded && hasDetails && (
-                    <div className="border-t border-slate-200 p-6 bg-slate-50">
-                      <h4 className="text-lg font-bold text-black mb-4">Question Details</h4>
 
-                      {/* Category Breakdown */}
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6">
-                        <div className="bg-white rounded-lg p-3 border border-slate-200">
-                          <div className="text-xs text-slate-500 mb-1">Correct</div>
-                          <div className="text-xl font-bold text-green-600">
-                            {score.questionResults!.filter(q => q.isCorrect).length}
-                          </div>
-                        </div>
-                        <div className="bg-white rounded-lg p-3 border border-slate-200">
-                          <div className="text-xs text-slate-500 mb-1">Incorrect</div>
-                          <div className="text-xl font-bold text-red-600">
-                            {score.questionResults!.filter(q => !q.isCorrect && q.selectedAnswer !== null).length}
-                          </div>
-                        </div>
-                        <div className="bg-white rounded-lg p-3 border border-slate-200">
-                          <div className="text-xs text-slate-500 mb-1">Flagged</div>
-                          <div className="text-xl font-bold text-orange-600">
-                            {score.questionResults!.filter(q => q.isFlagged).length}
-                          </div>
-                        </div>
-                        <div className="bg-white rounded-lg p-3 border border-slate-200">
-                          <div className="text-xs text-slate-500 mb-1">Important</div>
-                          <div className="text-xl font-bold text-yellow-600">
-                            {score.questionResults!.filter(q => q.isImportant).length}
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Question Filters */}
-                      <div className="flex gap-2 mb-4 overflow-x-auto pb-2">
-                        <button
-                          onClick={() => setQuestionFilter('all')}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${questionFilter === 'all' ? 'bg-black text-white' : 'bg-slate-200 text-slate-600 hover:bg-slate-300'
-                            }`}
-                        >
-                          All Questions
-                        </button>
-                        <button
-                          onClick={() => setQuestionFilter('incorrect')}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap flex items-center gap-1 ${questionFilter === 'incorrect' ? 'bg-red-600 text-white' : 'bg-red-100 text-red-600 hover:bg-red-200'
-                            }`}
-                        >
-                          <XCircle className="w-3.5 h-3.5" />
-                          Incorrect
-                        </button>
-                        <button
-                          onClick={() => setQuestionFilter('correct')}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap flex items-center gap-1 ${questionFilter === 'correct' ? 'bg-green-600 text-white' : 'bg-green-100 text-green-600 hover:bg-green-200'
-                            }`}
-                        >
-                          <CheckCircle className="w-3.5 h-3.5" />
-                          Correct
-                        </button>
-                        <button
-                          onClick={() => setQuestionFilter('flagged')}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap flex items-center gap-1 ${questionFilter === 'flagged' ? 'bg-orange-600 text-white' : 'bg-orange-100 text-orange-600 hover:bg-orange-200'
-                            }`}
-                        >
-                          <Flag className="w-3.5 h-3.5" />
-                          Flagged
-                        </button>
-                        <button
-                          onClick={() => setQuestionFilter('important')}
-                          className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap flex items-center gap-1 ${questionFilter === 'important' ? 'bg-yellow-600 text-white' : 'bg-yellow-100 text-yellow-600 hover:bg-yellow-200'
-                            }`}
-                        >
-                          <Star className="w-3.5 h-3.5" />
-                          Important
-                        </button>
-                      </div>
-
-                      {/* Question List */}
-                      <div className="space-y-2 max-h-96 overflow-y-auto">
-                        {score.questionResults!
-                          .map((result, originalIndex) => ({ result, originalIndex }))
-                          .filter(({ result }) => {
-                            if (questionFilter === 'incorrect') return !result.isCorrect && result.selectedAnswer !== null;
-                            if (questionFilter === 'correct') return result.isCorrect;
-                            if (questionFilter === 'flagged') return result.isFlagged;
-                            if (questionFilter === 'important') return result.isImportant;
-                            return true;
-                          })
-                          .map(({ result, originalIndex }) => (
-                            <div
-                              key={originalIndex}
-                              className={`p-3 rounded-lg border-2 ${result.isCorrect
-                                ? 'bg-green-50 border-green-200'
-                                : result.selectedAnswer === null
-                                  ? 'bg-slate-50 border-slate-200'
-                                  : 'bg-red-50 border-red-200'
-                                }`}
-                            >
-                              <div className="flex items-start justify-between gap-3">
-                                <div className="flex-1">
-                                  <div className="flex items-center gap-2 mb-1">
-                                    <span className="text-xs font-bold text-slate-500">Q{originalIndex + 1}</span>
-                                    <span className="text-xs px-2 py-0.5 bg-white rounded-full text-slate-600 border border-slate-200">
-                                      {result.category}
-                                    </span>
-                                    {result.isFlagged && (
-                                      <Flag className="w-3 h-3 text-orange-500" />
-                                    )}
-                                    {result.isImportant && (
-                                      <Star className="w-3 h-3 text-yellow-500 fill-current" />
-                                    )}
-                                  </div>
-                                  <div className="text-sm text-black line-clamp-2">{result.question}</div>
-                                </div>
-                                <div className="shrink-0">
-                                  {result.isCorrect ? (
-                                    <CheckCircle className="w-5 h-5 text-green-600" />
-                                  ) : result.selectedAnswer === null ? (
-                                    <AlertCircle className="w-5 h-5 text-slate-400" />
-                                  ) : (
-                                    <XCircle className="w-5 h-5 text-red-600" />
-                                  )}
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                      </div>
-                    </div>
-                  )}
                 </div>
               );
             })}
