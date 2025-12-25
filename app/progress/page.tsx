@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Home, TrendingUp, Award, Clock, Flag, Star, CheckCircle, XCircle, Calendar, Trash2, Filter, BarChart3, Target, AlertCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import ProtectedRoute from '@/components/auth/ProtectedRoute';
+import UserProfile from '@/components/auth/UserProfile';
+import { useAuth } from '@/contexts/AuthContext';
 
 interface QuestionResult {
   questionId: number;
@@ -17,6 +20,7 @@ interface QuestionResult {
 
 interface ExamScore {
   id: string;
+  userId?: string;
   date: string;
   score: number;
   percentage: number;
@@ -31,18 +35,44 @@ interface ExamScore {
 
 type FilterType = 'all' | 'passed' | 'failed' | 'flagged' | 'important';
 
-export default function Progress() {
+function ProgressContent() {
+  const { user } = useAuth();
   const [scores, setScores] = useState<ExamScore[]>([]);
   const [filterType, setFilterType] = useState<FilterType>('all');
   const [expandedExamId, setExpandedExamId] = useState<string | null>(null);
 
   useEffect(() => {
-    // Load scores from localStorage
-    const savedScores = localStorage.getItem('examScores');
-    if (savedScores) {
-      setScores(JSON.parse(savedScores));
-    }
-  }, []);
+    // Load scores from Firebase first, fallback to localStorage
+    const loadScores = async () => {
+      if (!user) return;
+
+      try {
+        // Try loading from Firebase with userId filter
+        const response = await fetch(`/api/exam-scores?userId=${user.uid}`);
+        const result = await response.json();
+
+        if (result.success && result.data && result.data.length > 0) {
+          // Successfully loaded from Firebase
+          setScores(result.data);
+        } else {
+          // Fallback to localStorage
+          const savedScores = localStorage.getItem('examScores');
+          if (savedScores) {
+            setScores(JSON.parse(savedScores));
+          }
+        }
+      } catch (error) {
+        console.error('Error loading scores from Firebase:', error);
+        // Fallback to localStorage
+        const savedScores = localStorage.getItem('examScores');
+        if (savedScores) {
+          setScores(JSON.parse(savedScores));
+        }
+      }
+    };
+
+    loadScores();
+  }, [user]);
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -61,16 +91,58 @@ export default function Progress() {
     });
   };
 
-  const deleteScore = (id: string) => {
-    const updatedScores = scores.filter(s => s.id !== id);
-    setScores(updatedScores);
-    localStorage.setItem('examScores', JSON.stringify(updatedScores));
+  const deleteScore = async (id: string) => {
+    try {
+      // Try deleting from Firebase
+      const response = await fetch(`/api/exam-scores?id=${id}`, {
+        method: 'DELETE',
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        // Successfully deleted from Firebase
+        const updatedScores = scores.filter(s => s.id !== id);
+        setScores(updatedScores);
+      } else {
+        // Fallback to localStorage
+        const updatedScores = scores.filter(s => s.id !== id);
+        setScores(updatedScores);
+        localStorage.setItem('examScores', JSON.stringify(updatedScores));
+      }
+    } catch (error) {
+      console.error('Error deleting score from Firebase:', error);
+      // Fallback to localStorage
+      const updatedScores = scores.filter(s => s.id !== id);
+      setScores(updatedScores);
+      localStorage.setItem('examScores', JSON.stringify(updatedScores));
+    }
   };
 
-  const clearAllScores = () => {
+  const clearAllScores = async () => {
     if (confirm('Are you sure you want to delete all exam scores?')) {
-      setScores([]);
-      localStorage.removeItem('examScores');
+      try {
+        // Try deleting all from Firebase
+        const response = await fetch('/api/exam-scores?deleteAll=true', {
+          method: 'DELETE',
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          // Successfully deleted from Firebase
+          setScores([]);
+        } else {
+          // Fallback to localStorage
+          setScores([]);
+          localStorage.removeItem('examScores');
+        }
+      } catch (error) {
+        console.error('Error deleting all scores from Firebase:', error);
+        // Fallback to localStorage
+        setScores([]);
+        localStorage.removeItem('examScores');
+      }
     }
   };
 
@@ -109,13 +181,16 @@ export default function Progress() {
               <h1 className="text-2xl font-bold text-black">Progress Tracking</h1>
               <p className="text-slate-600 text-sm mt-1">View your exam history and analytics</p>
             </div>
-            <Link
-              href="/"
-              className="flex items-center gap-2 px-4 py-2 border border-slate-300 rounded-lg hover:bg-slate-100 transition-colors text-black"
-            >
-              <Home className="w-4 h-4" />
-              Home
-            </Link>
+            <div className="flex items-center gap-4">
+              <UserProfile />
+              <Link
+                href="/"
+                className="flex items-center gap-2 px-4 py-2 border border-slate-300 rounded-lg hover:bg-slate-100 transition-colors text-black"
+              >
+                <Home className="w-4 h-4" />
+                Home
+              </Link>
+            </div>
           </div>
         </div>
       </header>
@@ -562,3 +637,10 @@ export default function Progress() {
   );
 }
 
+export default function Progress() {
+  return (
+    <ProtectedRoute>
+      <ProgressContent />
+    </ProtectedRoute>
+  );
+}

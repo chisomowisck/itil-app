@@ -1,0 +1,50 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Helper function to check if user owns the resource
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Questions collection - Read-only for authenticated users
+    match /questions/{questionId} {
+      allow read: if isAuthenticated();
+      allow write: if false; // Only allow writes through admin/migration tools
+    }
+    
+    // User profiles collection
+    match /users/{userId} {
+      // Users can read and write their own profile
+      allow read, write: if isOwner(userId);
+      // Allow creation during registration
+      allow create: if isAuthenticated() && request.auth.uid == userId;
+    }
+    
+    // Exam scores collection - User-specific access
+    match /examScores/{scoreId} {
+      // Users can only read their own scores
+      allow read: if isAuthenticated() && 
+                     (resource.data.userId == request.auth.uid || 
+                      !('userId' in resource.data)); // Backward compatibility for old scores
+      
+      // Users can only create scores for themselves
+      allow create: if isAuthenticated() && 
+                       request.resource.data.userId == request.auth.uid;
+      
+      // Users can only update their own scores
+      allow update: if isAuthenticated() && 
+                       resource.data.userId == request.auth.uid;
+      
+      // Users can only delete their own scores
+      allow delete: if isAuthenticated() && 
+                       resource.data.userId == request.auth.uid;
+    }
+  }
+}
+

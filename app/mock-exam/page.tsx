@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Clock, Home, CheckCircle, XCircle, AlertCircle, Flag, Shuffle, Filter, List, Eye, EyeOff, ChevronLeft, ChevronRight, SkipForward, BookOpen, FileText, ClipboardList, Star, TrendingUp, Award, ChevronDown, ChevronUp } from 'lucide-react';
+import ProtectedRoute from '@/components/auth/ProtectedRoute';
+import UserProfile from '@/components/auth/UserProfile';
+import { useAuth } from '@/contexts/AuthContext';
 
 interface Question {
   id: number;
@@ -26,6 +29,7 @@ interface QuestionResult {
 
 interface ExamScore {
   id: string;
+  userId?: string;
   date: string;
   score: number;
   percentage: number;
@@ -41,7 +45,8 @@ interface ExamScore {
 type FilterType = 'all' | 'flagged' | 'answered' | 'unanswered' | 'important';
 type TabType = 'tips' | 'rules' | 'review';
 
-export default function MockExam() {
+function MockExamContent() {
+  const { user } = useAuth();
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState<(number | null)[]>([]);
@@ -58,16 +63,46 @@ export default function MockExam() {
   const [startTime, setStartTime] = useState<number>(0);
 
   useEffect(() => {
-    // Load questions
-    fetch('/data/questions.json')
-      .then(res => res.json())
-      .then(data => {
+    // Load questions from Firebase first, fallback to local JSON
+    const loadQuestions = async () => {
+      try {
+        // Try loading from Firebase
+        const response = await fetch('/api/questions');
+        const result = await response.json();
+
+        let allQuestions: Question[] = [];
+
+        if (result.success && result.data && result.data.length > 0) {
+          // Successfully loaded from Firebase
+          allQuestions = result.data;
+        } else {
+          // Fallback to local JSON
+          const localResponse = await fetch('/data/questions.json');
+          allQuestions = await localResponse.json();
+        }
+
         // Randomly select 40 questions for the mock exam
-        const shuffled = [...data].sort(() => Math.random() - 0.5);
+        const shuffled = [...allQuestions].sort(() => Math.random() - 0.5);
         const examQuestions = shuffled.slice(0, 40);
         setQuestions(examQuestions);
         setSelectedAnswers(new Array(40).fill(null));
-      });
+      } catch (error) {
+        console.error('Error loading questions:', error);
+        // Final fallback to local JSON
+        try {
+          const localResponse = await fetch('/data/questions.json');
+          const allQuestions = await localResponse.json();
+          const shuffled = [...allQuestions].sort(() => Math.random() - 0.5);
+          const examQuestions = shuffled.slice(0, 40);
+          setQuestions(examQuestions);
+          setSelectedAnswers(new Array(40).fill(null));
+        } catch (localError) {
+          console.error('Error loading local questions:', localError);
+        }
+      }
+    };
+
+    loadQuestions();
   }, []);
 
   useEffect(() => {
@@ -135,8 +170,8 @@ export default function MockExam() {
       isImportant: importantQuestions.has(index),
     }));
 
-    const examScore: ExamScore = {
-      id: Date.now().toString(),
+    const examScore = {
+      userId: user?.uid,
       date: new Date().toISOString(),
       score,
       percentage,
@@ -150,13 +185,36 @@ export default function MockExam() {
     };
 
     try {
-      // Save to localStorage for now (since we don't have a backend)
-      const existingScores = localStorage.getItem('examScores');
-      const scores: ExamScore[] = existingScores ? JSON.parse(existingScores) : [];
-      scores.unshift(examScore); // Add to beginning
-      localStorage.setItem('examScores', JSON.stringify(scores));
+      // Save to Firebase via API
+      const response = await fetch('/api/exam-scores', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(examScore),
+      });
+
+      const result = await response.json();
+
+      if (!result.success) {
+        console.error('Failed to save exam score:', result.error);
+        // Fallback to localStorage if Firebase fails
+        const existingScores = localStorage.getItem('examScores');
+        const scores: ExamScore[] = existingScores ? JSON.parse(existingScores) : [];
+        scores.unshift({ ...examScore, id: Date.now().toString() });
+        localStorage.setItem('examScores', JSON.stringify(scores));
+      }
     } catch (error) {
       console.error('Error saving score:', error);
+      // Fallback to localStorage if API call fails
+      try {
+        const existingScores = localStorage.getItem('examScores');
+        const scores: ExamScore[] = existingScores ? JSON.parse(existingScores) : [];
+        scores.unshift({ ...examScore, id: Date.now().toString() });
+        localStorage.setItem('examScores', JSON.stringify(scores));
+      } catch (localError) {
+        console.error('Error saving to localStorage:', localError);
+      }
     }
   };
 
@@ -274,16 +332,20 @@ export default function MockExam() {
 
   if (!examStarted) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center p-6">
-        <div className="max-w-3xl w-full">
-          <div className="mb-8">
-            <h1 className="text-4xl font-bold mb-2 text-black">
-              Mock Exam
-            </h1>
-            <p className="text-slate-600">
-              ITIL 4 Foundation Practice Test
-            </p>
+      <div className="min-h-screen bg-slate-50 p-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex justify-end mb-6">
+            <UserProfile />
           </div>
+          <div className="max-w-3xl mx-auto">
+            <div className="mb-8">
+              <h1 className="text-4xl font-bold mb-2 text-black">
+                Mock Exam
+              </h1>
+              <p className="text-slate-600">
+                ITIL 4 Foundation Practice Test
+              </p>
+            </div>
 
           <div className="bg-white rounded-xl border border-slate-200 shadow-lg p-8 mb-6">
             <h2 className="text-2xl font-bold mb-6 text-black">Exam Information</h2>
@@ -342,6 +404,7 @@ export default function MockExam() {
               Home
             </Link>
           </div>
+          </div>
         </div>
       </div>
     );
@@ -354,6 +417,9 @@ export default function MockExam() {
 
     return (
       <div className="min-h-screen bg-slate-50 p-6">
+        <div className="flex justify-end mb-6 max-w-7xl mx-auto">
+          <UserProfile />
+        </div>
         <div className="container mx-auto max-w-5xl py-12">
           {/* Results Header */}
           <div className="mb-12">
@@ -692,6 +758,7 @@ export default function MockExam() {
                     {formatTime(timeLeft)}
                   </div>
                 </div>
+                <UserProfile />
                 <Link
                   href="/"
                   className="p-2.5 rounded-lg border-2 border-slate-300 hover:bg-slate-100 hover:border-black transition-all"
@@ -1003,8 +1070,8 @@ export default function MockExam() {
           </div>
         </div>
 
-        {/* Bottom Navigation - Centered and Prominent */}
-        <div className="border-t-2 border-slate-200 bg-white shadow-lg">
+        {/* Bottom Navigation - Centered, Prominent, and Sticky */}
+        <div className="border-t-2 border-slate-200 bg-white shadow-lg sticky bottom-0 z-10">
           <div className="px-6 py-5 flex items-center justify-between max-w-4xl mx-auto">
             <button
               onClick={handlePrevious}
@@ -1043,5 +1110,13 @@ export default function MockExam() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function MockExam() {
+  return (
+    <ProtectedRoute>
+      <MockExamContent />
+    </ProtectedRoute>
   );
 }
