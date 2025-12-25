@@ -44,7 +44,6 @@ interface ExamScore {
 }
 
 type FilterType = 'all' | 'flagged' | 'answered' | 'unanswered' | 'important';
-type TabType = 'tips' | 'rules' | 'review';
 
 function MockExamContent() {
   const { user } = useAuth();
@@ -58,9 +57,7 @@ function MockExamContent() {
   const [examStarted, setExamStarted] = useState(false);
   const [filterType, setFilterType] = useState<FilterType>('all');
   const [showSidebar, setShowSidebar] = useState(true);
-  const [activeTab, setActiveTab] = useState<TabType>('tips');
   const [showScore, setShowScore] = useState(false);
-  const [showTabs, setShowTabs] = useState(true);
   const [startTime, setStartTime] = useState<number>(0);
 
   useEffect(() => {
@@ -348,63 +345,63 @@ function MockExamContent() {
               </p>
             </div>
 
-          <div className="bg-white rounded-xl border border-slate-200 shadow-lg p-8 mb-6">
-            <h2 className="text-2xl font-bold mb-6 text-black">Exam Information</h2>
-            <div className="space-y-4 text-slate-700">
-              <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
-                <div className="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center shrink-0 font-bold">
-                  40
+            <div className="bg-white rounded-xl border border-slate-200 shadow-lg p-8 mb-6">
+              <h2 className="text-2xl font-bold mb-6 text-black">Exam Information</h2>
+              <div className="space-y-4 text-slate-700">
+                <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
+                  <div className="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center shrink-0 font-bold">
+                    40
+                  </div>
+                  <div>
+                    <div className="font-semibold text-black mb-1">Questions</div>
+                    <div className="text-sm text-slate-600">Randomly selected from 487 total questions</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-semibold text-black mb-1">Questions</div>
-                  <div className="text-sm text-slate-600">Randomly selected from 487 total questions</div>
+                <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
+                  <div className="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center shrink-0">
+                    <Clock className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-black mb-1">60 Minutes</div>
+                    <div className="text-sm text-slate-600">Time limit for completion</div>
+                  </div>
                 </div>
-              </div>
-              <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
-                <div className="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center shrink-0">
-                  <Clock className="w-5 h-5" />
+                <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
+                  <div className="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center shrink-0 font-bold">
+                    65%
+                  </div>
+                  <div>
+                    <div className="font-semibold text-black mb-1">Passing Score</div>
+                    <div className="text-sm text-slate-600">26 out of 40 questions correct</div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-semibold text-black mb-1">60 Minutes</div>
-                  <div className="text-sm text-slate-600">Time limit for completion</div>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
-                <div className="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center shrink-0 font-bold">
-                  65%
-                </div>
-                <div>
-                  <div className="font-semibold text-black mb-1">Passing Score</div>
-                  <div className="text-sm text-slate-600">26 out of 40 questions correct</div>
-                </div>
-              </div>
-              <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
-                <div className="w-10 h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center shrink-0">
-                  <CheckCircle className="w-5 h-5" />
-                </div>
-                <div>
-                  <div className="font-semibold text-black mb-1">Detailed Results</div>
-                  <div className="text-sm text-slate-600">Review all questions with correct answers at the end</div>
+                <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
+                  <div className="w-10 h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center shrink-0">
+                    <CheckCircle className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-black mb-1">Detailed Results</div>
+                    <div className="text-sm text-slate-600">Review all questions with correct answers at the end</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="flex gap-4">
-            <button
-              onClick={() => setExamStarted(true)}
-              className="flex-1 bg-black text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-800 transition-colors shadow-lg"
-            >
-              Start Exam
-            </button>
-            <Link
-              href="/"
-              className="flex items-center justify-center gap-2 px-8 py-4 border-2 border-slate-300 rounded-lg font-semibold hover:bg-white hover:border-black transition-colors text-black"
-            >
-              <Home className="w-5 h-5" />
-              Home
-            </Link>
-          </div>
+            <div className="flex gap-4">
+              <button
+                onClick={() => setExamStarted(true)}
+                className="flex-1 bg-black text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-800 transition-colors shadow-lg"
+              >
+                Start Exam
+              </button>
+              <Link
+                href="/"
+                className="flex items-center justify-center gap-2 px-8 py-4 border-2 border-slate-300 rounded-lg font-semibold hover:bg-white hover:border-black transition-colors text-black"
+              >
+                <Home className="w-5 h-5" />
+                Home
+              </Link>
+            </div>
           </div>
         </div>
       </div>
@@ -496,11 +493,10 @@ function MockExamContent() {
                 return (
                   <div key={q.id} className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
                     <div className="flex items-start gap-4 mb-4">
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center font-bold text-lg shrink-0 ${
-                        isCorrect
-                          ? 'bg-green-100 text-green-600'
-                          : 'bg-red-100 text-red-500'
-                      }`}>
+                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center font-bold text-lg shrink-0 ${isCorrect
+                        ? 'bg-green-100 text-green-600'
+                        : 'bg-red-100 text-red-500'
+                        }`}>
                         {index + 1}
                       </div>
                       <div className="flex-1">
@@ -533,22 +529,20 @@ function MockExamContent() {
                             return (
                               <div
                                 key={optIndex}
-                                className={`p-3 rounded-lg border ${
-                                  isCorrectAnswer
-                                    ? 'border-green-200 bg-green-50'
-                                    : isUserAnswer
+                                className={`p-3 rounded-lg border ${isCorrectAnswer
+                                  ? 'border-green-200 bg-green-50'
+                                  : isUserAnswer
                                     ? 'border-red-200 bg-red-50'
                                     : 'border-slate-200 bg-white'
-                                }`}
+                                  }`}
                               >
                                 <div className="flex items-center gap-3">
-                                  <div className={`w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs ${
-                                    isCorrectAnswer
-                                      ? 'bg-green-600 text-white'
-                                      : isUserAnswer
+                                  <div className={`w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs ${isCorrectAnswer
+                                    ? 'bg-green-600 text-white'
+                                    : isUserAnswer
                                       ? 'bg-red-500 text-white'
                                       : 'bg-slate-100 text-slate-400'
-                                  }`}>
+                                    }`}>
                                     {letter}
                                   </div>
                                   <span className="text-black text-sm flex-1">{option}</span>
@@ -593,43 +587,39 @@ function MockExamContent() {
             <div className="grid grid-cols-2 gap-1.5 mb-3">
               <button
                 onClick={() => setFilterType('all')}
-                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
-                  filterType === 'all'
-                    ? 'bg-black text-white'
-                    : 'bg-slate-100 text-black hover:bg-slate-200'
-                }`}
+                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${filterType === 'all'
+                  ? 'bg-black text-white'
+                  : 'bg-slate-100 text-black hover:bg-slate-200'
+                  }`}
               >
                 All ({questions.length})
               </button>
               <button
                 onClick={() => setFilterType('flagged')}
-                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
-                  filterType === 'flagged'
-                    ? 'bg-black text-white'
-                    : 'bg-slate-100 text-black hover:bg-slate-200'
-                }`}
+                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${filterType === 'flagged'
+                  ? 'bg-black text-white'
+                  : 'bg-slate-100 text-black hover:bg-slate-200'
+                  }`}
               >
                 <Flag className="w-3 h-3 inline mr-1" />
                 {flaggedQuestions.size}
               </button>
               <button
                 onClick={() => setFilterType('important')}
-                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
-                  filterType === 'important'
-                    ? 'bg-black text-white'
-                    : 'bg-slate-100 text-black hover:bg-slate-200'
-                }`}
+                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${filterType === 'important'
+                  ? 'bg-black text-white'
+                  : 'bg-slate-100 text-black hover:bg-slate-200'
+                  }`}
               >
                 <Star className="w-3 h-3 inline mr-1" />
                 {importantQuestions.size}
               </button>
               <button
                 onClick={() => setFilterType('answered')}
-                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
-                  filterType === 'answered'
-                    ? 'bg-black text-white'
-                    : 'bg-slate-100 text-black hover:bg-slate-200'
-                }`}
+                className={`px-2 py-1.5 text-xs font-semibold rounded-lg transition-colors ${filterType === 'answered'
+                  ? 'bg-black text-white'
+                  : 'bg-slate-100 text-black hover:bg-slate-200'
+                  }`}
               >
                 Done ({answeredCount})
               </button>
@@ -676,13 +666,12 @@ function MockExamContent() {
                   <button
                     key={actualIndex}
                     onClick={() => setCurrentQuestionIndex(actualIndex)}
-                    className={`relative aspect-square rounded-lg font-bold text-xs transition-all ${
-                      isCurrent
-                        ? 'bg-black text-white shadow-lg'
-                        : isAnswered
+                    className={`relative aspect-square rounded-lg font-bold text-xs transition-all ${isCurrent
+                      ? 'bg-black text-white shadow-lg'
+                      : isAnswered
                         ? 'bg-slate-200 text-black hover:bg-slate-300'
                         : 'bg-slate-100 text-slate-400 hover:bg-slate-200'
-                    }`}
+                      }`}
                   >
                     {actualIndex + 1}
                     {isFlagged && (
@@ -720,15 +709,12 @@ function MockExamContent() {
 
               <div className="flex items-center gap-3">
                 {showScore && (
-                  <div className={`px-4 py-2 rounded-lg border-2 ${
-                    currentPercentage >= 65 ? 'bg-green-50 border-green-300' : 'bg-orange-50 border-orange-300'
-                  }`}>
-                    <div className={`text-xs font-semibold mb-1 ${
-                      currentPercentage >= 65 ? 'text-green-700' : 'text-orange-700'
-                    }`}>Current Score</div>
-                    <div className={`text-lg font-bold ${
-                      currentPercentage >= 65 ? 'text-green-600' : 'text-orange-600'
+                  <div className={`px-4 py-2 rounded-lg border-2 ${currentPercentage >= 65 ? 'bg-green-50 border-green-300' : 'bg-orange-50 border-orange-300'
                     }`}>
+                    <div className={`text-xs font-semibold mb-1 ${currentPercentage >= 65 ? 'text-green-700' : 'text-orange-700'
+                      }`}>Current Score</div>
+                    <div className={`text-lg font-bold ${currentPercentage >= 65 ? 'text-green-600' : 'text-orange-600'
+                      }`}>
                       {currentScore}/{answeredCount} <span className="text-sm">({currentPercentage}%)</span>
                     </div>
                   </div>
@@ -746,15 +732,12 @@ function MockExamContent() {
                     {answeredCount}/{questions.length}
                   </div>
                 </div>
-                <div className={`px-4 py-2 rounded-lg border-2 ${
-                  timeLeft < 300 ? 'bg-red-50 border-red-300' : 'bg-slate-50 border-slate-200'
-                }`}>
-                  <div className={`text-xs font-semibold mb-1 ${
-                    timeLeft < 300 ? 'text-red-700' : 'text-slate-600'
-                  }`}>Time Left</div>
-                  <div className={`text-lg font-bold flex items-center gap-2 ${
-                    timeLeft < 300 ? 'text-red-600' : 'text-black'
+                <div className={`px-4 py-2 rounded-lg border-2 ${timeLeft < 300 ? 'bg-red-50 border-red-300' : 'bg-slate-50 border-slate-200'
                   }`}>
+                  <div className={`text-xs font-semibold mb-1 ${timeLeft < 300 ? 'text-red-700' : 'text-slate-600'
+                    }`}>Time Left</div>
+                  <div className={`text-lg font-bold flex items-center gap-2 ${timeLeft < 300 ? 'text-red-600' : 'text-black'
+                    }`}>
                     <Clock className="w-5 h-5" />
                     {formatTime(timeLeft)}
                   </div>
@@ -772,15 +755,7 @@ function MockExamContent() {
           <div className="flex-1 overflow-y-auto p-6 flex justify-center">
             <div className="w-full max-w-3xl">
               {/* Show Tabs Button - Fixed Position */}
-              {!showTabs && (
-                <button
-                  onClick={() => setShowTabs(true)}
-                  className="fixed right-4 top-24 p-3 bg-black text-white rounded-lg shadow-lg hover:bg-slate-800 transition-colors z-20"
-                  title="Show help panel"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-              )}
+
               {/* Question Card */}
               <div className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 mb-6">
                 {/* Category Badge */}
@@ -797,22 +772,20 @@ function MockExamContent() {
                 <div className="flex gap-2">
                   <button
                     onClick={() => toggleFlag(currentQuestionIndex)}
-                    className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center gap-2 ${
-                      flaggedQuestions.has(currentQuestionIndex)
-                        ? 'bg-orange-100 text-orange-600 border border-orange-300'
-                        : 'bg-slate-100 text-black hover:bg-slate-200'
-                    }`}
+                    className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center gap-2 ${flaggedQuestions.has(currentQuestionIndex)
+                      ? 'bg-orange-100 text-orange-600 border border-orange-300'
+                      : 'bg-slate-100 text-black hover:bg-slate-200'
+                      }`}
                   >
                     <Flag className="w-3 h-3" />
                     {flaggedQuestions.has(currentQuestionIndex) ? 'Review' : 'Flag'}
                   </button>
                   <button
                     onClick={() => toggleImportant(currentQuestionIndex)}
-                    className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center gap-2 ${
-                      importantQuestions.has(currentQuestionIndex)
-                        ? 'bg-yellow-100 text-yellow-600 border border-yellow-300'
-                        : 'bg-slate-100 text-black hover:bg-slate-200'
-                    }`}
+                    className={`px-4 py-2 rounded-lg text-xs font-semibold transition-colors flex items-center gap-2 ${importantQuestions.has(currentQuestionIndex)
+                      ? 'bg-yellow-100 text-yellow-600 border border-yellow-300'
+                      : 'bg-slate-100 text-black hover:bg-slate-200'
+                      }`}
                   >
                     <Star className="w-3 h-3" />
                     {importantQuestions.has(currentQuestionIndex) ? 'Important' : 'Mark'}
@@ -830,18 +803,16 @@ function MockExamContent() {
                     <button
                       key={index}
                       onClick={() => handleAnswerSelect(index)}
-                      className={`w-full text-left p-4 rounded-xl border transition-all ${
-                        isSelected
-                          ? 'border-black bg-white shadow-md'
-                          : 'border-slate-200 bg-white hover:border-slate-400 hover:shadow-sm'
-                      }`}
+                      className={`w-full text-left p-4 rounded-xl border transition-all ${isSelected
+                        ? 'border-black bg-white shadow-md'
+                        : 'border-slate-200 bg-white hover:border-slate-400 hover:shadow-sm'
+                        }`}
                     >
                       <div className="flex items-start gap-3">
-                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm shrink-0 ${
-                          isSelected
-                            ? 'bg-black text-white'
-                            : 'bg-slate-100 text-slate-600'
-                        }`}>
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold text-sm shrink-0 ${isSelected
+                          ? 'bg-black text-white'
+                          : 'bg-slate-100 text-slate-600'
+                          }`}>
                           {optionLetter}
                         </div>
                         <span className="text-sm pt-1 text-black">{option}</span>
@@ -851,271 +822,42 @@ function MockExamContent() {
                 })}
               </div>
             </div>
-          </div>
+            {/* Navigation Buttons */}
+            <div className="flex items-center justify-between mt-8">
+              <button
+                onClick={handlePrevious}
+                disabled={currentQuestionIndex === 0}
+                className="flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 hover:border-slate-400 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+              >
+                <ChevronLeft className="w-5 h-5" />
+                Previous
+              </button>
 
-          {/* Tabs Section - Right Side - Collapsible */}
-          <div className={`${showTabs ? 'w-80' : 'w-0'} border-l border-slate-200 overflow-hidden transition-all duration-300 bg-white`}>
-            <div className="w-80 h-full overflow-y-auto">
-              {/* Tab Headers with Collapse Button */}
-              <div className="border-b border-slate-200 bg-white p-2">
-                <div className="flex items-center justify-between mb-2">
-                  <h3 className="text-xs font-bold text-black px-2">HELP & REVIEW</h3>
-                  <button
-                    onClick={() => setShowTabs(!showTabs)}
-                    className="p-1 rounded hover:bg-slate-100"
-                    title="Hide panel"
-                  >
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
-                <div className="flex gap-1">
-                  <button
-                    onClick={() => setActiveTab('tips')}
-                    className={`flex-1 px-3 py-2 text-xs font-semibold rounded-lg transition-colors ${
-                      activeTab === 'tips' ? 'bg-black text-white' : 'text-black hover:bg-slate-100'
-                    }`}
-                  >
-                    <BookOpen className="w-4 h-4 mx-auto mb-1" />
-                    Tips
-                  </button>
-                  <button
-                    onClick={() => setActiveTab('rules')}
-                    className={`flex-1 px-3 py-2 text-xs font-semibold rounded-lg transition-colors ${
-                      activeTab === 'rules' ? 'bg-black text-white' : 'text-black hover:bg-slate-100'
-                    }`}
-                  >
-                    <FileText className="w-4 h-4 mx-auto mb-1" />
-                    Rules
-                  </button>
-                  <button
-                    onClick={() => setActiveTab('review')}
-                    className={`flex-1 px-3 py-2 text-xs font-semibold rounded-lg transition-colors ${
-                      activeTab === 'review' ? 'bg-black text-white' : 'text-black hover:bg-slate-100'
-                    }`}
-                  >
-                    <ClipboardList className="w-4 h-4 mx-auto mb-1" />
-                    Review
-                  </button>
-                </div>
-              </div>
-
-            {/* Tab Content */}
-            <div className="p-4">
-              {activeTab === 'tips' && (
-                <div className="space-y-3 text-sm">
-                  <h3 className="font-bold text-black mb-3">Exam Tips</h3>
-                  <div className="space-y-2">
-                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                      <div className="font-semibold text-black mb-1">Read Carefully</div>
-                      <div className="text-xs text-slate-600">Pay attention to keywords like "NOT", "EXCEPT", "BEST", "MOST"</div>
-                    </div>
-                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                      <div className="font-semibold text-black mb-1">Flag & Move On</div>
-                      <div className="text-xs text-slate-600">Don't spend too much time on one question. Flag it and come back later</div>
-                    </div>
-                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                      <div className="font-semibold text-black mb-1">Eliminate Wrong Answers</div>
-                      <div className="text-xs text-slate-600">Cross out obviously wrong options to narrow down choices</div>
-                    </div>
-                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                      <div className="font-semibold text-black mb-1">Time Management</div>
-                      <div className="text-xs text-slate-600">You have ~1.5 minutes per question. Keep an eye on the timer</div>
-                    </div>
-                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                      <div className="font-semibold text-black mb-1">Review Flagged</div>
-                      <div className="text-xs text-slate-600">Save 10-15 minutes at the end to review flagged questions</div>
-                    </div>
-                  </div>
-                </div>
+              {currentQuestionIndex === questions.length - 1 ? (
+                <button
+                  onClick={handleSubmit}
+                  className="flex items-center gap-2 px-8 py-3 rounded-lg font-bold text-white bg-green-600 hover:bg-green-700 shadow-md hover:shadow-lg transition-all"
+                >
+                  Submit Exam
+                  <CheckCircle className="w-5 h-5" />
+                </button>
+              ) : (
+                <button
+                  onClick={handleNext}
+                  className="flex items-center gap-2 px-8 py-3 rounded-lg font-bold text-white bg-black hover:bg-slate-800 shadow-md hover:shadow-lg transition-all"
+                >
+                  Next Question
+                  <ChevronRight className="w-5 h-5" />
+                </button>
               )}
-
-              {activeTab === 'rules' && (
-                <div className="space-y-3 text-sm">
-                  <h3 className="font-bold text-black mb-3">Exam Rules</h3>
-                  <div className="space-y-2">
-                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                      <div className="font-semibold text-black mb-1">40 Questions</div>
-                      <div className="text-xs text-slate-600">Multiple choice format with 4 options each</div>
-                    </div>
-                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                      <div className="font-semibold text-black mb-1">60 Minutes</div>
-                      <div className="text-xs text-slate-600">Total time limit for the exam</div>
-                    </div>
-                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                      <div className="font-semibold text-black mb-1">65% to Pass</div>
-                      <div className="text-xs text-slate-600">You need 26 correct answers out of 40</div>
-                    </div>
-                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                      <div className="font-semibold text-black mb-1">No Negative Marking</div>
-                      <div className="text-xs text-slate-600">Wrong answers don't deduct points. Always answer every question</div>
-                    </div>
-                    <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                      <div className="font-semibold text-black mb-1">One Answer Only</div>
-                      <div className="text-xs text-slate-600">Select only one option per question</div>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {activeTab === 'review' && (
-                <div className="space-y-3 text-sm">
-                  <h3 className="font-bold text-black mb-3">Review List</h3>
-
-                  {/* Unanswered Questions */}
-                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-200">
-                    <div className="font-semibold text-black mb-2 flex items-center justify-between">
-                      <span>Unanswered ({unansweredQuestions.length})</span>
-                      {unansweredQuestions.length > 0 && (
-                        <button
-                          onClick={goToFirstUnanswered}
-                          className="text-xs px-2 py-1 bg-black text-white rounded hover:bg-slate-800"
-                        >
-                          Go
-                        </button>
-                      )}
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {unansweredQuestions.length === 0 ? (
-                        <div className="text-xs text-slate-500 italic">All questions answered!</div>
-                      ) : (
-                        unansweredQuestions.map(index => (
-                          <button
-                            key={index}
-                            onClick={() => setCurrentQuestionIndex(index)}
-                            className="w-8 h-8 rounded-lg bg-white border border-slate-300 text-xs font-semibold hover:border-black transition-colors"
-                          >
-                            {index + 1}
-                          </button>
-                        ))
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Flagged Questions */}
-                  <div className="p-3 bg-orange-50 rounded-lg border border-orange-200">
-                    <div className="font-semibold text-black mb-2 flex items-center justify-between">
-                      <span className="flex items-center gap-1">
-                        <Flag className="w-3 h-3 text-orange-600" />
-                        Flagged ({flaggedQuestionsArray.length})
-                      </span>
-                      {flaggedQuestionsArray.length > 0 && (
-                        <button
-                          onClick={goToFirstFlagged}
-                          className="text-xs px-2 py-1 bg-black text-white rounded hover:bg-slate-800"
-                        >
-                          Go
-                        </button>
-                      )}
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {flaggedQuestionsArray.length === 0 ? (
-                        <div className="text-xs text-slate-500 italic">No flagged questions</div>
-                      ) : (
-                        flaggedQuestionsArray.map(index => (
-                          <button
-                            key={index}
-                            onClick={() => setCurrentQuestionIndex(index)}
-                            className="w-8 h-8 rounded-lg bg-orange-100 border border-orange-300 text-xs font-semibold hover:bg-orange-200 transition-colors relative"
-                          >
-                            {index + 1}
-                            <Flag className="w-2 h-2 absolute top-0.5 right-0.5 fill-current text-orange-600" />
-                          </button>
-                        ))
-                      )}
-                    </div>
-                  </div>
-
-                  {/* Important Questions */}
-                  <div className="p-3 bg-yellow-50 rounded-lg border border-yellow-200">
-                    <div className="font-semibold text-black mb-2 flex items-center justify-between">
-                      <span className="flex items-center gap-1">
-                        <Star className="w-3 h-3 text-yellow-600" />
-                        Important ({importantQuestionsArray.length})
-                      </span>
-                      {importantQuestionsArray.length > 0 && (
-                        <button
-                          onClick={() => importantQuestionsArray.length > 0 && setCurrentQuestionIndex(importantQuestionsArray[0])}
-                          className="text-xs px-2 py-1 bg-black text-white rounded hover:bg-slate-800"
-                        >
-                          Go
-                        </button>
-                      )}
-                    </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {importantQuestionsArray.length === 0 ? (
-                        <div className="text-xs text-slate-500 italic">No important questions</div>
-                      ) : (
-                        importantQuestionsArray.map(index => (
-                          <button
-                            key={index}
-                            onClick={() => setCurrentQuestionIndex(index)}
-                            className="w-8 h-8 rounded-lg bg-yellow-100 border border-yellow-300 text-xs font-semibold hover:bg-yellow-200 transition-colors relative"
-                          >
-                            {index + 1}
-                            <Star className="w-2 h-2 absolute top-0.5 right-0.5 fill-current text-yellow-600" />
-                          </button>
-                        ))
-                      )}
-                    </div>
-                  </div>
-                </div>
-              )}
-            </div>
             </div>
           </div>
         </div>
 
-        {/* Floating Navigation - Right Side */}
-        <div className="fixed right-6 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-3">
-          {/* Previous Button */}
-          <button
-            onClick={handlePrevious}
-            disabled={currentQuestionIndex === 0}
-            className="group relative p-4 rounded-full bg-white border-2 border-slate-300 font-bold disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-100 hover:border-black transition-all shadow-lg hover:shadow-xl"
-            title="Previous question"
-          >
-            <ChevronLeft className="w-6 h-6 text-black" />
-            <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-black text-white text-sm font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-              Previous
-            </span>
-          </button>
 
-          {/* Question Counter */}
-          <div className="bg-white border-2 border-slate-300 rounded-full px-4 py-3 shadow-lg">
-            <div className="text-center">
-              <div className="text-xs text-slate-500 font-semibold">Question</div>
-              <div className="text-lg font-bold text-black">
-                {currentQuestionIndex + 1}/{questions.length}
-              </div>
-            </div>
-          </div>
-
-          {/* Next/Submit Button */}
-          {currentQuestionIndex === questions.length - 1 ? (
-            <button
-              onClick={handleSubmit}
-              className="group relative p-4 rounded-full bg-green-600 text-white font-bold hover:bg-green-700 transition-all shadow-lg hover:shadow-xl"
-              title="Submit exam"
-            >
-              <CheckCircle className="w-6 h-6" />
-              <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-black text-white text-sm font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                Submit Exam
-              </span>
-            </button>
-          ) : (
-            <button
-              onClick={handleNext}
-              className="group relative p-4 rounded-full bg-black text-white font-bold hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl"
-              title="Next question"
-            >
-              <ChevronRight className="w-6 h-6" />
-              <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 px-3 py-1.5 bg-black text-white text-sm font-semibold rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                Next
-              </span>
-            </button>
-          )}
-        </div>
       </div>
+
+
     </div>
   );
 }

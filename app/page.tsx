@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import { BookOpen, Brain, GraduationCap, LayoutGrid, Trophy, Zap, ArrowRight, CheckCircle, LogIn, UserPlus } from "lucide-react";
+import { BookOpen, Brain, GraduationCap, LayoutGrid, Trophy, Zap, ArrowRight, CheckCircle, LogIn, UserPlus, FileText, Dumbbell, CreditCard, Layers, TrendingUp, BookMarked } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
 import UserProfile from "@/components/auth/UserProfile";
 import { useRouter } from "next/navigation";
@@ -11,12 +11,8 @@ export default function Home() {
   const { user, loading } = useAuth();
   const router = useRouter();
 
-  // Redirect authenticated users to mock exam
-  useEffect(() => {
-    if (!loading && user) {
-      router.push('/mock-exam');
-    }
-  }, [user, loading, router]);
+  // Redirect removed to allow access to dashboard
+
 
   // Show loading state
   if (loading) {
@@ -30,14 +26,93 @@ export default function Home() {
     );
   }
 
-  // If user is logged in, they'll be redirected, so show loading
+  // Dashboard for authenticated users
   if (user) {
+    const tools = [
+      {
+        title: "Mock Exam",
+        description: "Full-length practice exams with 40 questions and timer.",
+        icon: <FileText className="w-8 h-8 text-blue-600" />,
+        href: "/mock-exam",
+        color: "bg-blue-50 border-blue-200 hover:border-blue-400"
+      },
+      {
+        title: "Practice Mode",
+        description: "Practice without time limits. focus on learning.",
+        icon: <Dumbbell className="w-8 h-8 text-green-600" />,
+        href: "/practice",
+        color: "bg-green-50 border-green-200 hover:border-green-400"
+      },
+      {
+        title: "Flashcards",
+        description: "Quick revision with flashcards for key concepts.",
+        icon: <CreditCard className="w-8 h-8 text-purple-600" />,
+        href: "/flashcards",
+        color: "bg-purple-50 border-purple-200 hover:border-purple-400"
+      },
+      {
+        title: "Categories",
+        description: "Study questions by specific ITIL 4 categories.",
+        icon: <Layers className="w-8 h-8 text-orange-600" />,
+        href: "/categories",
+        color: "bg-orange-50 border-orange-200 hover:border-orange-400"
+      },
+      {
+        title: "Progress",
+        description: "Track your performance and see your improvement.",
+        icon: <TrendingUp className="w-8 h-8 text-red-600" />,
+        href: "/progress",
+        color: "bg-red-50 border-red-200 hover:border-red-400"
+      },
+      {
+        title: "Study Guide",
+        description: "Comprehensive guide to ITIL 4 Foundation.",
+        icon: <BookMarked className="w-8 h-8 text-indigo-600" />,
+        href: "/study-guide",
+        color: "bg-indigo-50 border-indigo-200 hover:border-indigo-400"
+      }
+    ];
+
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-black mx-auto mb-4"></div>
-          <p className="text-slate-600">Redirecting...</p>
-        </div>
+      <div className="min-h-screen bg-slate-50">
+        <header className="bg-white border-b border-slate-200 sticky top-0 z-10">
+          <div className="container mx-auto px-6 py-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <div className="bg-black text-white p-2 rounded-lg">
+                  <GraduationCap className="w-6 h-6" />
+                </div>
+                <h1 className="text-xl font-bold text-black">ITIL 4 Prep</h1>
+              </div>
+              <UserProfile />
+            </div>
+          </div>
+        </header>
+
+        <main className="container mx-auto px-6 py-12">
+          <div className="max-w-5xl mx-auto">
+            <div className="mb-10">
+              <h2 className="text-3xl font-bold text-black mb-2">Welcome back!</h2>
+              <p className="text-slate-600">Select a tool to start practicing.</p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {tools.map((tool, index) => (
+                <Link
+                  key={index}
+                  href={tool.href}
+                  className={`block p-6 rounded-xl border transition-all duration-200 hover:shadow-lg ${tool.color}`}
+                >
+                  <div className="mb-4 bg-white w-14 h-14 rounded-lg flex items-center justify-center shadow-sm">
+                    {tool.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-black mb-2">{tool.title}</h3>
+                  <p className="text-slate-600 text-sm">{tool.description}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </main>
       </div>
     );
   }
