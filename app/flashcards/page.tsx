@@ -56,8 +56,8 @@ function FlashcardsContent() {
 
   if (questions.length === 0) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-        <div className="text-2xl text-slate-700">Loading flashcards...</div>
+      <div className="min-h-screen bg-slate-50 dark:bg-black flex items-center justify-center">
+        <div className="text-2xl text-slate-700 dark:text-slate-300">Loading flashcards...</div>
       </div>
     );
   }
@@ -65,13 +65,13 @@ function FlashcardsContent() {
   const currentQuestion = questions[currentIndex];
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-10 shadow-sm">
+    <div className="min-h-screen bg-slate-50 dark:bg-black">
+      <header className="bg-white dark:bg-zinc-900 border-b border-slate-200 dark:border-zinc-800 sticky top-0 z-10 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-black">Flashcards</h1>
-              <p className="text-sm text-slate-600">
+              <h1 className="text-2xl font-bold text-black dark:text-white">Flashcards</h1>
+              <p className="text-sm text-slate-600 dark:text-slate-400">
                 Card {currentIndex + 1} of {questions.length}
               </p>
             </div>
@@ -80,7 +80,7 @@ function FlashcardsContent() {
               <UserProfile />
               <button
                 onClick={handleShuffle}
-                className="flex items-center gap-2 px-4 py-2 border-2 border-slate-300 rounded-lg hover:bg-slate-100 transition-colors"
+                className="flex items-center gap-2 px-4 py-2 border-2 border-slate-300 dark:border-zinc-700 rounded-lg hover:bg-slate-100 dark:hover:bg-zinc-800 text-black dark:text-white transition-colors"
               >
                 <RotateCcw className="w-5 h-5" />
                 Shuffle
@@ -92,40 +92,37 @@ function FlashcardsContent() {
 
       <main className="container mx-auto px-4 py-12 max-w-4xl">
         <div className="mb-8">
-          <div className="text-center text-sm text-slate-500 mb-4">
+          <div className="text-center text-sm text-slate-500 dark:text-slate-400 mb-4">
             {currentQuestion.category}
           </div>
-          
+
           <div
             onClick={handleFlip}
             className="relative cursor-pointer"
             style={{ perspective: '1000px' }}
           >
             <div
-              className={`relative w-full h-96 transition-transform duration-500 transform-style-3d ${
-                isFlipped ? 'rotate-y-180' : ''
-              }`}
+              className={`relative w-full h-96 transition-transform duration-500 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''
+                }`}
               style={{ transformStyle: 'preserve-3d' }}
             >
               {/* Front of card */}
               <div
-                className={`absolute inset-0 bg-white rounded-2xl shadow-2xl border border-slate-200 p-8 flex items-center justify-center backface-hidden ${
-                  isFlipped ? 'invisible' : 'visible'
-                }`}
+                className={`absolute inset-0 bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-zinc-800 p-8 flex items-center justify-center backface-hidden ${isFlipped ? 'invisible' : 'visible'
+                  }`}
                 style={{ backfaceVisibility: 'hidden' }}
               >
                 <div className="text-center">
-                  <div className="text-sm text-slate-500 mb-4">Question</div>
-                  <h2 className="text-2xl font-semibold text-black">{currentQuestion.question}</h2>
-                  <p className="text-sm text-slate-500 mt-8">Click to reveal answer</p>
+                  <div className="text-sm text-slate-500 dark:text-slate-400 mb-4">Question</div>
+                  <h2 className="text-2xl font-semibold text-black dark:text-white">{currentQuestion.question}</h2>
+                  <p className="text-sm text-slate-500 dark:text-slate-400 mt-8">Click to reveal answer</p>
                 </div>
               </div>
 
               {/* Back of card */}
               <div
-                className={`absolute inset-0 bg-black text-white rounded-2xl shadow-2xl p-8 flex items-center justify-center backface-hidden ${
-                  isFlipped ? 'visible' : 'invisible'
-                }`}
+                className={`absolute inset-0 bg-black dark:bg-zinc-800 text-white rounded-2xl shadow-2xl p-8 flex items-center justify-center backface-hidden ${isFlipped ? 'visible' : 'invisible'
+                  }`}
                 style={{
                   backfaceVisibility: 'hidden',
                   transform: 'rotateY(180deg)'
@@ -147,19 +144,19 @@ function FlashcardsContent() {
           <button
             onClick={handlePrevious}
             disabled={currentIndex === 0}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border-2 border-slate-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-100 transition-colors"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border-2 border-slate-300 dark:border-zinc-700 text-black dark:text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors"
           >
             <ChevronLeft className="w-5 h-5" />
             Previous
           </button>
 
           <div className="text-center">
-            <div className="text-sm text-slate-500">
+            <div className="text-sm text-slate-500 dark:text-slate-400">
               Progress: {Math.round(((currentIndex + 1) / questions.length) * 100)}%
             </div>
-            <div className="w-64 h-2 bg-slate-200 rounded-full mt-2">
+            <div className="w-64 h-2 bg-slate-200 dark:bg-zinc-800 rounded-full mt-2">
               <div
-                className="h-full bg-black rounded-full transition-all duration-300"
+                className="h-full bg-black dark:bg-white rounded-full transition-all duration-300"
                 style={{ width: `${((currentIndex + 1) / questions.length) * 100}%` }}
               />
             </div>
@@ -168,7 +165,7 @@ function FlashcardsContent() {
           <button
             onClick={handleNext}
             disabled={currentIndex === questions.length - 1}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-black text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-800 hover:shadow-md transition-all"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-black dark:bg-white text-white dark:text-black disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-800 dark:hover:bg-slate-200 hover:shadow-md transition-all"
           >
             Next
             <ChevronRight className="w-5 h-5" />

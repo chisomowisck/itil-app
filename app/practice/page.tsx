@@ -40,7 +40,7 @@ function PracticeContent() {
   const handleCheckAnswer = () => {
     if (selectedAnswer === null) return;
     setShowAnswer(true);
-    
+
     if (selectedAnswer === questions[currentIndex].correctAnswer) {
       setStats(prev => ({ ...prev, correct: prev.correct + 1 }));
     } else {
@@ -66,8 +66,8 @@ function PracticeContent() {
 
   if (questions.length === 0) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-        <div className="text-2xl text-slate-700">Loading questions...</div>
+      <div className="min-h-screen bg-slate-50 dark:bg-black flex items-center justify-center">
+        <div className="text-2xl text-slate-700 dark:text-slate-300">Loading questions...</div>
       </div>
     );
   }
@@ -76,24 +76,24 @@ function PracticeContent() {
   const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-10 shadow-sm">
+    <div className="min-h-screen bg-slate-50 dark:bg-black">
+      <header className="bg-white dark:bg-zinc-900 border-b border-slate-200 dark:border-zinc-800 sticky top-0 z-10 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-black">Practice Mode</h1>
-              <p className="text-sm text-slate-600">
+              <h1 className="text-2xl font-bold text-black dark:text-white">Practice Mode</h1>
+              <p className="text-sm text-slate-600 dark:text-slate-400">
                 Question {currentIndex + 1} of {questions.length}
               </p>
             </div>
             <div className="flex items-center gap-6">
               <div className="text-center">
-                <div className="text-sm text-slate-600">Correct</div>
-                <div className="text-xl font-bold text-green-600">{stats.correct}</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">Correct</div>
+                <div className="text-xl font-bold text-green-600 dark:text-green-500">{stats.correct}</div>
               </div>
               <div className="text-center">
-                <div className="text-sm text-slate-600">Incorrect</div>
-                <div className="text-xl font-bold text-red-600">{stats.incorrect}</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">Incorrect</div>
+                <div className="text-xl font-bold text-red-600 dark:text-red-500">{stats.incorrect}</div>
               </div>
               <Navigation />
               <UserProfile />
@@ -103,12 +103,12 @@ function PracticeContent() {
       </header>
 
       <main className="container mx-auto px-4 py-10 max-w-4xl">
-        <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 mb-6">
+        <div className="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg border border-slate-200 dark:border-zinc-800 p-8 mb-6">
           <div className="mb-6">
-            <div className="inline-flex px-3 py-1 rounded-full bg-slate-100 text-xs font-semibold text-slate-700 mb-3">
+            <div className="inline-flex px-3 py-1 rounded-full bg-slate-100 dark:bg-zinc-800 text-xs font-semibold text-slate-700 dark:text-slate-300 mb-3">
               {currentQuestion.category}
             </div>
-            <h2 className="text-2xl font-semibold mb-6 text-black">{currentQuestion.question}</h2>
+            <h2 className="text-2xl font-semibold mb-6 text-black dark:text-white">{currentQuestion.question}</h2>
           </div>
 
           <div className="space-y-3 mb-6">
@@ -120,16 +120,16 @@ function PracticeContent() {
 
               if (showAnswer) {
                 if (isCorrectOption) {
-                  className += 'border-green-600 bg-green-50';
+                  className += 'border-green-600 dark:border-green-500 bg-green-50 dark:bg-green-900/30';
                 } else if (isSelected) {
-                  className += 'border-red-500 bg-red-50';
+                  className += 'border-red-500 dark:border-red-500 bg-red-50 dark:bg-red-900/30';
                 } else {
-                  className += 'border-slate-200 opacity-50';
+                  className += 'border-slate-200 dark:border-zinc-700 opacity-50 text-slate-500 dark:text-slate-400';
                 }
               } else {
                 className += isSelected
-                  ? 'border-black bg-slate-50'
-                  : 'border-slate-200 hover:border-slate-400 hover:bg-slate-50';
+                  ? 'border-black dark:border-white bg-slate-50 dark:bg-zinc-800 text-black dark:text-white'
+                  : 'border-slate-200 dark:border-zinc-700 hover:border-slate-400 dark:hover:border-zinc-500 hover:bg-slate-50 dark:hover:bg-zinc-800 text-slate-700 dark:text-slate-300';
               }
 
               return (
@@ -140,9 +140,9 @@ function PracticeContent() {
                   className={className}
                 >
                   <div className="flex items-center gap-3">
-                    {showAnswer && isCorrectOption && <CheckCircle className="w-6 h-6 text-green-600" />}
-                    {showAnswer && isSelected && !isCorrectOption && <XCircle className="w-6 h-6 text-red-600" />}
-                    <span className="text-sm text-black">{option}</span>
+                    {showAnswer && isCorrectOption && <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-500" />}
+                    {showAnswer && isSelected && !isCorrectOption && <XCircle className="w-6 h-6 text-red-600 dark:text-red-500" />}
+                    <span className={`text-sm ${showAnswer ? (isCorrectOption ? 'text-green-900 dark:text-green-300' : isSelected ? 'text-red-900 dark:text-red-300' : '') : ''}`}>{option}</span>
                   </div>
                 </button>
               );
@@ -150,22 +150,22 @@ function PracticeContent() {
           </div>
 
           {showAnswer && (
-            <div className={`p-4 rounded-xl ${isCorrect ? 'bg-green-50' : 'bg-red-50'}`}>
+            <div className={`p-4 rounded-xl ${isCorrect ? 'bg-green-50 dark:bg-green-900/20' : 'bg-red-50 dark:bg-red-900/20'}`}>
               <div className="flex items-center gap-2 mb-2">
                 {isCorrect ? (
                   <>
-                    <CheckCircle className="w-6 h-6 text-green-600" />
-                    <span className="font-semibold text-green-800">Correct!</span>
+                    <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-500" />
+                    <span className="font-semibold text-green-800 dark:text-green-400">Correct!</span>
                   </>
                 ) : (
                   <>
-                    <XCircle className="w-6 h-6 text-red-600" />
-                    <span className="font-semibold text-red-800">Incorrect</span>
+                    <XCircle className="w-6 h-6 text-red-600 dark:text-red-500" />
+                    <span className="font-semibold text-red-800 dark:text-red-400">Incorrect</span>
                   </>
                 )}
               </div>
-              <p className="text-sm text-slate-700">
-                The correct answer is: <strong>{currentQuestion.options[currentQuestion.correctAnswer]}</strong>
+              <p className="text-sm text-slate-700 dark:text-slate-300">
+                The correct answer is: <strong className="text-black dark:text-white">{currentQuestion.options[currentQuestion.correctAnswer]}</strong>
               </p>
             </div>
           )}
@@ -173,7 +173,7 @@ function PracticeContent() {
           {!showAnswer && selectedAnswer !== null && (
             <button
               onClick={handleCheckAnswer}
-              className="w-full bg-black text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 hover:shadow-md transition-all"
+              className="w-full bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 dark:hover:bg-slate-200 hover:shadow-md transition-all"
             >
               Check Answer
             </button>
@@ -184,7 +184,7 @@ function PracticeContent() {
           <button
             onClick={handlePrevious}
             disabled={currentIndex === 0}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border-2 border-slate-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-100 transition-colors"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold border-2 border-slate-300 dark:border-zinc-700 text-black dark:text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors"
           >
             <ArrowLeft className="w-5 h-5" />
             Previous
@@ -193,7 +193,7 @@ function PracticeContent() {
           <button
             onClick={handleNext}
             disabled={currentIndex === questions.length - 1}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-black text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-800 hover:shadow-md transition-all"
+            className="flex items-center gap-2 px-6 py-3 rounded-xl font-semibold bg-black dark:bg-white text-white dark:text-black disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-800 dark:hover:bg-slate-200 hover:shadow-md transition-all"
           >
             Next
             <ArrowRight className="w-5 h-5" />

@@ -38,11 +38,11 @@ export default function LoginForm() {
 
   return (
     <div className="w-full max-w-md mx-auto">
-      <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
-        <h2 className="text-3xl font-bold text-center mb-6 text-gray-900 dark:text-white">
+      <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-lg p-8">
+        <h2 className="text-3xl font-bold text-center mb-6 text-black dark:text-white">
           Welcome Back
         </h2>
-        <p className="text-center text-gray-600 dark:text-gray-400 mb-8">
+        <p className="text-center text-slate-600 dark:text-slate-400 mb-8">
           Login to continue your ITIL exam preparation
         </p>
 
@@ -56,7 +56,7 @@ export default function LoginForm() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
             >
               Email Address
             </label>
@@ -65,7 +65,7 @@ export default function LoginForm() {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+              className="w-full px-4 py-2 border border-slate-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-zinc-800 dark:text-white"
               placeholder="you@example.com"
               required
             />
@@ -74,7 +74,7 @@ export default function LoginForm() {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2"
             >
               Password
             </label>
@@ -83,7 +83,7 @@ export default function LoginForm() {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
+              className="w-full px-4 py-2 border border-slate-300 dark:border-zinc-700 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-zinc-800 dark:text-white"
               placeholder="••••••••"
               required
             />
@@ -98,7 +98,7 @@ export default function LoginForm() {
               />
               <label
                 htmlFor="remember"
-                className="ml-2 block text-sm text-gray-700 dark:text-gray-300"
+                className="ml-2 block text-sm text-slate-700 dark:text-slate-300"
               >
                 Remember me
               </label>
@@ -121,7 +121,7 @@ export default function LoginForm() {
         </form>
 
         <div className="mt-6 text-center">
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-slate-600 dark:text-slate-400">
             Don't have an account?{" "}
             <Link
               href="/register"

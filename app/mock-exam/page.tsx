@@ -327,58 +327,58 @@ function MockExamContent() {
 
   if (!examStarted) {
     return (
-      <div className="min-h-screen bg-slate-50 p-6">
+      <div className="min-h-screen bg-slate-50 dark:bg-black p-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex justify-end mb-6">
             <UserProfile />
           </div>
           <div className="max-w-3xl mx-auto">
             <div className="mb-8">
-              <h1 className="text-4xl font-bold mb-2 text-black">
+              <h1 className="text-4xl font-bold mb-2 text-black dark:text-white">
                 Mock Exam
               </h1>
-              <p className="text-slate-600">
+              <p className="text-slate-600 dark:text-slate-400">
                 ITIL 4 Foundation Practice Test
               </p>
             </div>
 
-            <div className="bg-white rounded-xl border border-slate-200 shadow-lg p-8 mb-6">
-              <h2 className="text-2xl font-bold mb-6 text-black">Exam Information</h2>
-              <div className="space-y-4 text-slate-700">
-                <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
-                  <div className="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center shrink-0 font-bold">
+            <div className="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-lg p-8 mb-6">
+              <h2 className="text-2xl font-bold mb-6 text-black dark:text-white">Exam Information</h2>
+              <div className="space-y-4 text-slate-700 dark:text-slate-300">
+                <div className="flex items-start gap-4 p-4 bg-slate-50 dark:bg-zinc-800 rounded-lg">
+                  <div className="w-10 h-10 bg-black dark:bg-white text-white dark:text-black rounded-lg flex items-center justify-center shrink-0 font-bold">
                     40
                   </div>
                   <div>
-                    <div className="font-semibold text-black mb-1">Questions</div>
-                    <div className="text-sm text-slate-600">Randomly selected from 487 total questions</div>
+                    <div className="font-semibold text-black dark:text-white mb-1">Questions</div>
+                    <div className="text-sm text-slate-600 dark:text-slate-400">Randomly selected from 487 total questions</div>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
-                  <div className="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center shrink-0">
+                <div className="flex items-start gap-4 p-4 bg-slate-50 dark:bg-zinc-800 rounded-lg">
+                  <div className="w-10 h-10 bg-black dark:bg-white text-white dark:text-black rounded-lg flex items-center justify-center shrink-0">
                     <Clock className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="font-semibold text-black mb-1">60 Minutes</div>
-                    <div className="text-sm text-slate-600">Time limit for completion</div>
+                    <div className="font-semibold text-black dark:text-white mb-1">60 Minutes</div>
+                    <div className="text-sm text-slate-600 dark:text-slate-400">Time limit for completion</div>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
-                  <div className="w-10 h-10 bg-black text-white rounded-lg flex items-center justify-center shrink-0 font-bold">
+                <div className="flex items-start gap-4 p-4 bg-slate-50 dark:bg-zinc-800 rounded-lg">
+                  <div className="w-10 h-10 bg-black dark:bg-white text-white dark:text-black rounded-lg flex items-center justify-center shrink-0 font-bold">
                     65%
                   </div>
                   <div>
-                    <div className="font-semibold text-black mb-1">Passing Score</div>
-                    <div className="text-sm text-slate-600">26 out of 40 questions correct</div>
+                    <div className="font-semibold text-black dark:text-white mb-1">Passing Score</div>
+                    <div className="text-sm text-slate-600 dark:text-slate-400">26 out of 40 questions correct</div>
                   </div>
                 </div>
-                <div className="flex items-start gap-4 p-4 bg-slate-50 rounded-lg">
-                  <div className="w-10 h-10 bg-green-100 text-green-600 rounded-lg flex items-center justify-center shrink-0">
+                <div className="flex items-start gap-4 p-4 bg-slate-50 dark:bg-zinc-800 rounded-lg">
+                  <div className="w-10 h-10 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-lg flex items-center justify-center shrink-0">
                     <CheckCircle className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="font-semibold text-black mb-1">Detailed Results</div>
-                    <div className="text-sm text-slate-600">Review all questions with correct answers at the end</div>
+                    <div className="font-semibold text-black dark:text-white mb-1">Detailed Results</div>
+                    <div className="text-sm text-slate-600 dark:text-slate-400">Review all questions with correct answers at the end</div>
                   </div>
                 </div>
               </div>
@@ -387,13 +387,13 @@ function MockExamContent() {
             <div className="flex gap-4">
               <button
                 onClick={() => setExamStarted(true)}
-                className="flex-1 bg-black text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-800 transition-colors shadow-lg"
+                className="flex-1 bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors shadow-lg"
               >
                 Start Exam
               </button>
               <Link
                 href="/"
-                className="flex items-center justify-center gap-2 px-8 py-4 border-2 border-slate-300 rounded-lg font-semibold hover:bg-white hover:border-black transition-colors text-black"
+                className="flex items-center justify-center gap-2 px-8 py-4 border-2 border-slate-300 dark:border-zinc-700 rounded-lg font-semibold hover:bg-white dark:hover:bg-zinc-800 hover:border-black dark:hover:border-white transition-colors text-black dark:text-white"
               >
                 <Home className="w-5 h-5" />
                 Home
@@ -411,44 +411,44 @@ function MockExamContent() {
     const passed = isPassed();
 
     return (
-      <div className="min-h-screen bg-slate-50 p-6">
+      <div className="min-h-screen bg-slate-50 dark:bg-black p-6">
         <div className="flex justify-end mb-6 max-w-7xl mx-auto">
           <UserProfile />
         </div>
         <div className="container mx-auto max-w-5xl py-12">
           {/* Results Header */}
           <div className="mb-12">
-            <h1 className="text-4xl font-bold mb-6 text-black">Exam Results</h1>
+            <h1 className="text-4xl font-bold mb-6 text-black dark:text-white">Exam Results</h1>
 
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-lg p-10">
+            <div className="bg-white dark:bg-zinc-900 rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-lg p-10">
               <div className="grid grid-cols-3 gap-6 mb-8">
-                <div className="text-center p-6 bg-slate-50 rounded-xl">
-                  <div className="text-xs text-slate-600 uppercase tracking-wider mb-2">Score</div>
-                  <div className={`text-5xl font-bold ${passed ? 'text-green-600' : 'text-red-500'}`}>
+                <div className="text-center p-6 bg-slate-50 dark:bg-zinc-800 rounded-xl">
+                  <div className="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2">Score</div>
+                  <div className={`text-5xl font-bold ${passed ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
                     {percentage}%
                   </div>
                 </div>
-                <div className="text-center p-6 bg-slate-50 rounded-xl">
-                  <div className="text-xs text-slate-600 uppercase tracking-wider mb-2">Correct</div>
-                  <div className="text-5xl font-bold text-black">
+                <div className="text-center p-6 bg-slate-50 dark:bg-zinc-800 rounded-xl">
+                  <div className="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2">Correct</div>
+                  <div className="text-5xl font-bold text-black dark:text-white">
                     {score}
                   </div>
                 </div>
-                <div className="text-center p-6 bg-slate-50 rounded-xl">
-                  <div className="text-xs text-slate-600 uppercase tracking-wider mb-2">Total</div>
-                  <div className="text-5xl font-bold text-black">
+                <div className="text-center p-6 bg-slate-50 dark:bg-zinc-800 rounded-xl">
+                  <div className="text-xs text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2">Total</div>
+                  <div className="text-5xl font-bold text-black dark:text-white">
                     {questions.length}
                   </div>
                 </div>
               </div>
 
-              <div className={`text-center p-6 rounded-xl ${passed ? 'bg-green-50' : 'bg-red-50'}`}>
+              <div className={`text-center p-6 rounded-xl ${passed ? 'bg-green-50 dark:bg-green-900/30' : 'bg-red-50 dark:bg-red-900/30'}`}>
                 {passed ? (
-                  <div className="text-2xl font-bold text-green-600">
+                  <div className="text-2xl font-bold text-green-600 dark:text-green-400">
                     ✓ PASSED — Congratulations!
                   </div>
                 ) : (
-                  <div className="text-2xl font-bold text-red-500">
+                  <div className="text-2xl font-bold text-red-500 dark:text-red-400">
                     ✗ NOT PASSED — Keep Studying (Need 65%)
                   </div>
                 )}
@@ -458,19 +458,19 @@ function MockExamContent() {
             <div className="flex gap-4 mt-6">
               <Link
                 href="/mock-exam"
-                className="flex-1 bg-black text-white px-8 py-4 rounded-lg font-bold text-center hover:bg-slate-800 transition-colors shadow-lg"
+                className="flex-1 bg-black dark:bg-white text-white dark:text-black px-8 py-4 rounded-lg font-bold text-center hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors shadow-lg"
               >
                 Retake Exam
               </Link>
               <Link
                 href="/practice"
-                className="flex-1 border-2 border-slate-300 px-8 py-4 rounded-lg font-bold text-center hover:bg-white hover:border-black transition-colors text-black"
+                className="flex-1 border-2 border-slate-300 dark:border-zinc-700 px-8 py-4 rounded-lg font-bold text-center hover:bg-white dark:hover:bg-zinc-800 hover:border-black dark:hover:border-white transition-colors text-black dark:text-white"
               >
                 Practice Mode
               </Link>
               <Link
                 href="/"
-                className="flex-1 border-2 border-slate-300 px-8 py-4 rounded-lg font-bold text-center hover:bg-white hover:border-black transition-colors text-black"
+                className="flex-1 border-2 border-slate-300 dark:border-zinc-700 px-8 py-4 rounded-lg font-bold text-center hover:bg-white dark:hover:bg-zinc-800 hover:border-black dark:hover:border-white transition-colors text-black dark:text-white"
               >
                 Home
               </Link>
@@ -479,7 +479,7 @@ function MockExamContent() {
 
           {/* Review Section */}
           <div>
-            <h2 className="text-2xl font-bold mb-6 text-black">Review Answers</h2>
+            <h2 className="text-2xl font-bold mb-6 text-black dark:text-white">Review Answers</h2>
             <div className="space-y-4">
               {questions.map((q, index) => {
                 const userAnswer = selectedAnswers[index];
@@ -488,30 +488,30 @@ function MockExamContent() {
                 const correctLetter = String.fromCharCode(65 + q.correctAnswer);
 
                 return (
-                  <div key={q.id} className="bg-white rounded-xl border border-slate-200 shadow-sm p-6">
+                  <div key={q.id} className="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm p-6">
                     <div className="flex items-start gap-4 mb-4">
                       <div className={`w-12 h-12 rounded-lg flex items-center justify-center font-bold text-lg shrink-0 ${isCorrect
-                        ? 'bg-green-100 text-green-600'
-                        : 'bg-red-100 text-red-500'
+                        ? 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400'
+                        : 'bg-red-100 dark:bg-red-900/30 text-red-500 dark:text-red-400'
                         }`}>
                         {index + 1}
                       </div>
                       <div className="flex-1">
-                        <div className="inline-block px-2 py-1 bg-slate-100 rounded text-xs font-semibold text-slate-600 uppercase tracking-wider mb-2">
+                        <div className="inline-block px-2 py-1 bg-slate-100 dark:bg-zinc-800 rounded text-xs font-semibold text-slate-600 dark:text-slate-400 uppercase tracking-wider mb-2">
                           {q.category}
                         </div>
-                        <div className="text-base font-semibold mb-4 text-black">{q.question}</div>
+                        <div className="text-base font-semibold mb-4 text-black dark:text-white">{q.question}</div>
 
                         <div className="grid grid-cols-2 gap-3 mb-4">
-                          <div className="p-3 bg-slate-50 rounded-lg">
-                            <div className="text-xs text-slate-600 mb-1">Your Answer</div>
-                            <div className={`text-lg font-bold ${isCorrect ? 'text-green-600' : 'text-red-500'}`}>
+                          <div className="p-3 bg-slate-50 dark:bg-zinc-800 rounded-lg">
+                            <div className="text-xs text-slate-600 dark:text-slate-400 mb-1">Your Answer</div>
+                            <div className={`text-lg font-bold ${isCorrect ? 'text-green-600 dark:text-green-400' : 'text-red-500 dark:text-red-400'}`}>
                               {optionLetter}
                             </div>
                           </div>
-                          <div className="p-3 bg-slate-50 rounded-lg">
-                            <div className="text-xs text-slate-600 mb-1">Correct Answer</div>
-                            <div className="text-lg font-bold text-green-600">
+                          <div className="p-3 bg-slate-50 dark:bg-zinc-800 rounded-lg">
+                            <div className="text-xs text-slate-600 dark:text-slate-400 mb-1">Correct Answer</div>
+                            <div className="text-lg font-bold text-green-600 dark:text-green-400">
                               {correctLetter}
                             </div>
                           </div>
@@ -527,10 +527,10 @@ function MockExamContent() {
                               <div
                                 key={optIndex}
                                 className={`p-3 rounded-lg border ${isCorrectAnswer
-                                  ? 'border-green-200 bg-green-50'
+                                  ? 'border-green-200 bg-green-50 dark:bg-green-900/20 dark:border-green-800'
                                   : isUserAnswer
-                                    ? 'border-red-200 bg-red-50'
-                                    : 'border-slate-200 bg-white'
+                                    ? 'border-red-200 bg-red-50 dark:bg-red-900/20 dark:border-red-800'
+                                    : 'border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-900'
                                   }`}
                               >
                                 <div className="flex items-center gap-3">
@@ -538,13 +538,13 @@ function MockExamContent() {
                                     ? 'bg-green-600 text-white'
                                     : isUserAnswer
                                       ? 'bg-red-500 text-white'
-                                      : 'bg-slate-100 text-slate-400'
+                                      : 'bg-slate-100 dark:bg-zinc-800 text-slate-400 dark:text-slate-500'
                                     }`}>
                                     {letter}
                                   </div>
-                                  <span className="text-black text-sm flex-1">{option}</span>
-                                  {isCorrectAnswer && <span className="text-xs font-semibold text-green-600">✓ CORRECT</span>}
-                                  {isUserAnswer && !isCorrectAnswer && <span className="text-xs font-semibold text-red-500">✗ WRONG</span>}
+                                  <span className="text-black dark:text-slate-100 text-sm flex-1">{option}</span>
+                                  {isCorrectAnswer && <span className="text-xs font-semibold text-green-600 dark:text-green-400">✓ CORRECT</span>}
+                                  {isUserAnswer && !isCorrectAnswer && <span className="text-xs font-semibold text-red-500 dark:text-red-400">✗ WRONG</span>}
                                 </div>
                               </div>
                             );
@@ -572,23 +572,23 @@ function MockExamContent() {
   const currentPercentage = answeredCount > 0 ? Math.round((currentScore / answeredCount) * 100) : 0;
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
+    <div className="min-h-screen bg-slate-50 dark:bg-black flex flex-col">
       {/* Header - Minimal */}
-      <div className="bg-white border-b border-slate-200 sticky top-0 z-30">
+      <div className="bg-white dark:bg-zinc-900 border-b border-slate-200 dark:border-zinc-800 sticky top-0 z-30">
         <div className="max-w-[1400px] mx-auto px-6 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <FileText className="w-5 h-5 text-slate-700" />
-              <h1 className="text-sm font-bold text-black">ITIL 4 Foundation – Mock Exam</h1>
+              <FileText className="w-5 h-5 text-slate-700 dark:text-slate-300" />
+              <h1 className="text-sm font-bold text-black dark:text-white">ITIL 4 Foundation – Mock Exam</h1>
             </div>
             <div className="flex items-center gap-2">
               <UserProfile />
               <Link
                 href="/"
-                className="p-2 rounded-lg border border-slate-300 hover:bg-slate-100 transition-colors"
+                className="p-2 rounded-lg border border-slate-300 dark:border-zinc-700 hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors"
                 title="Go to home"
               >
-                <Home className="w-5 h-5 text-slate-700" />
+                <Home className="w-5 h-5 text-slate-700 dark:text-slate-300" />
               </Link>
             </div>
           </div>
@@ -596,14 +596,14 @@ function MockExamContent() {
       </div>
 
       {/* Timer Bar */}
-      <div className="bg-white border-b border-slate-200">
+      <div className="bg-white dark:bg-zinc-900 border-b border-slate-200 dark:border-zinc-800">
         <div className="max-w-[1400px] mx-auto px-6 py-3">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-slate-600" />
-                <span className="text-sm text-slate-600">Time left:</span>
-                <span className={`text-lg font-bold font-mono ${timeLeft < 300 ? 'text-red-600' : 'text-black'}`}>
+                <Clock className="w-4 h-4 text-slate-600 dark:text-slate-400" />
+                <span className="text-sm text-slate-600 dark:text-slate-400">Time left:</span>
+                <span className={`text-lg font-bold font-mono ${timeLeft < 300 ? 'text-red-600 dark:text-red-400' : 'text-black dark:text-white'}`}>
                   {formatTime(timeLeft)}
                 </span>
               </div>
@@ -629,15 +629,15 @@ function MockExamContent() {
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setShowScore(!showScore)}
-                className="px-3 py-1.5 text-sm font-semibold rounded-lg border border-slate-300 hover:bg-slate-50 transition-colors"
+                className="px-3 py-1.5 text-sm font-semibold rounded-lg border border-slate-300 dark:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-800 transition-colors dark:text-slate-300"
               >
                 {showScore ? <EyeOff className="w-4 h-4 inline mr-1" /> : <Eye className="w-4 h-4 inline mr-1" />}
                 {showScore ? 'Hide' : 'Show'} Score
               </button>
               {showScore && (
-                <div className="px-3 py-1.5 bg-slate-100 rounded-lg">
-                  <span className="text-sm font-semibold">
-                    Score: <span className={currentPercentage >= 65 ? 'text-green-600' : 'text-orange-600'}>
+                <div className="px-3 py-1.5 bg-slate-100 dark:bg-zinc-800 rounded-lg">
+                  <span className="text-sm font-semibold dark:text-slate-300">
+                    Score: <span className={currentPercentage >= 65 ? 'text-green-600 dark:text-green-400' : 'text-orange-600 dark:text-orange-400'}>
                       {currentScore}/{answeredCount} ({currentPercentage}%)
                     </span>
                   </span>
@@ -660,35 +660,35 @@ function MockExamContent() {
       <div className="flex-1 flex overflow-hidden max-w-[1400px] mx-auto w-full">
 
         {/* Left Sidebar - Navigator */}
-        <div className="w-80 bg-white border-r border-slate-200 flex-col shrink-0 overflow-y-auto hidden lg:flex">
+        <div className="w-80 bg-white dark:bg-zinc-900 border-r border-slate-200 dark:border-zinc-800 flex-col shrink-0 overflow-y-auto hidden lg:flex">
           <div className="p-6">
             {/* Question Navigator Header */}
-            <div className="flex items-center gap-2 mb-4 pb-3 border-b border-slate-200">
-              <List className="w-5 h-5 text-slate-700" />
-              <h3 className="text-base font-bold text-black">Question Navigator</h3>
+            <div className="flex items-center gap-2 mb-4 pb-3 border-b border-slate-200 dark:border-zinc-800">
+              <List className="w-5 h-5 text-slate-700 dark:text-slate-300" />
+              <h3 className="text-base font-bold text-black dark:text-white">Question Navigator</h3>
             </div>
 
             {/* Stats */}
             <div className="mb-6 space-y-3">
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-600">Pass mark:</span>
-                <span className="font-semibold text-black">65%</span>
+                <span className="text-slate-600 dark:text-slate-400">Pass mark:</span>
+                <span className="font-semibold text-black dark:text-white">65%</span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-600">Answered:</span>
-                <span className="font-semibold text-green-600">{answeredCount}/{questions.length}</span>
+                <span className="text-slate-600 dark:text-slate-400">Answered:</span>
+                <span className="font-semibold text-green-600 dark:text-green-400">{answeredCount}/{questions.length}</span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-600">Flagged:</span>
-                <span className="font-semibold text-orange-600">{flaggedQuestions.size}</span>
+                <span className="text-slate-600 dark:text-slate-400">Flagged:</span>
+                <span className="font-semibold text-orange-600 dark:text-orange-400">{flaggedQuestions.size}</span>
               </div>
               <div className="flex items-center justify-between text-sm">
-                <span className="text-slate-600">Important:</span>
-                <span className="font-semibold text-yellow-600">{importantQuestions.size}</span>
+                <span className="text-slate-600 dark:text-slate-400">Important:</span>
+                <span className="font-semibold text-yellow-600 dark:text-yellow-400">{importantQuestions.size}</span>
               </div>
-              <div className="pt-2 border-t border-slate-200">
-                <div className="text-xs text-slate-500 mb-1">Progress</div>
-                <div className="w-full h-2 bg-slate-200 rounded-full overflow-hidden">
+              <div className="pt-2 border-t border-slate-200 dark:border-zinc-800">
+                <div className="text-xs text-slate-500 dark:text-slate-500 mb-1">Progress</div>
+                <div className="w-full h-2 bg-slate-200 dark:bg-zinc-800 rounded-full overflow-hidden">
                   <div
                     className="h-full bg-blue-600 transition-all duration-300"
                     style={{ width: `${(answeredCount / questions.length) * 100}%` }}
@@ -726,18 +726,18 @@ function MockExamContent() {
             </div>
 
             {/* Review Section */}
-            <div className="border-t border-slate-200 pt-4">
+            <div className="border-t border-slate-200 dark:border-zinc-800 pt-4">
               <button
                 onClick={goToFirstUnanswered}
                 disabled={unansweredQuestions.length === 0}
-                className="w-full px-4 py-2.5 text-sm font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mb-2"
+                className="w-full px-4 py-2.5 text-sm font-semibold rounded-lg bg-slate-100 dark:bg-zinc-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-zinc-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed mb-2"
               >
                 Go to first unanswered ({unansweredQuestions.length})
               </button>
               <button
                 onClick={goToFirstFlagged}
                 disabled={flaggedQuestionsArray.length === 0}
-                className="w-full px-4 py-2.5 text-sm font-semibold rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-4 py-2.5 text-sm font-semibold rounded-lg bg-slate-100 dark:bg-zinc-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-zinc-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Go to first flagged ({flaggedQuestions.size})
               </button>
@@ -746,24 +746,24 @@ function MockExamContent() {
         </div>
 
         {/* Right Content - Question Area */}
-        <div className="flex-1 flex flex-col bg-slate-50 overflow-hidden">
+        <div className="flex-1 flex flex-col bg-slate-50 dark:bg-black overflow-hidden">
           <div className="flex-1 overflow-y-auto">
             <div className="max-w-4xl mx-auto p-8">
               {/* Category Badge and Question Number */}
               <div className="mb-6">
-                <div className="inline-block px-3 py-1 bg-blue-50 text-blue-700 rounded text-xs font-semibold mb-3 uppercase tracking-wide">
+                <div className="inline-block px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400 rounded text-xs font-semibold mb-3 uppercase tracking-wide">
                   {currentQuestion.category}
                 </div>
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-sm font-semibold text-slate-600">
+                  <h2 className="text-sm font-semibold text-slate-600 dark:text-slate-400">
                     Question {currentQuestionIndex + 1} of {questions.length}
                   </h2>
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => toggleFlag(currentQuestionIndex)}
                       className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-semibold transition-colors ${flaggedQuestions.has(currentQuestionIndex)
-                        ? 'bg-orange-50 text-orange-600 border border-orange-200'
-                        : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-300'
+                        ? 'bg-orange-50 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 border border-orange-200 dark:border-orange-800'
+                        : 'bg-white dark:bg-zinc-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-zinc-800 hover:border-slate-300'
                         }`}
                     >
                       <Flag className="w-3.5 h-3.5" />
@@ -772,8 +772,8 @@ function MockExamContent() {
                     <button
                       onClick={() => toggleImportant(currentQuestionIndex)}
                       className={`flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-semibold transition-colors ${importantQuestions.has(currentQuestionIndex)
-                        ? 'bg-yellow-50 text-yellow-600 border border-yellow-200'
-                        : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-300'
+                        ? 'bg-yellow-50 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 border border-yellow-200 dark:border-yellow-800'
+                        : 'bg-white dark:bg-zinc-900 text-slate-600 dark:text-slate-400 border border-slate-200 dark:border-zinc-800 hover:border-slate-300'
                         }`}
                     >
                       <Star className="w-3.5 h-3.5" />
@@ -784,9 +784,9 @@ function MockExamContent() {
               </div>
 
               {/* Question Card */}
-              <div className="bg-white rounded-lg border border-slate-200 shadow-sm p-8 mb-6">
+              <div className="bg-white dark:bg-zinc-900 rounded-lg border border-slate-200 dark:border-zinc-800 shadow-sm p-8 mb-6">
                 {/* Question */}
-                <h2 className="text-base font-normal mb-8 text-slate-900 leading-relaxed">
+                <h2 className="text-base font-normal mb-8 text-slate-900 dark:text-white leading-relaxed">
                   {currentQuestion.question}
                 </h2>
 
@@ -800,20 +800,20 @@ function MockExamContent() {
                         key={index}
                         onClick={() => handleAnswerSelect(index)}
                         className={`w-full text-left p-4 rounded-lg border-2 transition-all ${isSelected
-                          ? 'border-blue-500 bg-blue-50'
-                          : 'border-slate-200 bg-white hover:border-slate-300'
+                          ? 'border-blue-500 bg-blue-50 dark:bg-blue-900/30'
+                          : 'border-slate-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 hover:border-slate-300 dark:hover:border-zinc-600'
                           }`}
                       >
                         <div className="flex items-start gap-3">
                           <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 mt-0.5 ${isSelected
                             ? 'border-blue-500'
-                            : 'border-slate-300'
+                            : 'border-slate-300 dark:border-slate-600'
                             }`}>
                             {isSelected && (
                               <div className="w-3 h-3 rounded-full bg-blue-500"></div>
                             )}
                           </div>
-                          <span className="text-sm text-slate-900 leading-relaxed">{option}</span>
+                          <span className="text-sm text-slate-900 dark:text-slate-100 leading-relaxed">{option}</span>
                         </div>
                       </button>
                     );
@@ -826,12 +826,12 @@ function MockExamContent() {
                 <button
                   onClick={handlePrevious}
                   disabled={currentQuestionIndex === 0}
-                  className="px-5 py-2.5 rounded-lg font-semibold text-sm text-slate-700 bg-white border border-slate-300 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
+                  className="px-5 py-2.5 rounded-lg font-semibold text-sm text-slate-700 dark:text-slate-300 bg-white dark:bg-zinc-800 border border-slate-300 dark:border-zinc-700 hover:bg-slate-50 dark:hover:bg-zinc-700 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                 >
                   Previous
                 </button>
 
-                <div className="text-sm text-slate-600 font-medium">
+                <div className="text-sm text-slate-600 dark:text-slate-400 font-medium">
                   {currentQuestionIndex + 1} / {questions.length}
                 </div>
 
@@ -853,7 +853,7 @@ function MockExamContent() {
               </div>
 
               {/* Tabs Section */}
-              <div className="border-t border-slate-200 bg-white">
+              <div className="border-t border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900">
                 <div className="px-8 py-6">
                   <div className="flex gap-6 border-b border-slate-200 mb-6">
                     <button
@@ -889,26 +889,26 @@ function MockExamContent() {
                   {activeTab === 'tips' && (
                     <div className="space-y-4 text-sm">
                       <div>
-                        <h4 className="font-semibold text-black mb-1.5">Utility vs Warranty:</h4>
-                        <p className="text-slate-600">Utility = what it does (fit for purpose). Warranty = how well it performs (fit for use).</p>
+                        <h4 className="font-semibold text-black dark:text-white mb-1.5">Utility vs Warranty:</h4>
+                        <p className="text-slate-600 dark:text-slate-400">Utility = what it does (fit for purpose). Warranty = how well it performs (fit for use).</p>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-black mb-1.5">Incident vs Problem:</h4>
-                        <p className="text-slate-600">Incident restores service quickly. Problem finds root cause and prevents recurrence. Known error = analyzed problem.</p>
+                        <h4 className="font-semibold text-black dark:text-white mb-1.5">Incident vs Problem:</h4>
+                        <p className="text-slate-600 dark:text-slate-400">Incident restores service quickly. Problem finds root cause and prevents recurrence. Known error = analyzed problem.</p>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-black mb-1.5">Value stream vs Value chain:</h4>
-                        <p className="text-slate-600">Value chain = activities. Value stream = specific path through those activities.</p>
+                        <h4 className="font-semibold text-black dark:text-white mb-1.5">Value stream vs Value chain:</h4>
+                        <p className="text-slate-600 dark:text-slate-400">Value chain = activities. Value stream = specific path through those activities.</p>
                       </div>
                       <div>
-                        <h4 className="font-semibold text-black mb-1.5">Use Flag for uncertain questions.</h4>
-                        <p className="text-slate-600">Answer everything before submitting.</p>
+                        <h4 className="font-semibold text-black dark:text-white mb-1.5">Use Flag for uncertain questions.</h4>
+                        <p className="text-slate-600 dark:text-slate-400">Answer everything before submitting.</p>
                       </div>
                     </div>
                   )}
 
                   {activeTab === 'rules' && (
-                    <div className="space-y-3 text-sm text-slate-600">
+                    <div className="space-y-3 text-sm text-slate-600 dark:text-slate-400">
                       <p>• 40 questions total</p>
                       <p>• 60 minutes time limit</p>
                       <p>• Single best answer for each question</p>

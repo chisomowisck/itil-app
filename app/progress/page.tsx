@@ -164,14 +164,14 @@ function ProgressContent() {
     : 0;
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-slate-50 dark:bg-black">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-slate-200">
+      <header className="bg-white dark:bg-zinc-900 shadow-sm border-b border-slate-200 dark:border-zinc-800">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-black">Progress Tracking</h1>
-              <p className="text-slate-600 text-sm mt-1">View your exam history and analytics</p>
+              <h1 className="text-2xl font-bold text-black dark:text-white">Progress Tracking</h1>
+              <p className="text-slate-600 dark:text-slate-400 text-sm mt-1">View your exam history and analytics</p>
             </div>
             <div className="flex items-center gap-4">
               <Navigation />
@@ -184,83 +184,83 @@ function ProgressContent() {
       <main className="container mx-auto px-6 py-8 max-w-6xl">
         {/* Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
-          <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 p-6 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center gap-3 mb-2">
-              <div className="p-2 bg-blue-100 rounded-lg">
-                <BarChart3 className="w-5 h-5 text-blue-600" />
+              <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                <BarChart3 className="w-5 h-5 text-blue-600 dark:text-blue-400" />
               </div>
-              <div className="text-sm text-slate-600">Total Exams</div>
+              <div className="text-sm text-slate-600 dark:text-slate-400">Total Exams</div>
             </div>
-            <div className="text-3xl font-bold text-black">{scores.length}</div>
+            <div className="text-3xl font-bold text-black dark:text-white">{scores.length}</div>
           </div>
 
-          <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 p-6 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center gap-3 mb-2">
-              <div className="p-2 bg-green-100 rounded-lg">
-                <CheckCircle className="w-5 h-5 text-green-600" />
+              <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                <CheckCircle className="w-5 h-5 text-green-600 dark:text-green-400" />
               </div>
-              <div className="text-sm text-slate-600">Passed</div>
+              <div className="text-sm text-slate-600 dark:text-slate-400">Passed</div>
             </div>
-            <div className="text-3xl font-bold text-green-600">{passedCount}</div>
+            <div className="text-3xl font-bold text-green-600 dark:text-green-400">{passedCount}</div>
           </div>
 
-          <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 p-6 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center gap-3 mb-2">
-              <div className="p-2 bg-red-100 rounded-lg">
-                <XCircle className="w-5 h-5 text-red-600" />
+              <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded-lg">
+                <XCircle className="w-5 h-5 text-red-600 dark:text-red-400" />
               </div>
-              <div className="text-sm text-slate-600">Failed</div>
+              <div className="text-sm text-slate-600 dark:text-slate-400">Failed</div>
             </div>
-            <div className="text-3xl font-bold text-red-600">{failedCount}</div>
+            <div className="text-3xl font-bold text-red-600 dark:text-red-400">{failedCount}</div>
           </div>
 
-          <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 p-6 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center gap-3 mb-2">
-              <div className="p-2 bg-purple-100 rounded-lg">
-                <Award className="w-5 h-5 text-purple-600" />
+              <div className="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
+                <Award className="w-5 h-5 text-purple-600 dark:text-purple-400" />
               </div>
-              <div className="text-sm text-slate-600">Best Score</div>
+              <div className="text-sm text-slate-600 dark:text-slate-400">Best Score</div>
             </div>
-            <div className="text-3xl font-bold text-purple-600">{bestScore}%</div>
+            <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">{bestScore}%</div>
           </div>
 
-          <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 p-6 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center gap-3 mb-2">
-              <div className="p-2 bg-slate-100 rounded-lg">
-                <Target className="w-5 h-5 text-slate-600" />
+              <div className="p-2 bg-slate-100 dark:bg-zinc-800 rounded-lg">
+                <Target className="w-5 h-5 text-slate-600 dark:text-slate-400" />
               </div>
-              <div className="text-sm text-slate-600">Average</div>
+              <div className="text-sm text-slate-600 dark:text-slate-400">Average</div>
             </div>
-            <div className="text-3xl font-bold text-slate-700">{averageScore}%</div>
+            <div className="text-3xl font-bold text-slate-700 dark:text-slate-300">{averageScore}%</div>
           </div>
 
-          <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm hover:shadow-md transition-shadow">
+          <div className="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 p-6 shadow-sm hover:shadow-md transition-shadow">
             <div className="flex items-center gap-3 mb-2">
-              <div className={`p-2 rounded-lg ${improvementTrend >= 0 ? 'bg-green-100' : 'bg-orange-100'}`}>
-                <TrendingUp className={`w-5 h-5 ${improvementTrend >= 0 ? 'text-green-600' : 'text-orange-600'}`} />
+              <div className={`p-2 rounded-lg ${improvementTrend >= 0 ? 'bg-green-100 dark:bg-green-900/30' : 'bg-orange-100 dark:bg-orange-900/30'}`}>
+                <TrendingUp className={`w-5 h-5 ${improvementTrend >= 0 ? 'text-green-600 dark:text-green-400' : 'text-orange-600 dark:text-orange-400'}`} />
               </div>
-              <div className="text-sm text-slate-600">Trend</div>
+              <div className="text-sm text-slate-600 dark:text-slate-400">Trend</div>
             </div>
-            <div className={`text-3xl font-bold ${improvementTrend >= 0 ? 'text-green-600' : 'text-orange-600'}`}>
+            <div className={`text-3xl font-bold ${improvementTrend >= 0 ? 'text-green-600 dark:text-green-400' : 'text-orange-600 dark:text-orange-400'}`}>
               {improvementTrend >= 0 ? '+' : ''}{improvementTrend}%
             </div>
           </div>
         </div>
 
         {/* Filter and Actions */}
-        <div className="bg-white rounded-xl border border-slate-200 p-4 mb-6 shadow-sm">
+        <div className="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 p-4 mb-6 shadow-sm">
           <div className="flex items-center justify-between flex-wrap gap-3">
             <div className="flex gap-2 flex-wrap">
               <button
                 onClick={() => setFilterType('all')}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${filterType === 'all' ? 'bg-black text-white' : 'bg-slate-100 text-black hover:bg-slate-200'
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${filterType === 'all' ? 'bg-black dark:bg-white text-white dark:text-black' : 'bg-slate-100 dark:bg-zinc-800 text-black dark:text-white hover:bg-slate-200 dark:hover:bg-zinc-700'
                   }`}
               >
                 All ({scores.length})
               </button>
               <button
                 onClick={() => setFilterType('passed')}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${filterType === 'passed' ? 'bg-green-600 text-white' : 'bg-green-100 text-green-600 hover:bg-green-200'
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${filterType === 'passed' ? 'bg-green-600 text-white' : 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 hover:bg-green-200 dark:hover:bg-green-900/50'
                   }`}
               >
                 <CheckCircle className="w-4 h-4" />
@@ -268,7 +268,7 @@ function ProgressContent() {
               </button>
               <button
                 onClick={() => setFilterType('failed')}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${filterType === 'failed' ? 'bg-red-600 text-white' : 'bg-red-100 text-red-600 hover:bg-red-200'
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${filterType === 'failed' ? 'bg-red-600 text-white' : 'bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 hover:bg-red-200 dark:hover:bg-red-900/50'
                   }`}
               >
                 <XCircle className="w-4 h-4" />
@@ -276,7 +276,7 @@ function ProgressContent() {
               </button>
               <button
                 onClick={() => setFilterType('flagged')}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${filterType === 'flagged' ? 'bg-orange-600 text-white' : 'bg-orange-100 text-orange-600 hover:bg-orange-200'
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${filterType === 'flagged' ? 'bg-orange-600 text-white' : 'bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 hover:bg-orange-200 dark:hover:bg-orange-900/50'
                   }`}
               >
                 <Flag className="w-4 h-4" />
@@ -284,7 +284,7 @@ function ProgressContent() {
               </button>
               <button
                 onClick={() => setFilterType('important')}
-                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${filterType === 'important' ? 'bg-yellow-600 text-white' : 'bg-yellow-100 text-yellow-600 hover:bg-yellow-200'
+                className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors flex items-center gap-1 ${filterType === 'important' ? 'bg-yellow-600 text-white' : 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 hover:bg-yellow-200 dark:hover:bg-yellow-900/50'
                   }`}
               >
                 <Star className="w-4 h-4" />
@@ -294,7 +294,7 @@ function ProgressContent() {
             {scores.length > 0 && (
               <button
                 onClick={clearAllScores}
-                className="px-4 py-2 rounded-lg text-sm font-semibold bg-red-100 text-red-600 hover:bg-red-200 transition-colors flex items-center gap-2"
+                className="px-4 py-2 rounded-lg text-sm font-semibold bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 hover:bg-red-200 dark:hover:bg-red-900/50 transition-colors flex items-center gap-2"
               >
                 <Trash2 className="w-4 h-4" />
                 Clear All
@@ -305,26 +305,26 @@ function ProgressContent() {
 
         {/* Score History */}
         {filteredScores.length === 0 ? (
-          <div className="bg-white rounded-xl border border-slate-200 p-12 text-center shadow-sm">
-            <TrendingUp className="w-16 h-16 mx-auto mb-4 text-slate-300" />
-            <h3 className="text-xl font-bold text-black mb-2">
+          <div className="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 p-12 text-center shadow-sm">
+            <TrendingUp className="w-16 h-16 mx-auto mb-4 text-slate-300 dark:text-slate-600" />
+            <h3 className="text-xl font-bold text-black dark:text-white mb-2">
               {filterType === 'all' ? 'No Exam History Yet' : `No ${filterType} exams`}
             </h3>
-            <p className="text-slate-600 mb-6">
+            <p className="text-slate-600 dark:text-slate-400 mb-6">
               {filterType === 'all'
                 ? 'Take a mock exam to start tracking your progress!'
                 : `You haven't ${filterType} any exams yet.`}
             </p>
             <Link
               href="/mock-exam"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-slate-800 transition-colors font-semibold"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors font-semibold"
             >
               Start Mock Exam
             </Link>
           </div>
         ) : (
           <div className="space-y-4">
-            <p className="text-sm text-slate-600">Showing {filteredScores.length} exam{filteredScores.length !== 1 ? 's' : ''}</p>
+            <p className="text-sm text-slate-600 dark:text-slate-400">Showing {filteredScores.length} exam{filteredScores.length !== 1 ? 's' : ''}</p>
             {filteredScores.map((score) => {
 
               const hasDetails = score.questionResults && score.questionResults.length > 0;
@@ -332,24 +332,24 @@ function ProgressContent() {
               return (
                 <div
                   key={score.id}
-                  className={`bg-white rounded-xl border-2 shadow-sm hover:shadow-md transition-all ${score.passed ? 'border-green-200' : 'border-red-200'
+                  className={`bg-white dark:bg-zinc-900 rounded-xl border-2 shadow-sm hover:shadow-md transition-all ${score.passed ? 'border-green-200 dark:border-green-900/30' : 'border-red-200 dark:border-red-900/30'
                     }`}
                 >
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center gap-3">
-                        <div className={`p-3 rounded-lg ${score.passed ? 'bg-green-100' : 'bg-red-100'}`}>
+                        <div className={`p-3 rounded-lg ${score.passed ? 'bg-green-100 dark:bg-green-900/30' : 'bg-red-100 dark:bg-red-900/30'}`}>
                           {score.passed ? (
-                            <CheckCircle className="w-6 h-6 text-green-600" />
+                            <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-400" />
                           ) : (
-                            <XCircle className="w-6 h-6 text-red-600" />
+                            <XCircle className="w-6 h-6 text-red-600 dark:text-red-400" />
                           )}
                         </div>
                         <div>
-                          <div className={`text-2xl font-bold ${score.passed ? 'text-green-600' : 'text-red-600'}`}>
+                          <div className={`text-2xl font-bold ${score.passed ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'}`}>
                             {score.percentage}%
                           </div>
-                          <div className="text-sm text-slate-600">
+                          <div className="text-sm text-slate-600 dark:text-slate-400">
                             {score.correct} / {score.total} correct
                           </div>
                         </div>
@@ -360,7 +360,7 @@ function ProgressContent() {
                         {hasDetails && (
                           <Link
                             href={`/progress/${score.id}`}
-                            className="flex items-center gap-1.5 px-3 py-1.5 bg-black text-white text-sm font-semibold rounded-lg hover:bg-slate-800 transition-colors"
+                            className="flex items-center gap-1.5 px-3 py-1.5 bg-black dark:bg-white text-white dark:text-black text-sm font-semibold rounded-lg hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors"
                           >
                             Review
                             <ChevronRight className="w-4 h-4" />
@@ -371,7 +371,7 @@ function ProgressContent() {
                             e.stopPropagation();
                             score.id && deleteScore(score.id);
                           }}
-                          className="p-2 rounded-lg hover:bg-red-100 text-red-600 transition-colors"
+                          className="p-2 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/30 text-red-600 dark:text-red-400 transition-colors"
                           title="Delete this score"
                         >
                           <Trash2 className="w-4 h-4" />
@@ -381,38 +381,38 @@ function ProgressContent() {
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                       <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4 text-slate-400" />
+                        <Calendar className="w-4 h-4 text-slate-400 dark:text-slate-500" />
                         <div>
-                          <div className="text-xs text-slate-500">Date</div>
-                          <div className="text-sm font-semibold text-black">{formatDate(score.date)}</div>
+                          <div className="text-xs text-slate-500 dark:text-slate-400">Date</div>
+                          <div className="text-sm font-semibold text-black dark:text-white">{formatDate(score.date)}</div>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Clock className="w-4 h-4 text-slate-400" />
+                        <Clock className="w-4 h-4 text-slate-400 dark:text-slate-500" />
                         <div>
-                          <div className="text-xs text-slate-500">Time Spent</div>
-                          <div className="text-sm font-semibold text-black">{formatTime(score.timeSpent)}</div>
+                          <div className="text-xs text-slate-500 dark:text-slate-400">Time Spent</div>
+                          <div className="text-sm font-semibold text-black dark:text-white">{formatTime(score.timeSpent)}</div>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
                         <Flag className="w-4 h-4 text-orange-400" />
                         <div>
-                          <div className="text-xs text-slate-500">Flagged</div>
-                          <div className="text-sm font-semibold text-black">{score.flaggedCount}</div>
+                          <div className="text-xs text-slate-500 dark:text-slate-400">Flagged</div>
+                          <div className="text-sm font-semibold text-black dark:text-white">{score.flaggedCount}</div>
                         </div>
                       </div>
                       <div className="flex items-center gap-2">
                         <Star className="w-4 h-4 text-yellow-400" />
                         <div>
-                          <div className="text-xs text-slate-500">Important</div>
-                          <div className="text-sm font-semibold text-black">{score.importantCount}</div>
+                          <div className="text-xs text-slate-500 dark:text-slate-400">Important</div>
+                          <div className="text-sm font-semibold text-black dark:text-white">{score.importantCount}</div>
                         </div>
                       </div>
                     </div>
 
                     <div className={`mt-4 px-4 py-2 rounded-lg text-center font-semibold ${score.passed
-                      ? 'bg-green-50 text-green-600 border border-green-200'
-                      : 'bg-red-50 text-red-600 border border-red-200'
+                      ? 'bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 border border-green-200 dark:border-green-800'
+                      : 'bg-red-50 dark:bg-red-900/30 text-red-600 dark:text-red-400 border border-red-200 dark:border-red-800'
                       }`}>
                       {score.passed ? '✓ PASSED' : '✗ FAILED'} - {score.passed ? 'Pass mark is 65%' : 'Need 65% to pass'}
                     </div>
@@ -427,11 +427,11 @@ function ProgressContent() {
 
         {/* Score Trend Chart */}
         {scores.length > 1 && (
-          <div className="mt-8 bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
-            <h3 className="text-lg font-bold text-black mb-4">Score Trend</h3>
+          <div className="mt-8 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 p-6 shadow-sm">
+            <h3 className="text-lg font-bold text-black dark:text-white mb-4">Score Trend</h3>
             <div className="relative h-48">
               {/* Y-axis labels */}
-              <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-xs text-slate-500 pr-2">
+              <div className="absolute left-0 top-0 bottom-0 flex flex-col justify-between text-xs text-slate-500 dark:text-slate-400 pr-2">
                 <span>100%</span>
                 <span>75%</span>
                 <span>65%</span>
@@ -441,10 +441,10 @@ function ProgressContent() {
               </div>
 
               {/* Chart area */}
-              <div className="ml-12 h-full relative border-l-2 border-b-2 border-slate-200">
+              <div className="ml-12 h-full relative border-l-2 border-b-2 border-slate-200 dark:border-zinc-700">
                 {/* Pass line */}
-                <div className="absolute left-0 right-0 border-t-2 border-dashed border-green-300" style={{ bottom: '65%' }}>
-                  <span className="absolute -top-2 right-0 text-xs text-green-600 bg-white px-1">Pass</span>
+                <div className="absolute left-0 right-0 border-t-2 border-dashed border-green-300 dark:border-green-700" style={{ bottom: '65%' }}>
+                  <span className="absolute -top-2 right-0 text-xs text-green-600 dark:text-green-400 bg-white dark:bg-zinc-900 px-1">Pass</span>
                 </div>
 
                 {/* Score points and line */}
@@ -481,7 +481,7 @@ function ProgressContent() {
               </div>
 
               {/* X-axis labels */}
-              <div className="ml-12 mt-2 flex justify-between text-xs text-slate-500">
+              <div className="ml-12 mt-2 flex justify-between text-xs text-slate-500 dark:text-slate-400">
                 <span>Oldest</span>
                 <span>Latest</span>
               </div>
@@ -493,45 +493,45 @@ function ProgressContent() {
         {scores.length > 0 && (
           <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Average Score */}
-            <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-black mb-4">Average Performance</h3>
+            <div className="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 p-6 shadow-sm">
+              <h3 className="text-lg font-bold text-black dark:text-white mb-4">Average Performance</h3>
               <div className="flex items-center gap-4">
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm text-slate-600">Average Score</span>
-                    <span className="text-lg font-bold text-black">{averageScore}%</span>
+                    <span className="text-sm text-slate-600 dark:text-slate-400">Average Score</span>
+                    <span className="text-lg font-bold text-black dark:text-white">{averageScore}%</span>
                   </div>
-                  <div className="w-full bg-slate-200 rounded-full h-4">
+                  <div className="w-full bg-slate-200 dark:bg-zinc-700 rounded-full h-4">
                     <div
-                      className={`h-4 rounded-full transition-all ${averageScore >= 65 ? 'bg-green-600' : 'bg-red-600'
+                      className={`h-4 rounded-full transition-all ${averageScore >= 65 ? 'bg-green-600 dark:bg-green-500' : 'bg-red-600 dark:bg-red-500'
                         }`}
                       style={{ width: `${averageScore}%` }}
                     />
                   </div>
                   <div className="flex justify-between mt-1">
-                    <span className="text-xs text-slate-500">0%</span>
-                    <span className="text-xs text-slate-500">Pass: 65%</span>
-                    <span className="text-xs text-slate-500">100%</span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400">0%</span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400">Pass: 65%</span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400">100%</span>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Score Range */}
-            <div className="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
-              <h3 className="text-lg font-bold text-black mb-4">Score Range</h3>
+            <div className="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 p-6 shadow-sm">
+              <h3 className="text-lg font-bold text-black dark:text-white mb-4">Score Range</h3>
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-slate-600">Best Score</span>
-                  <span className="text-lg font-bold text-green-600">{bestScore}%</span>
+                  <span className="text-sm text-slate-600 dark:text-slate-400">Best Score</span>
+                  <span className="text-lg font-bold text-green-600 dark:text-green-400">{bestScore}%</span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-slate-600">Worst Score</span>
-                  <span className="text-lg font-bold text-red-600">{worstScore}%</span>
+                  <span className="text-sm text-slate-600 dark:text-slate-400">Worst Score</span>
+                  <span className="text-lg font-bold text-red-600 dark:text-red-400">{worstScore}%</span>
                 </div>
-                <div className="flex items-center justify-between pt-2 border-t border-slate-200">
-                  <span className="text-sm text-slate-600">Improvement</span>
-                  <span className={`text-lg font-bold ${improvementTrend >= 0 ? 'text-green-600' : 'text-orange-600'}`}>
+                <div className="flex items-center justify-between pt-2 border-t border-slate-200 dark:border-zinc-800">
+                  <span className="text-sm text-slate-600 dark:text-slate-400">Improvement</span>
+                  <span className={`text-lg font-bold ${improvementTrend >= 0 ? 'text-green-600 dark:text-green-400' : 'text-orange-600 dark:text-orange-400'}`}>
                     {improvementTrend >= 0 ? '+' : ''}{improvementTrend}%
                   </span>
                 </div>

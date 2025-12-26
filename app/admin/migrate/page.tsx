@@ -44,15 +44,15 @@ export default function MigratePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 p-8">
       <div className="max-w-2xl mx-auto">
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-6">
+        <div className="bg-white dark:bg-zinc-900 rounded-lg shadow-lg p-8">
+          <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-6">
             🔄 Migrate Questions to Firebase
           </h1>
 
-          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6">
-            <p className="text-sm text-blue-700">
+          <div className="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-500 p-4 mb-6">
+            <p className="text-sm text-blue-700 dark:text-blue-300">
               <strong>Note:</strong> This will upload all questions from the local JSON file
               to Firebase Firestore. Make sure Firebase is properly configured in your .env.local file.
             </p>
@@ -62,33 +62,32 @@ export default function MigratePage() {
             <button
               onClick={migrateQuestions}
               disabled={loading}
-              className={`w-full py-3 px-6 rounded-lg font-semibold text-white transition-colors ${
-                loading
+              className={`w-full py-3 px-6 rounded-lg font-semibold text-white transition-colors ${loading
                   ? "bg-gray-400 cursor-not-allowed"
                   : "bg-blue-600 hover:bg-blue-700"
-              }`}
+                }`}
             >
               {loading ? "Migrating..." : "Start Migration"}
             </button>
 
             {status && (
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                <p className="text-green-800">{status}</p>
+              <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg p-4">
+                <p className="text-green-800 dark:text-green-300">{status}</p>
               </div>
             )}
 
             {error && (
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                <p className="text-red-800">{error}</p>
+              <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg p-4">
+                <p className="text-red-800 dark:text-red-300">{error}</p>
               </div>
             )}
           </div>
 
-          <div className="mt-8 pt-6 border-t border-gray-200">
-            <h2 className="text-lg font-semibold text-gray-800 mb-3">
+          <div className="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+            <h2 className="text-lg font-semibold text-gray-800 dark:text-white mb-3">
               Migration Steps:
             </h2>
-            <ol className="list-decimal list-inside space-y-2 text-gray-600">
+            <ol className="list-decimal list-inside space-y-2 text-gray-600 dark:text-gray-400">
               <li>Ensure Firebase configuration is set in .env.local</li>
               <li>Click "Start Migration" button above</li>
               <li>Wait for the upload to complete</li>
@@ -100,16 +99,16 @@ export default function MigratePage() {
           <div className="mt-6">
             <Link
               href="/"
-              className="text-blue-600 hover:text-blue-800 font-medium"
+              className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium"
             >
               ← Back to Home
             </Link>
           </div>
         </div>
 
-        <div className="mt-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-          <h3 className="font-semibold text-yellow-800 mb-2">⚠️ Important Notes:</h3>
-          <ul className="list-disc list-inside space-y-1 text-sm text-yellow-700">
+        <div className="mt-6 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4">
+          <h3 className="font-semibold text-yellow-800 dark:text-yellow-300 mb-2">⚠️ Important Notes:</h3>
+          <ul className="list-disc list-inside space-y-1 text-sm text-yellow-700 dark:text-yellow-400">
             <li>This will create new documents in Firestore</li>
             <li>If questions already exist, duplicates will be created</li>
             <li>You may need to manually delete duplicates from Firebase Console</li>

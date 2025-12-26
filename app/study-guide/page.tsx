@@ -8,11 +8,11 @@ import Navigation from '@/components/Navigation';
 
 function StudyGuideContent() {
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="bg-white border-b border-slate-200 shadow-sm">
+    <div className="min-h-screen bg-slate-50 dark:bg-black">
+      <header className="bg-white dark:bg-zinc-900 border-b border-slate-200 dark:border-zinc-800 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold text-black">ITIL 4 Study Guide</h1>
+            <h1 className="text-2xl font-bold text-black dark:text-white">ITIL 4 Study Guide</h1>
             <div className="flex items-center gap-4">
               <Navigation />
               <UserProfile />
@@ -22,14 +22,14 @@ function StudyGuideContent() {
       </header>
 
       <main className="container mx-auto px-4 py-12 max-w-4xl">
-        <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
+        <div className="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg border border-slate-200 dark:border-zinc-800 p-8">
           <BookOpen className="w-16 h-16 mx-auto mb-4 text-indigo-500" />
-          <h2 className="text-3xl font-bold mb-6 text-center text-black">Quick Reference Guide</h2>
-          
+          <h2 className="text-3xl font-bold mb-6 text-center text-black dark:text-white">Quick Reference Guide</h2>
+
           <div className="space-y-6">
             <section>
-              <h3 className="text-2xl font-bold mb-3 text-black">ITIL 4 Guiding Principles</h3>
-              <ul className="list-disc list-inside space-y-2 text-slate-700">
+              <h3 className="text-2xl font-bold mb-3 text-black dark:text-white">ITIL 4 Guiding Principles</h3>
+              <ul className="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300">
                 <li><strong>Focus on Value</strong> - Everything should link to value for stakeholders</li>
                 <li><strong>Start Where You Are</strong> - Don't start from scratch, use what you have</li>
                 <li><strong>Progress Iteratively with Feedback</strong> - Work in small steps with feedback</li>
@@ -41,8 +41,8 @@ function StudyGuideContent() {
             </section>
 
             <section>
-              <h3 className="text-2xl font-bold mb-3 text-black">Four Dimensions of Service Management</h3>
-              <ul className="list-disc list-inside space-y-2 text-slate-700">
+              <h3 className="text-2xl font-bold mb-3 text-black dark:text-white">Four Dimensions of Service Management</h3>
+              <ul className="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300">
                 <li><strong>Organizations and People</strong> - Roles, responsibilities, culture, staffing</li>
                 <li><strong>Information and Technology</strong> - Information, knowledge, technologies</li>
                 <li><strong>Partners and Suppliers</strong> - Relationships with other organizations</li>
@@ -51,8 +51,8 @@ function StudyGuideContent() {
             </section>
 
             <section>
-              <h3 className="text-2xl font-bold mb-3 text-black">Service Value Chain Activities</h3>
-              <ul className="list-disc list-inside space-y-2 text-slate-700">
+              <h3 className="text-2xl font-bold mb-3 text-black dark:text-white">Service Value Chain Activities</h3>
+              <ul className="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300">
                 <li><strong>Plan</strong> - Shared understanding of vision and direction</li>
                 <li><strong>Improve</strong> - Continual improvement of products and services</li>
                 <li><strong>Engage</strong> - Understanding stakeholder needs</li>
@@ -63,8 +63,8 @@ function StudyGuideContent() {
             </section>
 
             <section>
-              <h3 className="text-2xl font-bold mb-3 text-black">Key Practices</h3>
-              <ul className="list-disc list-inside space-y-2 text-slate-700">
+              <h3 className="text-2xl font-bold mb-3 text-black dark:text-white">Key Practices</h3>
+              <ul className="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300">
                 <li><strong>Incident Management</strong> - Minimize negative impact of incidents</li>
                 <li><strong>Problem Management</strong> - Reduce likelihood and impact of incidents</li>
                 <li><strong>Change Enablement</strong> - Maximize successful service and product changes</li>
@@ -75,8 +75,8 @@ function StudyGuideContent() {
             </section>
 
             <section>
-              <h3 className="text-2xl font-bold mb-3 text-black">Exam Tips</h3>
-              <ul className="list-disc list-inside space-y-2 text-slate-700">
+              <h3 className="text-2xl font-bold mb-3 text-black dark:text-white">Exam Tips</h3>
+              <ul className="list-disc list-inside space-y-2 text-slate-700 dark:text-slate-300">
                 <li>40 questions, 60 minutes</li>
                 <li>65% passing score (26 out of 40)</li>
                 <li>Multiple choice format</li>
@@ -87,21 +87,21 @@ function StudyGuideContent() {
             </section>
           </div>
 
-          <div className="mt-8 p-6 bg-slate-50 rounded-xl border border-slate-200">
-            <h3 className="text-xl font-bold mb-3 text-black">Ready to Practice?</h3>
-            <p className="text-slate-700 mb-4">
+          <div className="mt-8 p-6 bg-slate-50 dark:bg-zinc-800 rounded-xl border border-slate-200 dark:border-zinc-700">
+            <h3 className="text-xl font-bold mb-3 text-black dark:text-white">Ready to Practice?</h3>
+            <p className="text-slate-700 dark:text-slate-300 mb-4">
               Now that you've reviewed the key concepts, test your knowledge with our practice questions!
             </p>
             <div className="flex gap-4">
               <Link
                 href="/practice"
-                className="bg-black text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 hover:shadow-md transition-all"
+                className="bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 dark:hover:bg-slate-200 hover:shadow-md transition-all"
               >
                 Practice Mode
               </Link>
               <Link
                 href="/mock-exam"
-                className="border-2 border-black text-black px-6 py-3 rounded-xl font-semibold hover:bg-slate-50 transition-all"
+                className="border-2 border-black dark:border-white text-black dark:text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-50 dark:hover:bg-zinc-700 transition-all"
               >
                 Mock Exam
               </Link>

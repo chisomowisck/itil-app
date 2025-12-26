@@ -19,7 +19,7 @@ interface Question {
 function CategoryPracticeContent({ params }: { params: Promise<{ category: string }> }) {
   const resolvedParams = use(params);
   const category = decodeURIComponent(resolvedParams.category);
-  
+
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
@@ -43,7 +43,7 @@ function CategoryPracticeContent({ params }: { params: Promise<{ category: strin
   const handleCheckAnswer = () => {
     if (selectedAnswer === null) return;
     setShowAnswer(true);
-    
+
     if (selectedAnswer === questions[currentIndex].correctAnswer) {
       setStats(prev => ({ ...prev, correct: prev.correct + 1 }));
     } else {
@@ -69,8 +69,8 @@ function CategoryPracticeContent({ params }: { params: Promise<{ category: strin
 
   if (questions.length === 0) {
     return (
-      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
-        <div className="text-2xl text-slate-700">Loading questions...</div>
+      <div className="min-h-screen bg-slate-50 dark:bg-black flex items-center justify-center">
+        <div className="text-2xl text-slate-700 dark:text-slate-300">Loading questions...</div>
       </div>
     );
   }
@@ -79,30 +79,30 @@ function CategoryPracticeContent({ params }: { params: Promise<{ category: strin
   const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
 
   return (
-    <div className="min-h-screen bg-slate-50">
-      <header className="bg-white border-b border-slate-200 sticky top-0 z-10 shadow-sm">
+    <div className="min-h-screen bg-slate-50 dark:bg-black">
+      <header className="bg-white dark:bg-zinc-900 border-b border-slate-200 dark:border-zinc-800 sticky top-0 z-10 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div>
-              <h1 className="text-2xl font-bold text-black">{category}</h1>
-              <p className="text-sm text-slate-600">
+              <h1 className="text-2xl font-bold text-black dark:text-white">{category}</h1>
+              <p className="text-sm text-slate-600 dark:text-slate-400">
                 Question {currentIndex + 1} of {questions.length}
               </p>
             </div>
             <div className="flex items-center gap-4">
               <div className="text-center">
-                <div className="text-sm text-slate-600">Correct</div>
-                <div className="text-xl font-bold text-green-600">{stats.correct}</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">Correct</div>
+                <div className="text-xl font-bold text-green-600 dark:text-green-500">{stats.correct}</div>
               </div>
               <div className="text-center">
-                <div className="text-sm text-slate-600">Incorrect</div>
-                <div className="text-xl font-bold text-red-600">{stats.incorrect}</div>
+                <div className="text-sm text-slate-600 dark:text-slate-400">Incorrect</div>
+                <div className="text-xl font-bold text-red-600 dark:text-red-500">{stats.incorrect}</div>
               </div>
               <Navigation />
               <UserProfile />
               <Link
                 href="/categories"
-                className="flex items-center gap-2 px-4 py-2 border-2 border-slate-300 rounded-lg hover:bg-slate-100 transition-colors"
+                className="flex items-center gap-2 px-4 py-2 border-2 border-slate-300 dark:border-zinc-700 rounded-lg hover:bg-slate-100 dark:hover:bg-zinc-800 text-black dark:text-white transition-colors"
               >
                 <ArrowLeft className="w-5 h-5" />
                 Back
@@ -113,8 +113,8 @@ function CategoryPracticeContent({ params }: { params: Promise<{ category: strin
       </header>
 
       <main className="container mx-auto px-4 py-8 max-w-4xl">
-        <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8 mb-6">
-          <h2 className="text-2xl font-semibold mb-6 text-black">{currentQuestion.question}</h2>
+        <div className="bg-white dark:bg-zinc-900 rounded-2xl shadow-lg border border-slate-200 dark:border-zinc-800 p-8 mb-6">
+          <h2 className="text-2xl font-semibold mb-6 text-black dark:text-white">{currentQuestion.question}</h2>
 
           <div className="space-y-3 mb-6">
             {currentQuestion.options.map((option, index) => {
@@ -125,16 +125,16 @@ function CategoryPracticeContent({ params }: { params: Promise<{ category: strin
 
               if (showAnswer) {
                 if (isCorrectOption) {
-                  className += 'border-green-600 bg-green-50';
+                  className += 'border-green-600 dark:border-green-500 bg-green-50 dark:bg-green-900/30';
                 } else if (isSelected) {
-                  className += 'border-red-500 bg-red-50';
+                  className += 'border-red-500 dark:border-red-500 bg-red-50 dark:bg-red-900/30';
                 } else {
-                  className += 'border-slate-200 opacity-50';
+                  className += 'border-slate-200 dark:border-zinc-700 opacity-50 text-slate-500 dark:text-slate-400';
                 }
               } else {
                 className += isSelected
-                  ? 'border-black bg-slate-50'
-                  : 'border-slate-200 hover:border-slate-400 hover:bg-slate-50';
+                  ? 'border-black dark:border-white bg-slate-50 dark:bg-zinc-800 text-black dark:text-white'
+                  : 'border-slate-200 dark:border-zinc-700 hover:border-slate-400 dark:hover:border-zinc-500 hover:bg-slate-50 dark:hover:bg-zinc-800 text-slate-700 dark:text-slate-300';
               }
 
               return (
@@ -145,9 +145,9 @@ function CategoryPracticeContent({ params }: { params: Promise<{ category: strin
                   className={className}
                 >
                   <div className="flex items-center gap-3">
-                    {showAnswer && isCorrectOption && <CheckCircle className="w-6 h-6 text-green-600" />}
-                    {showAnswer && isSelected && !isCorrectOption && <XCircle className="w-6 h-6 text-red-600" />}
-                    <span className="text-sm text-black">{option}</span>
+                    {showAnswer && isCorrectOption && <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-500" />}
+                    {showAnswer && isSelected && !isCorrectOption && <XCircle className="w-6 h-6 text-red-600 dark:text-red-500" />}
+                    <span className={`text-sm ${showAnswer ? (isCorrectOption ? 'text-green-900 dark:text-green-300' : isSelected ? 'text-red-900 dark:text-red-300' : 'text-black dark:text-white') : ''}`}>{option}</span>
                   </div>
                 </button>
               );
@@ -155,17 +155,17 @@ function CategoryPracticeContent({ params }: { params: Promise<{ category: strin
           </div>
 
           {showAnswer && (
-            <div className={`p-4 rounded-xl ${isCorrect ? 'bg-green-50' : 'bg-red-50'}`}>
+            <div className={`p-4 rounded-xl ${isCorrect ? 'bg-green-50 dark:bg-green-900/20' : 'bg-red-50 dark:bg-red-900/20'}`}>
               <div className="flex items-center gap-2">
                 {isCorrect ? (
                   <>
-                    <CheckCircle className="w-6 h-6 text-green-600" />
-                    <span className="font-semibold text-green-800">Correct!</span>
+                    <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-500" />
+                    <span className="font-semibold text-green-800 dark:text-green-400">Correct!</span>
                   </>
                 ) : (
                   <>
-                    <XCircle className="w-6 h-6 text-red-600" />
-                    <span className="font-semibold text-red-800">
+                    <XCircle className="w-6 h-6 text-red-600 dark:text-red-500" />
+                    <span className="font-semibold text-red-800 dark:text-red-400">
                       Correct answer: {currentQuestion.options[currentQuestion.correctAnswer]}
                     </span>
                   </>
@@ -177,7 +177,7 @@ function CategoryPracticeContent({ params }: { params: Promise<{ category: strin
           {!showAnswer && selectedAnswer !== null && (
             <button
               onClick={handleCheckAnswer}
-              className="w-full bg-black text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 hover:shadow-md transition-all"
+              className="w-full bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 dark:hover:bg-slate-200 hover:shadow-md transition-all"
             >
               Check Answer
             </button>
@@ -188,7 +188,7 @@ function CategoryPracticeContent({ params }: { params: Promise<{ category: strin
           <button
             onClick={handlePrevious}
             disabled={currentIndex === 0}
-            className="px-6 py-3 rounded-xl font-semibold border-2 border-slate-300 disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-100 transition-colors"
+            className="px-6 py-3 rounded-xl font-semibold border-2 border-slate-300 dark:border-zinc-700 text-black dark:text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-100 dark:hover:bg-zinc-800 transition-colors"
           >
             Previous
           </button>
@@ -196,7 +196,7 @@ function CategoryPracticeContent({ params }: { params: Promise<{ category: strin
           <button
             onClick={handleNext}
             disabled={currentIndex === questions.length - 1}
-            className="px-6 py-3 rounded-xl font-semibold bg-black text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-800 hover:shadow-md transition-all"
+            className="px-6 py-3 rounded-xl font-semibold bg-black dark:bg-white text-white dark:text-black disabled:opacity-50 disabled:cursor-not-allowed hover:bg-slate-800 dark:hover:bg-slate-200 hover:shadow-md transition-all"
           >
             Next
           </button>
