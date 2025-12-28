@@ -111,26 +111,27 @@ function QuizReviewContent() {
         .filter((q): q is NonNullable<typeof q> => q !== null)
         .filter(q => {
             if (!searchTerm) return true;
-            return q.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                q.category.toLowerCase().includes(searchTerm.toLowerCase());
+            const search = searchTerm.toLowerCase();
+            return (q.question && q.question.toLowerCase().includes(search)) ||
+                   (q.category && q.category.toLowerCase().includes(search));
         });
 
     // Sorting
     filteredQuestions.sort((a, b) => {
         if (sortType === 'incorrect') {
-            if (a.isCorrect === b.isCorrect) return a.id - b.id;
+            if (a.isCorrect === b.isCorrect) return (a.id ?? 0) - (b.id ?? 0);
             return a.isCorrect ? 1 : -1; // Put incorrect first
         }
         if (sortType === 'flagged') {
-            if (a.isFlagged === b.isFlagged) return a.id - b.id;
+            if (a.isFlagged === b.isFlagged) return (a.id ?? 0) - (b.id ?? 0);
             return a.isFlagged ? -1 : 1; // Put flagged first
         }
         if (sortType === 'important') {
-            if (a.isImportant === b.isImportant) return a.id - b.id;
+            if (a.isImportant === b.isImportant) return (a.id ?? 0) - (b.id ?? 0);
             return a.isImportant ? -1 : 1; // Put important first
         }
         // Default: ID order
-        return a.id - b.id;
+        return (a.id ?? 0) - (b.id ?? 0);
     });
 
     // Pagination
@@ -246,7 +247,7 @@ function QuizReviewContent() {
                             </div>
 
                             <div className="space-y-2 pl-11">
-                                {q.options.map((option, idx) => {
+                                {q.options && q.options.map((option, idx) => {
                                     const isSelected = q.selectedAnswer === idx;
                                     const isCorrect = q.correctAnswer === idx;
 
