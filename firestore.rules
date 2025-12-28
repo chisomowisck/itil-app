@@ -66,6 +66,12 @@ service cloud.firestore {
       allow delete: if isAuthenticated() &&
                        resource.data.userId == request.auth.uid;
     }
+
+    // Quiz progress collection
+    match /quizProgress/{userId} {
+      // Users can read and write their own progress
+      allow read, write: if isOwner(userId);
+    }
   }
 }
 

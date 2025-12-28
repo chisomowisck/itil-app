@@ -59,6 +59,20 @@ export interface ExamScore {
   createdAt?: Timestamp;
 }
 
+export interface QuizProgress {
+  userId: string;
+  currentQuestionIndex: number;
+  answers: { [key: number]: number }; // questionId -> selectedAnswerIndex
+  flaggedQuestions: number[]; // Array of questionIds
+  importantQuestions: number[]; // Array of questionIds
+  stats: {
+    correct: number;
+    incorrect: number;
+    totalAnswered: number;
+  };
+  lastUpdated: Timestamp;
+}
+
 // ============================================================================
 // QUESTIONS COLLECTION SERVICES
 // ============================================================================
@@ -333,6 +347,57 @@ export async function updateUserStats(
     }
   } catch (error) {
     console.error("Error updating user stats:", error);
+    throw error;
+  }
+}
+
+// ============================================================================
+// QUIZ PROGRESS SERVICES
+// ============================================================================
+
+/**
+ * Get quiz progress for a user
+ */
+export async function getQuizProgress(userId: string): Promise<QuizProgress | null> {
+  try {
+    const docRef = doc(db, "quizProgress", userId);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      return docSnap.data() as QuizProgress;
+    }
+    return null;
+  } catch (error) {
+    console.error("Error fetching quiz progress:", error);
+    throw error;
+  }
+}
+
+/**
+ * Save quiz progress for a user
+ */
+export async function saveQuizProgress(userId: string, progress: Omit<QuizProgress, "lastUpdated">): Promise<void> {
+  try {
+    const docRef = doc(db, "quizProgress", userId);
+    await setDoc(docRef, {
+      ...progress,
+      lastUpdated: Timestamp.now(),
+    });
+  } catch (error) {
+    console.error("Error saving quiz progress:", error);
+    throw error;
+  }
+}
+
+/**
+ * Reset/Delete quiz progress for a user
+ */
+export async function resetQuizProgress(userId: string): Promise<void> {
+  try {
+    const docRef = doc(db, "quizProgress", userId);
+    await deleteDoc(docRef);
+  } catch (error) {
+    console.error("Error resetting quiz progress:", error);
     throw error;
   }
 }

@@ -2,12 +2,13 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Home, TrendingUp, Award, Clock, Flag, Star, CheckCircle, XCircle, Calendar, Trash2, Filter, BarChart3, Target, AlertCircle, ChevronDown, ChevronUp, ChevronRight } from 'lucide-react';
+import { Home, TrendingUp, Award, Clock, Flag, Star, CheckCircle, XCircle, Calendar, Trash2, Filter, BarChart3, Target, AlertCircle, ChevronDown, ChevronUp, ChevronRight, ArrowRight } from 'lucide-react';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import UserProfile from '@/components/auth/UserProfile';
 import Navigation from '@/components/Navigation';
 import { useAuth } from '@/contexts/AuthContext';
-import { getAllExamScores, deleteExamScore, deleteAllExamScores } from '@/lib/firebase/services';
+import { getAllExamScores, deleteExamScore, deleteAllExamScores, getQuizProgress, resetQuizProgress, QuizProgress, getAllQuestions } from '@/lib/firebase/services';
+import { useRouter } from 'next/navigation';
 
 interface QuestionResult {
   questionId: number;
@@ -41,45 +42,45 @@ type FilterType = 'all' | 'passed' | 'failed' | 'flagged' | 'important';
 
 function ProgressContent() {
   const { user } = useAuth();
+  const router = useRouter();
   const [scores, setScores] = useState<ExamScore[]>([]);
+  const [quizProgress, setQuizProgress] = useState<QuizProgress | null>(null);
+  const [totalQuestionsCount, setTotalQuestionsCount] = useState(0);
   const [filterType, setFilterType] = useState<FilterType>('all');
 
   useEffect(() => {
     // Load scores from Firebase first, fallback to localStorage
-    const loadScores = async () => {
+    const loadData = async () => {
       if (!user) return;
 
       try {
-        // Load directly using client SDK to pass auth context
+        // Load exam scores
         const data = await getAllExamScores(user.uid);
-
         if (data.length > 0) {
           setScores(data);
         } else {
-          // Fallback to localStorage logic is a bit weird here since we want cloud sync
-          // But if cloud is empty, maybe check local? 
-          // For now, let's prioritize cloud, and if empty there, check local just in case
           const savedScores = localStorage.getItem('examScores');
           if (savedScores) {
-            const localScores = JSON.parse(savedScores);
-            // In a real app we might merge, but here let's just show local if cloud is empty
-            // or maybe better to migrate local to cloud?
-            // Let's keep existing behavior: if cloud empty, show local
-            setScores(localScores);
+            setScores(JSON.parse(savedScores));
           }
         }
+
+        // Load quiz progress
+        const progress = await getQuizProgress(user.uid);
+        setQuizProgress(progress);
+
+        // Load total questions count for calc
+        const allQ = await getAllQuestions();
+        setTotalQuestionsCount(allQ.length || 487); // Fallback to 487 if fetch empty/fails
+
       } catch (error) {
-        console.error('Error loading scores from Firebase:', error);
-        // Fallback to localStorage
-        const savedScores = localStorage.getItem('examScores');
-        if (savedScores) {
-          setScores(JSON.parse(savedScores));
-        }
+        console.error('Error loading data:', error);
       }
     };
 
-    loadScores();
+    loadData();
   }, [user]);
+
 
   const formatTime = (seconds: number) => {
     const mins = Math.floor(seconds / 60);
@@ -138,6 +139,19 @@ function ProgressContent() {
     }
   };
 
+  const handleResetQuiz = async () => {
+    if (!user) return;
+    if (confirm('Are you sure you want to reset your Quiz progress? This cannot be undone.')) {
+      try {
+        await resetQuizProgress(user.uid);
+        setQuizProgress(null);
+        router.refresh();
+      } catch (error) {
+        console.error('Error resetting quiz:', error);
+      }
+    }
+  };
+
   const filteredScores = scores.filter(score => {
     if (filterType === 'passed') return score.passed;
     if (filterType === 'failed') return !score.passed;
@@ -182,6 +196,86 @@ function ProgressContent() {
       </header>
 
       <main className="container mx-auto px-6 py-8 max-w-6xl">
+        {/* Quiz Progress Section */}
+        <div className="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 p-6 shadow-sm mb-8">
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <h2 className="text-xl font-bold text-black dark:text-white">Quiz Mode Progress</h2>
+              <p className="text-sm text-slate-600 dark:text-slate-400">Track your progress through all {totalQuestionsCount} questions</p>
+            </div>
+            <div className="flex gap-3">
+              {quizProgress ? (
+                <>
+                  <button
+                    onClick={handleResetQuiz}
+                    className="px-4 py-2 text-sm font-semibold text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-lg transition-colors"
+                  >
+                    Reset Quiz
+                  </button>
+                  <Link
+                    href="/quiz"
+                    className="px-4 py-2 text-sm font-semibold bg-black dark:bg-white text-white dark:text-black rounded-lg hover:bg-slate-800 dark:hover:bg-slate-200 transition-colors flex items-center gap-2"
+                  >
+                    Resume Quiz
+                    <ChevronRight className="w-4 h-4" />
+                  </Link>
+                </>
+              ) : (
+                <Link
+                  href="/quiz"
+                  className="px-4 py-2 text-sm font-semibold bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                >
+                  Start New Quiz
+                </Link>
+              )}
+            </div>
+          </div>
+
+          {quizProgress ? (
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              <div className="p-4 bg-slate-50 dark:bg-zinc-800 rounded-xl">
+                <div className="text-sm text-slate-500 dark:text-slate-400 mb-1">Questions Answered</div>
+                <div className="text-2xl font-bold text-black dark:text-white">
+                  {quizProgress.stats.totalAnswered} <span className="text-sm font-normal text-slate-400">/ {totalQuestionsCount}</span>
+                </div>
+                <div className="w-full bg-slate-200 dark:bg-zinc-700 h-1.5 rounded-full mt-3">
+                  <div
+                    className="bg-blue-600 h-1.5 rounded-full"
+                    style={{ width: `${(quizProgress.stats.totalAnswered / totalQuestionsCount) * 100}%` }}
+                  />
+                </div>
+              </div>
+              <div className="p-4 bg-slate-50 dark:bg-zinc-800 rounded-xl">
+                <div className="text-sm text-slate-500 dark:text-slate-400 mb-1">Current Level</div>
+                <div className="text-2xl font-bold text-black dark:text-white">
+                  {Math.floor(quizProgress.currentQuestionIndex / 20) + 1}
+                </div>
+              </div>
+              <div className="p-4 bg-slate-50 dark:bg-zinc-800 rounded-xl">
+                <div className="text-sm text-slate-500 dark:text-slate-400 mb-1">Accuracy</div>
+                <div className={`text-2xl font-bold ${(quizProgress.stats.correct / quizProgress.stats.totalAnswered) >= 0.65
+                  ? 'text-green-600 dark:text-green-400'
+                  : 'text-orange-600 dark:text-orange-400'
+                  }`}>
+                  {quizProgress.stats.totalAnswered > 0
+                    ? Math.round((quizProgress.stats.correct / quizProgress.stats.totalAnswered) * 100)
+                    : 0}%
+                </div>
+              </div>
+              <div className="p-4 bg-slate-50 dark:bg-zinc-800 rounded-xl">
+                <div className="text-sm text-slate-500 dark:text-slate-400 mb-1">Actions</div>
+                <Link href="/quiz/review" className="text-blue-600 dark:text-blue-400 hover:underline text-sm font-semibold flex items-center gap-1">
+                  Review All Answers <ArrowRight className="w-3 h-3" />
+                </Link>
+              </div>
+            </div>
+          ) : (
+            <div className="text-center py-8 bg-slate-50 dark:bg-zinc-800 rounded-xl border border-dashed border-slate-300 dark:border-zinc-700">
+              <p className="text-slate-600 dark:text-slate-400">You haven't started the full quiz mode yet.</p>
+            </div>
+          )}
+        </div>
+
         {/* Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
           <div className="bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800 p-6 shadow-sm hover:shadow-md transition-shadow">

@@ -58,6 +58,13 @@ export default function Home() {
         color: "bg-orange-50 border-orange-200 hover:border-orange-400"
       },
       {
+        title: "Quiz Mode",
+        description: "Answer all 400+ questions with progress saving and levels.",
+        icon: <LayoutGrid className="w-8 h-8 text-pink-600" />,
+        href: "/quiz",
+        color: "bg-pink-50 border-pink-200 hover:border-pink-400"
+      },
+      {
         title: "Progress",
         description: "Track your performance and see your improvement.",
         icon: <TrendingUp className="w-8 h-8 text-red-600" />,
