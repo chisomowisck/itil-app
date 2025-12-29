@@ -9,6 +9,7 @@ import Navigation from '@/components/Navigation';
 import UserProfile from '@/components/auth/UserProfile';
 import { getExamScoreById, ExamScore } from '@/lib/firebase/services';
 import { useAuth } from '@/contexts/AuthContext';
+import ExplanationBox from '@/components/ExplanationBox';
 
 
 function ExamDetailContent({ id }: { id: string }) {
@@ -332,7 +333,7 @@ function ExamDetailContent({ id }: { id: string }) {
                                                     Explanation
                                                 </h4>
                                                 <p className="text-sm text-slate-700 dark:text-slate-300 leading-relaxed">
-                                                    {result.explanation}
+                                                    <ExplanationBox explanation={result.explanation} />
                                                 </p>
                                             </div>
                                         )}

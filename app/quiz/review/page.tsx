@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, CheckCircle, XCircle, Flag, Star, Filter, AlertCircle, Search, ChevronLeft, ChevronRight, ArrowUpDown, RotateCcw, Target, Zap, TrendingUp } from 'lucide-react';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
+import ExplanationBox from '@/components/ExplanationBox';
 import { useAuth } from '@/contexts/AuthContext';
 import { getQuizProgress, QuizProgress, getAllQuestions, Question } from '@/lib/firebase/services';
 
@@ -398,11 +399,11 @@ function QuizReviewContent() {
                                 })}
                             </div>
 
-                            <div className="mt-4 pl-11 pt-4 border-t border-slate-100 dark:border-zinc-800">
-                                <p className="text-sm text-slate-600 dark:text-slate-400">
-                                    <span className="font-semibold text-slate-900 dark:text-white">Explanation:</span> {q.explanation}
-                                </p>
-                            </div>
+                            {q.explanation && (
+                                <div className="mt-4 pl-11">
+                                    <ExplanationBox explanation={q.explanation} />
+                                </div>
+                            )}
                         </div>
                     ))}
 

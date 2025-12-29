@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Clock, Home, CheckCircle, XCircle, AlertCircle, Flag, Shuffle, Filter, List, Eye, EyeOff, ChevronLeft, ChevronRight, SkipForward, BookOpen, FileText, ClipboardList, Star, TrendingUp, Award, ChevronDown, ChevronUp } from 'lucide-react';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import UserProfile from '@/components/auth/UserProfile';
+import ExplanationBox from '@/components/ExplanationBox';
 import { useAuth } from '@/contexts/AuthContext';
 import { saveExamScore } from '@/lib/firebase/services';
 
@@ -517,7 +518,7 @@ function MockExamContent() {
                           </div>
                         </div>
 
-                        <div className="space-y-2">
+                        <div className="space-y-2 mb-4">
                           {q.options.map((option, optIndex) => {
                             const isUserAnswer = userAnswer === optIndex;
                             const isCorrectAnswer = q.correctAnswer === optIndex;
@@ -550,6 +551,10 @@ function MockExamContent() {
                             );
                           })}
                         </div>
+
+                        {q.explanation && (
+                          <ExplanationBox explanation={q.explanation} />
+                        )}
                       </div>
                     </div>
                   </div>

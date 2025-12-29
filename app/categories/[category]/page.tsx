@@ -7,6 +7,7 @@ import { Home, ArrowLeft, CheckCircle, XCircle } from 'lucide-react';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import UserProfile from '@/components/auth/UserProfile';
 import Navigation from '@/components/Navigation';
+import ExplanationBox from '@/components/ExplanationBox';
 
 interface Question {
   id: number;
@@ -14,6 +15,7 @@ interface Question {
   options: string[];
   correctAnswer: number;
   category: string;
+  explanation: string;
 }
 
 function CategoryPracticeContent({ params }: { params: Promise<{ category: string }> }) {
@@ -155,22 +157,28 @@ function CategoryPracticeContent({ params }: { params: Promise<{ category: strin
           </div>
 
           {showAnswer && (
-            <div className={`p-4 rounded-xl ${isCorrect ? 'bg-green-50 dark:bg-green-900/20' : 'bg-red-50 dark:bg-red-900/20'}`}>
-              <div className="flex items-center gap-2">
-                {isCorrect ? (
-                  <>
-                    <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-500" />
-                    <span className="font-semibold text-green-800 dark:text-green-400">Correct!</span>
-                  </>
-                ) : (
-                  <>
-                    <XCircle className="w-6 h-6 text-red-600 dark:text-red-500" />
-                    <span className="font-semibold text-red-800 dark:text-red-400">
-                      Correct answer: {currentQuestion.options[currentQuestion.correctAnswer]}
-                    </span>
-                  </>
-                )}
+            <div className="space-y-4">
+              <div className={`p-4 rounded-xl ${isCorrect ? 'bg-green-50 dark:bg-green-900/20' : 'bg-red-50 dark:bg-red-900/20'}`}>
+                <div className="flex items-center gap-2">
+                  {isCorrect ? (
+                    <>
+                      <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-500" />
+                      <span className="font-semibold text-green-800 dark:text-green-400">Correct!</span>
+                    </>
+                  ) : (
+                    <>
+                      <XCircle className="w-6 h-6 text-red-600 dark:text-red-500" />
+                      <span className="font-semibold text-red-800 dark:text-red-400">
+                        Correct answer: {currentQuestion.options[currentQuestion.correctAnswer]}
+                      </span>
+                    </>
+                  )}
+                </div>
               </div>
+
+              {currentQuestion.explanation && (
+                <ExplanationBox explanation={currentQuestion.explanation} />
+              )}
             </div>
           )}
 

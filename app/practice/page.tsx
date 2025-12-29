@@ -6,6 +6,7 @@ import { Home, CheckCircle, XCircle, ArrowRight, ArrowLeft } from 'lucide-react'
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import UserProfile from '@/components/auth/UserProfile';
 import Navigation from '@/components/Navigation';
+import ExplanationBox from '@/components/ExplanationBox';
 
 interface Question {
   id: number;
@@ -150,23 +151,29 @@ function PracticeContent() {
           </div>
 
           {showAnswer && (
-            <div className={`p-4 rounded-xl ${isCorrect ? 'bg-green-50 dark:bg-green-900/20' : 'bg-red-50 dark:bg-red-900/20'}`}>
-              <div className="flex items-center gap-2 mb-2">
-                {isCorrect ? (
-                  <>
-                    <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-500" />
-                    <span className="font-semibold text-green-800 dark:text-green-400">Correct!</span>
-                  </>
-                ) : (
-                  <>
-                    <XCircle className="w-6 h-6 text-red-600 dark:text-red-500" />
-                    <span className="font-semibold text-red-800 dark:text-red-400">Incorrect</span>
-                  </>
-                )}
+            <div className="space-y-4">
+              <div className={`p-4 rounded-xl ${isCorrect ? 'bg-green-50 dark:bg-green-900/20' : 'bg-red-50 dark:bg-red-900/20'}`}>
+                <div className="flex items-center gap-2 mb-2">
+                  {isCorrect ? (
+                    <>
+                      <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-500" />
+                      <span className="font-semibold text-green-800 dark:text-green-400">Correct!</span>
+                    </>
+                  ) : (
+                    <>
+                      <XCircle className="w-6 h-6 text-red-600 dark:text-red-500" />
+                      <span className="font-semibold text-red-800 dark:text-red-400">Incorrect</span>
+                    </>
+                  )}
+                </div>
+                <p className="text-sm text-slate-700 dark:text-slate-300">
+                  The correct answer is: <strong className="text-black dark:text-white">{currentQuestion.options[currentQuestion.correctAnswer]}</strong>
+                </p>
               </div>
-              <p className="text-sm text-slate-700 dark:text-slate-300">
-                The correct answer is: <strong className="text-black dark:text-white">{currentQuestion.options[currentQuestion.correctAnswer]}</strong>
-              </p>
+
+              {currentQuestion.explanation && (
+                <ExplanationBox explanation={currentQuestion.explanation} />
+              )}
             </div>
           )}
 

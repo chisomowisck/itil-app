@@ -10,7 +10,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "In ITIL 4, a <b>service<b> enables value co-creation by facilitating desired outcomes <b>without the consumer managing specific costs and risks<b>. The missing word is <b>Costs</b>, because services remove or reduce the consumer’s need to manage those costs directly."
+    "explanation": ""
   },
   {
     "id": 2,
@@ -23,7 +23,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Desk",
-    "explanation": "<b>The Service Desk should work in close collaboration with support and development teams</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 3,
@@ -36,7 +36,7 @@
     ],
     "correctAnswer": 1,
     "category": "Incident Management",
-    "explanation": "<b>Improve</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 4,
@@ -49,7 +49,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>The Continual Improvement model</b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 5,
@@ -62,7 +62,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Desk",
-    "explanation": "The <b>Service Desk<b> provides a <b>single point of contact<b> for users and handles communications for incidents and requests. <b>Service Desk</b> is correct because this is a defining purpose of the Service Desk practice."
+    "explanation": ""
   },
   {
     "id": 6,
@@ -75,7 +75,7 @@
     ],
     "correctAnswer": 2,
     "category": "Incident Management",
-    "explanation": "<b>Service Desk</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 7,
@@ -88,7 +88,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>IT Asset Management and software asset management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 8,
@@ -101,7 +101,7 @@
     ],
     "correctAnswer": 1,
     "category": "Incident Management",
-    "explanation": "<b>The incident category</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 9,
@@ -114,7 +114,7 @@
     ],
     "correctAnswer": 3,
     "category": "Change Control",
-    "explanation": "Service Request Management often fulfills requests using <b>standard changes<b>—pre-authorized, low-risk, repeatable changes with proven procedures. Therefore <b>A standard change</b> is most likely to be managed through Service Request Management."
+    "explanation": ""
   },
   {
     "id": 10,
@@ -127,7 +127,7 @@
     ],
     "correctAnswer": 3,
     "category": "Continual Improvement",
-    "explanation": "<b>Making business cases for improvement action</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 11,
@@ -140,7 +140,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "Emergency changes are handled quickly, but still require assessment and authorization—just expedited. <b>The assessment and Authorization of Emergency Changes is expedited to ensure they can be implemented quickly</b> is correct because ITIL expects emergency changes to be authorized rapidly to restore service or address urgent risks, not to skip governance entirely."
+    "explanation": ""
   },
   {
     "id": 12,
@@ -153,7 +153,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Keep it simple and practical<b> recommends using the minimum number of steps and removing anything that does not add value. <b>Understand how each element contributes to value creation</b> is correct because it aligns directly with simplifying workflows."
+    "explanation": ""
   },
   {
     "id": 13,
@@ -166,7 +166,7 @@
     ],
     "correctAnswer": 0,
     "category": "Continual Improvement",
-    "explanation": "<b>Accurate and carefully analysed data</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 14,
@@ -179,7 +179,7 @@
     ],
     "correctAnswer": 1,
     "category": "Event Management",
-    "explanation": "<b>To systematically observe services and service components, and record and report selected changes of state</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 15,
@@ -192,7 +192,7 @@
     ],
     "correctAnswer": 3,
     "category": "Continual Improvement",
-    "explanation": "<b>Each iteration should be continually re-evaluated based on feedback</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 16,
@@ -205,7 +205,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>By replacing human intervention wherever possible</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 17,
@@ -218,7 +218,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>Engage, Plan, and Improve<b> are <b>Service Value Chain activities<b> used to convert inputs into outputs and form value streams. <b>Service Value Chain activities</b> is correct because these are the named SVC activities."
+    "explanation": ""
   },
   {
     "id": 18,
@@ -231,7 +231,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Understanding the vision and objectives of the organization</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 19,
@@ -244,7 +244,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>Ideation, Design, Develop, Deploy, Test, Operate, Retire</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 20,
@@ -257,7 +257,7 @@
     ],
     "correctAnswer": 0,
     "category": "Problem Management",
-    "explanation": "A workaround can be documented as soon as it is known and useful—often right after the problem is logged—so that incident resolution can benefit immediately. <b>Whenever the workaround is used</b> is correct because early documentation reduces impact while a permanent fix is developed."
+    "explanation": ""
   },
   {
     "id": 21,
@@ -270,7 +270,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Change Control</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 22,
@@ -283,7 +283,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "An <b>output<b> is something produced by an activity (for example, a report, a deployed component, or a completed ticket). The P&L report is a deliverable created by the system, so it is an <b>Something created by carrying out an activity</b>—it can then enable outcomes such as better financial decisions."
+    "explanation": ""
   },
   {
     "id": 23,
@@ -296,7 +296,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Start where you are<b> means assessing the current state and reusing what works, using <b>measurement to support—rather than replace—direct observation<b>. <b>Measurement</b> is correct because it reflects ITIL’s guidance on baselines and evidence."
+    "explanation": ""
   },
   {
     "id": 24,
@@ -309,7 +309,7 @@
     ],
     "correctAnswer": 2,
     "category": "Incident Management",
-    "explanation": "<b>Problem Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 25,
@@ -322,7 +322,7 @@
     ],
     "correctAnswer": 1,
     "category": "Problem Management",
-    "explanation": "<b>It should be prioritized based on its potential impact and probability</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 26,
@@ -335,7 +335,7 @@
     ],
     "correctAnswer": 2,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>Take action</b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 27,
@@ -348,7 +348,7 @@
     ],
     "correctAnswer": 2,
     "category": "Four Dimensions",
-    "explanation": "<b>Roles and responsibilities</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 28,
@@ -361,7 +361,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Request Management",
-    "explanation": "<b>It acquires pre-approved service components to help fulfill service requests</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 29,
@@ -374,7 +374,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "An <b>outcome<b> is a result for a stakeholder, enabled by one or more outputs. The correct option (<b>Results desired by a stakeholder</b>) matches ITIL’s definition because services and outputs exist to help consumers achieve outcomes, not just produce outputs."
+    "explanation": ""
   },
   {
     "id": 30,
@@ -387,7 +387,7 @@
     ],
     "correctAnswer": 1,
     "category": "Incident Management",
-    "explanation": "<b>An application is not available during the business hours</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 31,
@@ -400,7 +400,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "In ITIL 4, a <b>service<b> enables value co-creation by facilitating desired outcomes <b>without the consumer managing specific costs and risks<b>. The missing word is <b>A service</b>, because services remove or reduce the consumer’s need to manage those costs directly."
+    "explanation": ""
   },
   {
     "id": 32,
@@ -413,7 +413,7 @@
     ],
     "correctAnswer": 0,
     "category": "Information Security",
-    "explanation": "<b>To protect the information needed by the organization to conduct its business</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 33,
@@ -426,7 +426,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>The time needed to realistically deliver the service</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 34,
@@ -439,7 +439,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Level Management",
-    "explanation": "<b>Business analysis and commercial management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 35,
@@ -452,7 +452,7 @@
     ],
     "correctAnswer": 2,
     "category": "Change Control",
-    "explanation": "Service Request Management often fulfills requests using <b>standard changes<b>—pre-authorized, low-risk, repeatable changes with proven procedures. Therefore <b>The installation of a software application in response to a service request</b> is most likely to be managed through Service Request Management."
+    "explanation": ""
   },
   {
     "id": 36,
@@ -465,7 +465,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Desk",
-    "explanation": "<b>All of the above</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 37,
@@ -478,7 +478,7 @@
     ],
     "correctAnswer": 0,
     "category": "Problem Management",
-    "explanation": "<b>Trend analysis shows a large number of similar incidents</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 38,
@@ -491,7 +491,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Using operational data to provide detailed service reports</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 39,
@@ -504,7 +504,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Keep it simple and practical<b> recommends using the minimum number of steps and removing anything that does not add value. <b>Keep It Simple and Practical</b> is correct because it aligns directly with simplifying workflows."
+    "explanation": ""
   },
   {
     "id": 40,
@@ -517,7 +517,7 @@
     ],
     "correctAnswer": 0,
     "category": "Four Dimensions",
-    "explanation": "<b>Value Streams and Processes</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 41,
@@ -530,7 +530,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "<b>Normal changes should be assessed and authorized before they are deployed</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 42,
@@ -543,7 +543,7 @@
     ],
     "correctAnswer": 1,
     "category": "Continual Improvement",
-    "explanation": "<b>Select a few key methods for the types of improvement that the organization handles</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 43,
@@ -556,7 +556,7 @@
     ],
     "correctAnswer": 2,
     "category": "Problem Management",
-    "explanation": "A <b>known error<b> is a problem that has been <b>analysed<b> and has not been resolved. <b>Analysed</b> is correct because analysis confirms the cause and documents the error state, even if a permanent fix is not yet applied."
+    "explanation": ""
   },
   {
     "id": 44,
@@ -569,7 +569,7 @@
     ],
     "correctAnswer": 0,
     "category": "Four Dimensions",
-    "explanation": "<b>Value Streams and Processes</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 45,
@@ -582,7 +582,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Desk",
-    "explanation": "<b>To capture demand for Incident Resolution and service requests</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 46,
@@ -595,7 +595,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Service Level Management<b> uses techniques like service reviews and <b>event-based surveys<b> to understand customer satisfaction and whether service levels support desired outcomes. <b>Service Level Management</b> is correct because SLM is responsible for measuring and improving the customer’s experience against agreed targets."
+    "explanation": ""
   },
   {
     "id": 47,
@@ -608,7 +608,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>It integrates practices for a specific scenario</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 48,
@@ -621,7 +621,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Think and Work Holistically</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 49,
@@ -634,7 +634,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Request Management",
-    "explanation": "Service requests should use <b>standard, proven request models/workflows<b> and be automated where practical. <b>They should be well-known and proven</b> is correct because ITIL promotes predictable, well-understood steps to set expectations and ensure consistent fulfilment."
+    "explanation": ""
   },
   {
     "id": 50,
@@ -647,7 +647,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Continual Improvement</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 51,
@@ -660,7 +660,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Request Management",
-    "explanation": "<b>By initiating standard changes to fulfill service requests</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 52,
@@ -673,7 +673,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Request Management",
-    "explanation": "Service requests should use <b>standard, proven request models/workflows<b> and be automated where practical. <b>Leverage existing workflows whenever possible</b> is correct because ITIL promotes predictable, well-understood steps to set expectations and ensure consistent fulfilment."
+    "explanation": ""
   },
   {
     "id": 53,
@@ -686,7 +686,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Costs removed from the consumer are part of the value proposition</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 54,
@@ -699,7 +699,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Continual Improvement</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 55,
@@ -712,7 +712,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>They contribute to the achievement of outcomes</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 56,
@@ -725,7 +725,7 @@
     ],
     "correctAnswer": 1,
     "category": "Incident Management",
-    "explanation": "<b>As a problem</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 57,
@@ -738,7 +738,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Value System",
-    "explanation": "The <b>Service Value System (SVS)<b> describes how all components and activities work together to enable value creation. <b>How all the components and activities of the organization work together as a system to enable value creation</b> is correct because it matches the SVS definition, not a single practice or relationship concept."
+    "explanation": ""
   },
   {
     "id": 58,
@@ -751,7 +751,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>To help an organization make good decisions</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 59,
@@ -764,7 +764,7 @@
     ],
     "correctAnswer": 1,
     "category": "Relationship Management",
-    "explanation": "<b>Consumer and provider</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 60,
@@ -777,7 +777,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Request Management",
-    "explanation": "Service requests are user‑initiated requests for information, access, or a standard service action. <b>Service degradation<b> is an <b>incident<b> (unplanned reduction in service quality), so <b>The degradation of a service</b> is the option that should *not* be handled as a service request."
+    "explanation": ""
   },
   {
     "id": 61,
@@ -790,7 +790,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Problem Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 62,
@@ -803,7 +803,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Service Level Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 63,
@@ -816,7 +816,7 @@
     ],
     "correctAnswer": 3,
     "category": "Relationship Management",
-    "explanation": "<b>Investigating a major incident</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 64,
@@ -829,7 +829,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Events</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 65,
@@ -842,7 +842,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Think and Work Holistically</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 66,
@@ -855,7 +855,7 @@
     ],
     "correctAnswer": 3,
     "category": "Problem Management",
-    "explanation": "<b>Trend analysis of incident records</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 67,
@@ -868,7 +868,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "<b>Normal changes are triggered by the creation of a change request which can be created manually or automated</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 68,
@@ -881,7 +881,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Focus on Value</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 69,
@@ -894,7 +894,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Desk",
-    "explanation": "<b>Acknowledge, classify, own</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 70,
@@ -907,7 +907,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Value System",
-    "explanation": "<b>Engage, Plan, and Improve<b> are <b>Service Value Chain activities<b> used to convert inputs into outputs and form value streams. <b>Customer requirements</b> is correct because these are the named SVC activities."
+    "explanation": ""
   },
   {
     "id": 71,
@@ -920,7 +920,7 @@
     ],
     "correctAnswer": 0,
     "category": "Supplier Management",
-    "explanation": "<b>The level of integration and formality involved in the relationships between organizations</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 72,
@@ -933,7 +933,7 @@
     ],
     "correctAnswer": 2,
     "category": "Relationship Management",
-    "explanation": "<b>Relationship Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 73,
@@ -946,7 +946,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>A Service Desk agent provides support to a user</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 74,
@@ -959,7 +959,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Request Management",
-    "explanation": "<b>Service Request Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 75,
@@ -972,7 +972,7 @@
     ],
     "correctAnswer": 1,
     "category": "Problem Management",
-    "explanation": "<b>A cause, or potential cause, of one or more incidents</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 76,
@@ -985,7 +985,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Level Management",
-    "explanation": "<b>Customer engagement</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 77,
@@ -998,7 +998,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Review each Guiding Principle to decide how relevant it is to the specific decision</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 78,
@@ -1011,7 +1011,7 @@
     ],
     "correctAnswer": 0,
     "category": "Incident Management",
-    "explanation": "<b>Scripts for collecting user information</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 79,
@@ -1024,7 +1024,7 @@
     ],
     "correctAnswer": 1,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>Performing baseline assessments</b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 80,
@@ -1037,7 +1037,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Service Desk</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 81,
@@ -1050,7 +1050,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>The number of passengers checked in</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 82,
@@ -1063,7 +1063,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Increasing collaboration and visibility for the improvement</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 83,
@@ -1076,7 +1076,7 @@
     ],
     "correctAnswer": 0,
     "category": "Incident Management",
-    "explanation": "The purpose of <b>Incident Management<b> is to <b>minimize negative impact<b> by restoring normal service operation as quickly as possible. <b>To minimize the negative impact of incidents by restoring normal service operation as quickly as possible</b> matches this purpose statement."
+    "explanation": ""
   },
   {
     "id": 84,
@@ -1089,7 +1089,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>An organization</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 85,
@@ -1102,7 +1102,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Value System",
-    "explanation": "<b>To continually improve all products and services across all value chain activities</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 86,
@@ -1115,7 +1115,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Customer</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 87,
@@ -1128,7 +1128,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Service Desk</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 88,
@@ -1141,7 +1141,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Change Control</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 89,
@@ -1154,7 +1154,7 @@
     ],
     "correctAnswer": 2,
     "category": "Release Management",
-    "explanation": "<b>To make new and changed services available for use</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 90,
@@ -1167,7 +1167,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Progress iteratively with feedback<b> recommends delivering in smaller increments and learning through feedback to reduce risk and adapt. <b>An improvement initiative that is broken into a number of manageable sections</b> is correct because it matches iterative improvement and early learning."
+    "explanation": ""
   },
   {
     "id": 91,
@@ -1180,7 +1180,7 @@
     ],
     "correctAnswer": 0,
     "category": "Continual Improvement",
-    "explanation": "<b>The Service Value System</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 92,
@@ -1193,7 +1193,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Warranty<b> is the assurance that a service will meet agreed requirements (such as availability, capacity, continuity, and security). <b>Warranty</b> is correct because it describes whether the service is *fit for use* under agreed conditions."
+    "explanation": ""
   },
   {
     "id": 93,
@@ -1206,7 +1206,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Focus on Value</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 94,
@@ -1219,7 +1219,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Progress iteratively with feedback<b> recommends delivering in smaller increments and learning through feedback to reduce risk and adapt. <b>The ability to discover and respond to failure earlier</b> is correct because it matches iterative improvement and early learning."
+    "explanation": ""
   },
   {
     "id": 95,
@@ -1232,7 +1232,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>The ITIL Service Value System</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 96,
@@ -1245,7 +1245,7 @@
     ],
     "correctAnswer": 3,
     "category": "Continual Improvement",
-    "explanation": "<b>Everyone in the organization is responsible for some aspects of Continual Improvement</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 97,
@@ -1258,7 +1258,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Recommendations that help an organization when adopting a Service Management approach</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 98,
@@ -1271,7 +1271,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Organizations and People</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 99,
@@ -1284,7 +1284,7 @@
     ],
     "correctAnswer": 3,
     "category": "Change Control",
-    "explanation": "<b>Emergency Changes are changes that must be implemented as soon as possible and therefore Authorization is expedited</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 100,
@@ -1297,7 +1297,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Utility<b> is the functionality a service offers—whether it is *fit for purpose*. <b>Utility</b> best matches utility because it focuses on what the service enables the consumer to do (the performance it supports), rather than assurances like availability or capacity (warranty)."
+    "explanation": ""
   },
   {
     "id": 101,
@@ -1310,7 +1310,7 @@
     ],
     "correctAnswer": 0,
     "category": "Information Security",
-    "explanation": "<b>Information security management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 102,
@@ -1323,7 +1323,7 @@
     ],
     "correctAnswer": 3,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>Evaluate measurements and metrics</b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 103,
@@ -1336,7 +1336,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Cost</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 104,
@@ -1349,7 +1349,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "<b>Changes to products and services</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 105,
@@ -1362,7 +1362,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Desk",
-    "explanation": "<b>Incident</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 106,
@@ -1375,7 +1375,7 @@
     ],
     "correctAnswer": 3,
     "category": "Change Control",
-    "explanation": "<b>Services</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 107,
@@ -1388,7 +1388,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Request Management",
-    "explanation": "<b>A compliment about an IT support team</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 108,
@@ -1401,7 +1401,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Level Management",
-    "explanation": "<b>Using bundled metrics to relate performance to outcomes</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 109,
@@ -1414,7 +1414,7 @@
     ],
     "correctAnswer": 3,
     "category": "Supplier Management",
-    "explanation": "<b>Working with an integrator to manage relationships</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 110,
@@ -1427,7 +1427,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Desk",
-    "explanation": "<b>Less low level work and a greater ability to focus on user experience</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 111,
@@ -1440,7 +1440,7 @@
     ],
     "correctAnswer": 0,
     "category": "Change Control",
-    "explanation": "<b>Collaborate and Promote Visibility</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 112,
@@ -1453,7 +1453,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Incident Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 113,
@@ -1466,7 +1466,7 @@
     ],
     "correctAnswer": 0,
     "category": "Relationship Management",
-    "explanation": "<b>It enables effective stakeholder management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 114,
@@ -1479,7 +1479,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Service Request Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 115,
@@ -1492,7 +1492,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Value System",
-    "explanation": "<b>Engage, Plan, and Improve<b> are <b>Service Value Chain activities<b> used to convert inputs into outputs and form value streams. <b>Inputs, outputs and triggers</b> is correct because these are the named SVC activities."
+    "explanation": ""
   },
   {
     "id": 116,
@@ -1505,7 +1505,7 @@
     ],
     "correctAnswer": 0,
     "category": "Incident Management",
-    "explanation": "<b>They are agreed, documented, and communicated to help set user expectations</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 117,
@@ -1518,7 +1518,7 @@
     ],
     "correctAnswer": 2,
     "category": "Problem Management",
-    "explanation": "A workaround can be documented as soon as it is known and useful—often right after the problem is logged—so that incident resolution can benefit immediately. <b>Problem Management and Incident Management</b> is correct because early documentation reduces impact while a permanent fix is developed."
+    "explanation": ""
   },
   {
     "id": 118,
@@ -1531,7 +1531,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Value System",
-    "explanation": "<b>Engage, Plan, and Improve<b> are <b>Service Value Chain activities<b> used to convert inputs into outputs and form value streams. <b>Each value chain activity uses different combinations of practices to convert inputs into outputs</b> is correct because these are the named SVC activities."
+    "explanation": ""
   },
   {
     "id": 119,
@@ -1544,7 +1544,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Desk",
-    "explanation": "The <b>Service Desk<b> provides a <b>single point of contact<b> for users and handles communications for incidents and requests. <b>Service provider</b> is correct because this is a defining purpose of the Service Desk practice."
+    "explanation": ""
   },
   {
     "id": 120,
@@ -1557,7 +1557,7 @@
     ],
     "correctAnswer": 2,
     "category": "Incident Management",
-    "explanation": "<b>Low impact incidents should be resolved efficiently so the resource required is reduced</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 121,
@@ -1570,7 +1570,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>Service Desk</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 122,
@@ -1583,7 +1583,7 @@
     ],
     "correctAnswer": 2,
     "category": "Incident Management",
-    "explanation": "<b>Collaboration between teams</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 123,
@@ -1596,7 +1596,7 @@
     ],
     "correctAnswer": 0,
     "category": "Relationship Management",
-    "explanation": "<b>To establish and nurture the links between the organization and its stakeholders</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 124,
@@ -1609,7 +1609,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Utility<b> is the functionality a service offers—whether it is *fit for purpose*. <b>A service that supports the performance of the consumer</b> best matches utility because it focuses on what the service enables the consumer to do (the performance it supports), rather than assurances like availability or capacity (warranty)."
+    "explanation": ""
   },
   {
     "id": 125,
@@ -1622,7 +1622,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Request Management",
-    "explanation": "<b>To streamline the fulfilment workflow</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 126,
@@ -1635,7 +1635,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Keep it simple and practical<b> recommends using the minimum number of steps and removing anything that does not add value. <b>Design controls and metrics first, then remove those not adding value</b> is correct because it aligns directly with simplifying workflows."
+    "explanation": ""
   },
   {
     "id": 127,
@@ -1648,7 +1648,7 @@
     ],
     "correctAnswer": 1,
     "category": "Information Security",
-    "explanation": "<b>Information and Technology</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 128,
@@ -1661,7 +1661,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Problem Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 129,
@@ -1674,7 +1674,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Think and work holistically<b> means considering end-to-end value and coordinating across all parts of the system (including the four dimensions). <b>Use the Four Dimensions of Service Management to ensure coordination of all aspects of an improvement initiative</b> is correct because it emphasizes whole-system coordination, not local optimization."
+    "explanation": ""
   },
   {
     "id": 130,
@@ -1687,7 +1687,7 @@
     ],
     "correctAnswer": 0,
     "category": "Relationship Management",
-    "explanation": "<b>Design and Transition</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 131,
@@ -1700,7 +1700,7 @@
     ],
     "correctAnswer": 1,
     "category": "Problem Management",
-    "explanation": "The purpose of <b>Problem Management<b> is to reduce the likelihood and impact of incidents by identifying causes and managing workarounds/known errors. <b>To reduce the likelihood and impact of incidents by identifying actual and potential causes of incidents, and managing workarounds and known errors</b> is correct because it reflects this preventive, root-cause focus."
+    "explanation": ""
   },
   {
     "id": 132,
@@ -1713,7 +1713,7 @@
     ],
     "correctAnswer": 0,
     "category": "Problem Management",
-    "explanation": "A workaround can be documented as soon as it is known and useful—often right after the problem is logged—so that incident resolution can benefit immediately. <b>After the problem has been logged</b> is correct because early documentation reduces impact while a permanent fix is developed."
+    "explanation": ""
   },
   {
     "id": 133,
@@ -1726,7 +1726,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Obtain/Build</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 134,
@@ -1739,7 +1739,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>The Service Value System</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 135,
@@ -1752,7 +1752,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Service Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 136,
@@ -1765,7 +1765,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Release Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 137,
@@ -1778,7 +1778,7 @@
     ],
     "correctAnswer": 1,
     "category": "Problem Management",
-    "explanation": "<b>Prioritization of problems based on the risk that they pose</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 138,
@@ -1791,7 +1791,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Service provision</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 139,
@@ -1804,7 +1804,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Level Management",
-    "explanation": "<b>To set clear business-based targets for service levels</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 140,
@@ -1817,7 +1817,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Level Management",
-    "explanation": "<b>Warranty</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 141,
@@ -1830,7 +1830,7 @@
     ],
     "correctAnswer": 2,
     "category": "Problem Management",
-    "explanation": "A <b>known error<b> is a problem that has been <b>analysed<b> and has not been resolved. <b>A problem that has been analysed and has not been resolved</b> is correct because analysis confirms the cause and documents the error state, even if a permanent fix is not yet applied."
+    "explanation": ""
   },
   {
     "id": 142,
@@ -1843,7 +1843,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Start where you are<b> means assessing the current state and reusing what works, using <b>measurement to support—rather than replace—direct observation<b>. <b>It should always be used to support direct observation</b> is correct because it reflects ITIL’s guidance on baselines and evidence."
+    "explanation": ""
   },
   {
     "id": 143,
@@ -1856,7 +1856,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>The customer's perception of the benefits of using the service</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 144,
@@ -1869,7 +1869,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Problem Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 145,
@@ -1882,7 +1882,7 @@
     ],
     "correctAnswer": 2,
     "category": "Incident Management",
-    "explanation": "<b>Providing good-quality updates when expected</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 146,
@@ -1895,7 +1895,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Value System",
-    "explanation": "The <b>Service Value System (SVS)<b> describes how all components and activities work together to enable value creation. <b>The Four Dimensions of Service Management</b> is correct because it matches the SVS definition, not a single practice or relationship concept."
+    "explanation": ""
   },
   {
     "id": 147,
@@ -1908,7 +1908,7 @@
     ],
     "correctAnswer": 3,
     "category": "Incident Management",
-    "explanation": "<b>Problem</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 148,
@@ -1921,7 +1921,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Service Desk</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 149,
@@ -1934,7 +1934,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>CIs</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 150,
@@ -1947,7 +1947,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "An <b>outcome<b> is a result for a stakeholder, enabled by one or more outputs. The correct option (<b>Service providers help service consumers achieve outcomes</b>) matches ITIL’s definition because services and outputs exist to help consumers achieve outcomes, not just produce outputs."
+    "explanation": ""
   },
   {
     "id": 151,
@@ -1960,7 +1960,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "An <b>outcome<b> is a result for a stakeholder, enabled by one or more outputs. The correct option (<b>An outcome can be enabled by more than one output</b>) matches ITIL’s definition because services and outputs exist to help consumers achieve outcomes, not just produce outputs."
+    "explanation": ""
   },
   {
     "id": 152,
@@ -1973,7 +1973,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Value System",
-    "explanation": "<b>Providing transparency and good relationships</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 153,
@@ -1986,7 +1986,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Request Management",
-    "explanation": "<b>Service requests are usually formalized using standard procedures for initiation, approval and fulfilment</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 154,
@@ -1999,7 +1999,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "<b>Deployment Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 155,
@@ -2012,7 +2012,7 @@
     ],
     "correctAnswer": 2,
     "category": "Release Management",
-    "explanation": "<b>Partners and Suppliers</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 156,
@@ -2025,7 +2025,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "ITIL recommends <b>optimize first, then automate<b>. <b>Check that the activity has already been optimized</b> is correct because automation should improve an already-simplified/optimized activity; automating waste just makes bad work faster."
+    "explanation": ""
   },
   {
     "id": 157,
@@ -2038,7 +2038,7 @@
     ],
     "correctAnswer": 3,
     "category": "Supplier Management",
-    "explanation": "<b>1 and 4</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 158,
@@ -2051,7 +2051,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Request Management",
-    "explanation": "Service requests should use <b>standard, proven request models/workflows<b> and be automated where practical. <b>Service requests and their fulfilment should be automated as much as possible</b> is correct because ITIL promotes predictable, well-understood steps to set expectations and ensure consistent fulfilment."
+    "explanation": ""
   },
   {
     "id": 159,
@@ -2064,7 +2064,7 @@
     ],
     "correctAnswer": 2,
     "category": "Release Management",
-    "explanation": "<b>To move new or changed components to live environments</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 160,
@@ -2077,7 +2077,7 @@
     ],
     "correctAnswer": 3,
     "category": "Change Control",
-    "explanation": "A <b>change schedule<b> is primarily used to plan and manage <b>normal changes<b> by providing visibility of planned changes and avoiding conflicts. <b>To help manage normal changes</b> is correct because it supports coordination and risk reduction for normal change activity."
+    "explanation": ""
   },
   {
     "id": 161,
@@ -2090,7 +2090,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>The Service Value Chain</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 162,
@@ -2103,7 +2103,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Any financially valuable component that can contribute to delivery of an IT product or service</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 163,
@@ -2116,7 +2116,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Level Management",
-    "explanation": "<b>It should be simply written and easy to understand</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 164,
@@ -2129,7 +2129,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Sponsor</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 165,
@@ -2142,7 +2142,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>Warranty<b> is the assurance that a service will meet agreed requirements (such as availability, capacity, continuity, and security). <b>Assurance that a product or service will meet agreed requirements</b> is correct because it describes whether the service is *fit for use* under agreed conditions."
+    "explanation": ""
   },
   {
     "id": 166,
@@ -2155,7 +2155,7 @@
     ],
     "correctAnswer": 2,
     "category": "Problem Management",
-    "explanation": "<b>Problem identification, problem control, error control</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 167,
@@ -2168,7 +2168,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>Service level agreements</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 168,
@@ -2181,7 +2181,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Level Management",
-    "explanation": "<b>Listening</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 169,
@@ -2194,7 +2194,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Service Desk</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 170,
@@ -2207,7 +2207,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Value System",
-    "explanation": "<b>Plan</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 171,
@@ -2220,7 +2220,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>A configuration item (CI)</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 172,
@@ -2233,7 +2233,7 @@
     ],
     "correctAnswer": 1,
     "category": "Supplier Management",
-    "explanation": "<b>Supplier Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 173,
@@ -2246,7 +2246,7 @@
     ],
     "correctAnswer": 0,
     "category": "Event Management",
-    "explanation": "<b>Service Level Management<b> uses techniques like service reviews and <b>event-based surveys<b> to understand customer satisfaction and whether service levels support desired outcomes. <b>Service Level Management</b> is correct because SLM is responsible for measuring and improving the customer’s experience against agreed targets."
+    "explanation": ""
   },
   {
     "id": 174,
@@ -2259,7 +2259,7 @@
     ],
     "correctAnswer": 0,
     "category": "Incident Management",
-    "explanation": "<b>It enables quick and efficient diagnosis of incidents</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 175,
@@ -2272,7 +2272,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "Service Request Management often fulfills requests using <b>standard changes<b>—pre-authorized, low-risk, repeatable changes with proven procedures. Therefore <b>A change that is typically implemented as a service request</b> is most likely to be managed through Service Request Management."
+    "explanation": ""
   },
   {
     "id": 176,
@@ -2285,7 +2285,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Level Management",
-    "explanation": "<b>Metrics linked to defined outcomes</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 177,
@@ -2298,7 +2298,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Request Management",
-    "explanation": "<b>Requesting information about how to create a document</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 178,
@@ -2311,7 +2311,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Desk",
-    "explanation": "<b>Incident Management and Service Request Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 179,
@@ -2324,7 +2324,7 @@
     ],
     "correctAnswer": 0,
     "category": "Incident Management",
-    "explanation": "<b>An incident</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 180,
@@ -2337,7 +2337,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "<b>Changes that need to be scheduled and assessed following a process</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 181,
@@ -2350,7 +2350,7 @@
     ],
     "correctAnswer": 2,
     "category": "Incident Management",
-    "explanation": "<b>A separate process</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 182,
@@ -2363,7 +2363,7 @@
     ],
     "correctAnswer": 3,
     "category": "Change Control",
-    "explanation": "<b>Change authorities are assigned for each type of change and change model</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 183,
@@ -2376,7 +2376,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>A customer</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 184,
@@ -2389,7 +2389,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Service Desk</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 185,
@@ -2402,7 +2402,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Desk",
-    "explanation": "<b>Incident Analysis skills</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 186,
@@ -2415,7 +2415,7 @@
     ],
     "correctAnswer": 2,
     "category": "Incident Management",
-    "explanation": "<b>Incident Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 187,
@@ -2428,7 +2428,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Value System",
-    "explanation": "<b>Engage, Plan, and Improve<b> are <b>Service Value Chain activities<b> used to convert inputs into outputs and form value streams. <b>Value realization</b> is correct because these are the named SVC activities."
+    "explanation": ""
   },
   {
     "id": 188,
@@ -2441,7 +2441,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "<b>Monitoring and Event Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 189,
@@ -2454,7 +2454,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Collaborate and Promote Visibility</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 190,
@@ -2467,7 +2467,7 @@
     ],
     "correctAnswer": 2,
     "category": "Incident Management",
-    "explanation": "<b>The use of scripts</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 191,
@@ -2480,7 +2480,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>A role</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 192,
@@ -2493,7 +2493,7 @@
     ],
     "correctAnswer": 3,
     "category": "Problem Management",
-    "explanation": "<b>As soon as the analysis of cost, risks and benefits justifies the change</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 193,
@@ -2506,7 +2506,7 @@
     ],
     "correctAnswer": 2,
     "category": "Continual Improvement",
-    "explanation": "<b>An organization should always develop competencies in methodologies and techniques that will meet their needs</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 194,
@@ -2519,7 +2519,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "<b>Ensure that risks have been properly assessed</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 195,
@@ -2532,7 +2532,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>By communicating constraints</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 196,
@@ -2545,7 +2545,7 @@
     ],
     "correctAnswer": 3,
     "category": "Supplier Management",
-    "explanation": "<b>Performances</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 197,
@@ -2558,7 +2558,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Information and Technology</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 198,
@@ -2571,7 +2571,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Optimize and Automate</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 199,
@@ -2584,7 +2584,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Keep It Simple and Practical</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 200,
@@ -2597,7 +2597,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Focus on Value at every step of the improvement</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 201,
@@ -2610,7 +2610,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>The management of resources configured to deliver the service</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 202,
@@ -2623,7 +2623,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Request Management",
-    "explanation": "<b>Service Request Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 203,
@@ -2636,7 +2636,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "Service Request Management often fulfills requests using <b>standard changes<b>—pre-authorized, low-risk, repeatable changes with proven procedures. Therefore <b>When the procedure for the standard change is created</b> is most likely to be managed through Service Request Management."
+    "explanation": ""
   },
   {
     "id": 204,
@@ -2649,7 +2649,7 @@
     ],
     "correctAnswer": 3,
     "category": "Continual Improvement",
-    "explanation": "<b>It should be re-prioritized as ideas are documented</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 205,
@@ -2662,7 +2662,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Value System",
-    "explanation": "<b>Continually meeting stakeholder expectations for costs</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 206,
@@ -2675,7 +2675,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Value System",
-    "explanation": "<b>Providing services to agreed specifications</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 207,
@@ -2688,7 +2688,7 @@
     ],
     "correctAnswer": 1,
     "category": "Incident Management",
-    "explanation": "<b>Service Desk</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 208,
@@ -2701,7 +2701,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Incident Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 209,
@@ -2714,7 +2714,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Start Where You Are</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 210,
@@ -2727,7 +2727,7 @@
     ],
     "correctAnswer": 3,
     "category": "Incident Management",
-    "explanation": "<b>A service interruption resolved by the use of self-help tools</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 211,
@@ -2740,7 +2740,7 @@
     ],
     "correctAnswer": 0,
     "category": "Change Control",
-    "explanation": "<b>Event</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 212,
@@ -2753,7 +2753,7 @@
     ],
     "correctAnswer": 3,
     "category": "Four Dimensions",
-    "explanation": "<b>Information and Technology</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 213,
@@ -2766,7 +2766,7 @@
     ],
     "correctAnswer": 3,
     "category": "Change Control",
-    "explanation": "A <b>change schedule<b> is primarily used to plan and manage <b>normal changes<b> by providing visibility of planned changes and avoiding conflicts. <b>To plan changes and help avoid conflicts</b> is correct because it supports coordination and risk reduction for normal change activity."
+    "explanation": ""
   },
   {
     "id": 214,
@@ -2779,7 +2779,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Optimize and Automate</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 215,
@@ -2792,7 +2792,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Progress Iteratively with Feedback</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 216,
@@ -2805,7 +2805,7 @@
     ],
     "correctAnswer": 3,
     "category": "Continual Improvement",
-    "explanation": "<b>Improvement ideas are documented, assessed and prioritized</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 217,
@@ -2818,7 +2818,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Level Management",
-    "explanation": "<b>To set clear business-based targets for service levels</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 218,
@@ -2831,7 +2831,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>A value stream</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 219,
@@ -2844,7 +2844,7 @@
     ],
     "correctAnswer": 1,
     "category": "Incident Management",
-    "explanation": "<b>Swarming</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 220,
@@ -2857,7 +2857,7 @@
     ],
     "correctAnswer": 1,
     "category": "Continual Improvement",
-    "explanation": "<b>It is the role of senior management to authorize improvement initiatives</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 221,
@@ -2870,7 +2870,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Value System",
-    "explanation": "The <b>Service Value System (SVS)<b> describes how all components and activities work together to enable value creation. <b>Organizational silos</b> is correct because it matches the SVS definition, not a single practice or relationship concept."
+    "explanation": ""
   },
   {
     "id": 222,
@@ -2883,7 +2883,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Level Management",
-    "explanation": "<b>The metrics in an SLA are focused on internal measures, so that reports show everything is good, while the customer is not satisfied</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 223,
@@ -2896,7 +2896,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Service Level Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 224,
@@ -2909,7 +2909,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>A means of enabling value co-creation by facilitating outcomes that customers want to achieve, without the customer having to manage specific costs and risks</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 225,
@@ -2922,7 +2922,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Request Management",
-    "explanation": "<b>1 and 4</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 226,
@@ -2935,7 +2935,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Desk",
-    "explanation": "<b>Demonstration of emotional intelligence</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 227,
@@ -2948,7 +2948,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Service Desk</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 228,
@@ -2961,7 +2961,7 @@
     ],
     "correctAnswer": 3,
     "category": "Change Control",
-    "explanation": "<b>Continual Improvement</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 229,
@@ -2974,7 +2974,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Change Enablement</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 230,
@@ -2987,7 +2987,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Service Desk</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 231,
@@ -3000,7 +3000,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Request Management",
-    "explanation": "<b>Understanding which service requests can be accomplished with limited approvals</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 232,
@@ -3013,7 +3013,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "An <b>outcome<b> is a result for a stakeholder, enabled by one or more outputs. The correct option (<b>They allow service consumers to achieve a desired result</b>) matches ITIL’s definition because services and outputs exist to help consumers achieve outcomes, not just produce outputs."
+    "explanation": ""
   },
   {
     "id": 233,
@@ -3026,7 +3026,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Keep It Simple and Practical</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 234,
@@ -3039,7 +3039,7 @@
     ],
     "correctAnswer": 3,
     "category": "Supplier Management",
-    "explanation": "<b>Managed</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 235,
@@ -3052,7 +3052,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Configuration of services</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 236,
@@ -3065,7 +3065,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Service Level Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 237,
@@ -3078,7 +3078,7 @@
     ],
     "correctAnswer": 3,
     "category": "Problem Management",
-    "explanation": "A workaround can be documented as soon as it is known and useful—often right after the problem is logged—so that incident resolution can benefit immediately. <b>When a problem cannot be resolved quickly</b> is correct because early documentation reduces impact while a permanent fix is developed."
+    "explanation": ""
   },
   {
     "id": 238,
@@ -3091,7 +3091,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Any component that needs to be managed in order to deliver an IT service</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 239,
@@ -3104,7 +3104,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Existing information</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 240,
@@ -3117,7 +3117,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Value System",
-    "explanation": "The <b>Service Value System (SVS)<b> describes how all components and activities work together to enable value creation. <b>Governance, Service Value Chain, practices</b> is correct because it matches the SVS definition, not a single practice or relationship concept."
+    "explanation": ""
   },
   {
     "id": 241,
@@ -3130,7 +3130,7 @@
     ],
     "correctAnswer": 0,
     "category": "Change Control",
-    "explanation": "A <b>change schedule<b> is primarily used to plan and manage <b>normal changes<b> by providing visibility of planned changes and avoiding conflicts. <b>Assigning resources to changes</b> is correct because it supports coordination and risk reduction for normal change activity."
+    "explanation": ""
   },
   {
     "id": 242,
@@ -3143,7 +3143,7 @@
     ],
     "correctAnswer": 3,
     "category": "Four Dimensions",
-    "explanation": "<b>Value Streams and Processes</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 243,
@@ -3156,7 +3156,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Optimize and Automate</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 244,
@@ -3169,7 +3169,7 @@
     ],
     "correctAnswer": 0,
     "category": "Incident Management",
-    "explanation": "<b>It resolves the highest impact incidents first</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 245,
@@ -3182,7 +3182,7 @@
     ],
     "correctAnswer": 0,
     "category": "Incident Management",
-    "explanation": "<b>Use an agreed classification which is based on the business impact of the incident</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 246,
@@ -3195,7 +3195,7 @@
     ],
     "correctAnswer": 0,
     "category": "Relationship Management",
-    "explanation": "<b>To identify, analyze, monitor, and continually improve links with stakeholders</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 247,
@@ -3208,7 +3208,7 @@
     ],
     "correctAnswer": 0,
     "category": "Problem Management",
-    "explanation": "<b>Problem Prioritization involves risk assessment</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 248,
@@ -3221,7 +3221,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Failure of server hardware</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 249,
@@ -3234,7 +3234,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Value System",
-    "explanation": "<b>Meeting stakeholder expectations</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 250,
@@ -3247,7 +3247,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Request Management",
-    "explanation": "<b>A request to provide a laptop</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 251,
@@ -3260,7 +3260,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>Service Value Chain</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 252,
@@ -3273,7 +3273,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>Ensuring access to agreed resources</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 253,
@@ -3286,7 +3286,7 @@
     ],
     "correctAnswer": 0,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>Where are we now?<b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 254,
@@ -3299,7 +3299,7 @@
     ],
     "correctAnswer": 0,
     "category": "Change Control",
-    "explanation": "<b>A person who approves a change</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 255,
@@ -3312,7 +3312,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Value System",
-    "explanation": "The <b>Service Value System (SVS)<b> describes how all components and activities work together to enable value creation. <b>Opportunity and demand</b> is correct because it matches the SVS definition, not a single practice or relationship concept."
+    "explanation": ""
   },
   {
     "id": 256,
@@ -3325,7 +3325,7 @@
     ],
     "correctAnswer": 0,
     "category": "Relationship Management",
-    "explanation": "<b>It requires co-operation of both the service provider and service consumer</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 257,
@@ -3338,7 +3338,7 @@
     ],
     "correctAnswer": 0,
     "category": "Incident Management",
-    "explanation": "<b>To ensure that incidents with highest impact are resolved first</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 258,
@@ -3351,7 +3351,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Level Management",
-    "explanation": "<b>Understanding the ongoing requirements of customers</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 259,
@@ -3364,7 +3364,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>Service Request Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 260,
@@ -3377,7 +3377,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Keep It Simple and Practical</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 261,
@@ -3390,7 +3390,7 @@
     ],
     "correctAnswer": 0,
     "category": "Event Management",
-    "explanation": "<b>To systematically observe services and service components</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 262,
@@ -3403,7 +3403,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "An <b>outcome<b> is a result for a stakeholder, enabled by one or more outputs. The correct option (<b>Outcomes rely on outputs to deliver results for a stakeholder</b>) matches ITIL’s definition because services and outputs exist to help consumers achieve outcomes, not just produce outputs."
+    "explanation": ""
   },
   {
     "id": 263,
@@ -3416,7 +3416,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Level Management",
-    "explanation": "<b>Supplier Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 264,
@@ -3429,7 +3429,7 @@
     ],
     "correctAnswer": 0,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>Organizations should work through the steps of the model in the sequence in which they are presented</b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 265,
@@ -3442,7 +3442,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>Warranty<b> is the assurance that a service will meet agreed requirements (such as availability, capacity, continuity, and security). <b>A means of determining whether a service is Fit for Use</b> is correct because it describes whether the service is *fit for use* under agreed conditions."
+    "explanation": ""
   },
   {
     "id": 266,
@@ -3455,7 +3455,7 @@
     ],
     "correctAnswer": 0,
     "category": "Information Security",
-    "explanation": "<b>Information security management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 267,
@@ -3468,7 +3468,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>A means of enabling value co-creation by facilitating outcomes that customers want to achieve, without the customer having to manage specific costs and risks</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 268,
@@ -3481,7 +3481,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Functionality</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 269,
@@ -3494,7 +3494,7 @@
     ],
     "correctAnswer": 2,
     "category": "Change Control",
-    "explanation": "A <b>change schedule<b> is primarily used to plan and manage <b>normal changes<b> by providing visibility of planned changes and avoiding conflicts. <b>Change Enablement</b> is correct because it supports coordination and risk reduction for normal change activity."
+    "explanation": ""
   },
   {
     "id": 270,
@@ -3507,7 +3507,7 @@
     ],
     "correctAnswer": 2,
     "category": "Change Control",
-    "explanation": "<b>Service</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 271,
@@ -3520,7 +3520,7 @@
     ],
     "correctAnswer": 0,
     "category": "Information Security",
-    "explanation": "<b>Protecting an organization by understanding and managing risks to the confidentiality, integrity, and availability of information</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 272,
@@ -3533,7 +3533,7 @@
     ],
     "correctAnswer": 1,
     "category": "Event Management",
-    "explanation": "<b>Systematically observing services and service components and recording and reporting selected changes of state identified as events</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 273,
@@ -3546,7 +3546,7 @@
     ],
     "correctAnswer": 3,
     "category": "Incident Management",
-    "explanation": "The purpose of <b>Incident Management<b> is to <b>minimize negative impact<b> by restoring normal service operation as quickly as possible. <b>Minimizing the negative impact of incidents by restoring normal service operation as quickly as possible</b> matches this purpose statement."
+    "explanation": ""
   },
   {
     "id": 274,
@@ -3559,7 +3559,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Service Configuration Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 275,
@@ -3572,7 +3572,7 @@
     ],
     "correctAnswer": 3,
     "category": "Incident Management",
-    "explanation": "<b>Service Desk</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 276,
@@ -3585,7 +3585,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>A service offering</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 277,
@@ -3598,7 +3598,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>Tangible or intangible deliverables</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 278,
@@ -3611,7 +3611,7 @@
     ],
     "correctAnswer": 3,
     "category": "Relationship Management",
-    "explanation": "<b>Organization</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 279,
@@ -3624,7 +3624,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>A Guiding Principle is a recommendation used as guidance in all circumstances</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 280,
@@ -3637,7 +3637,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Service Level Management<b> uses techniques like service reviews and <b>event-based surveys<b> to understand customer satisfaction and whether service levels support desired outcomes. <b>Focus on Value</b> is correct because SLM is responsible for measuring and improving the customer’s experience against agreed targets."
+    "explanation": ""
   },
   {
     "id": 281,
@@ -3650,7 +3650,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Start Where You Are</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 282,
@@ -3663,7 +3663,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Engage, Plan, and Improve<b> are <b>Service Value Chain activities<b> used to convert inputs into outputs and form value streams. <b>Progress Iteratively with Feedback</b> is correct because these are the named SVC activities."
+    "explanation": ""
   },
   {
     "id": 283,
@@ -3676,7 +3676,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Collaborate and Promote Visibility</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 284,
@@ -3689,7 +3689,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Think and work holistically<b> means considering end-to-end value and coordinating across all parts of the system (including the four dimensions). <b>John should meet with Sally to determine how the digital product fulfillment will occur</b> is correct because it emphasizes whole-system coordination, not local optimization."
+    "explanation": ""
   },
   {
     "id": 285,
@@ -3702,7 +3702,7 @@
     ],
     "correctAnswer": 2,
     "category": "Four Dimensions",
-    "explanation": "<b>Roles and responsibilities</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 286,
@@ -3715,7 +3715,7 @@
     ],
     "correctAnswer": 0,
     "category": "Supplier Management",
-    "explanation": "<b>Workflow management and inventory systems</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 287,
@@ -3728,7 +3728,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Value System",
-    "explanation": "<b>Engage, Plan, and Improve<b> are <b>Service Value Chain activities<b> used to convert inputs into outputs and form value streams. <b>Service Value System</b> is correct because these are the named SVC activities."
+    "explanation": ""
   },
   {
     "id": 288,
@@ -3741,7 +3741,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Service Value Chain</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 289,
@@ -3754,7 +3754,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Plan</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 290,
@@ -3767,7 +3767,7 @@
     ],
     "correctAnswer": 1,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>What is the vision?<b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 291,
@@ -3780,7 +3780,7 @@
     ],
     "correctAnswer": 0,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>The high-level direction of the initiative has been understood</b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 292,
@@ -3793,7 +3793,7 @@
     ],
     "correctAnswer": 1,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>Where do we want to be?<b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 293,
@@ -3806,7 +3806,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "<b>A change that needs to be assessed, authorized, and scheduled by a change authority</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 294,
@@ -3819,7 +3819,7 @@
     ],
     "correctAnswer": 2,
     "category": "Change Control",
-    "explanation": "<b>Emergency</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 295,
@@ -3832,7 +3832,7 @@
     ],
     "correctAnswer": 0,
     "category": "Change Control",
-    "explanation": "A <b>change schedule<b> is primarily used to plan and manage <b>normal changes<b> by providing visibility of planned changes and avoiding conflicts. <b>Developing features</b> is correct because it supports coordination and risk reduction for normal change activity."
+    "explanation": ""
   },
   {
     "id": 296,
@@ -3845,7 +3845,7 @@
     ],
     "correctAnswer": 0,
     "category": "Incident Management",
-    "explanation": "<b>Implement incident classification</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 297,
@@ -3858,7 +3858,7 @@
     ],
     "correctAnswer": 1,
     "category": "Incident Management",
-    "explanation": "<b>Every incident should be logged</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 298,
@@ -3871,7 +3871,7 @@
     ],
     "correctAnswer": 1,
     "category": "Problem Management",
-    "explanation": "<b>Problem classification</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 299,
@@ -3884,7 +3884,7 @@
     ],
     "correctAnswer": 2,
     "category": "Problem Management",
-    "explanation": "<b>Workaround</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 300,
@@ -3897,7 +3897,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Request Management",
-    "explanation": "<b>It analyzes data to identify opportunities to provide new service request options</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 301,
@@ -3910,7 +3910,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Request Management",
-    "explanation": "<b>Standardized</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 302,
@@ -3923,7 +3923,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Service Desk</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 303,
@@ -3936,7 +3936,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Desk",
-    "explanation": "<b>Service Desks should have a practical understanding of the business practices across the organization</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 304,
@@ -3949,7 +3949,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Level Management",
-    "explanation": "<b>To measure the performance of services from a customer's point of view</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 305,
@@ -3962,7 +3962,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Level Management",
-    "explanation": "<b>Provides information about the actual service performance and trends</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 306,
@@ -3975,7 +3975,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Level Management",
-    "explanation": "<b>Clearly defined service outcomes</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 307,
@@ -3988,7 +3988,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>The functionality offered by a product or service to meet a particular need</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 308,
@@ -4001,7 +4001,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>Outcomes</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 309,
@@ -4014,7 +4014,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Any valuable component that can contribute to the delivery of an IT product or service</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 310,
@@ -4027,7 +4027,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Configuration item</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 311,
@@ -4040,7 +4040,7 @@
     ],
     "correctAnswer": 2,
     "category": "Incident Management",
-    "explanation": "<b>Incident</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 312,
@@ -4053,7 +4053,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Continual Improvement</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 313,
@@ -4066,7 +4066,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Level</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 314,
@@ -4079,7 +4079,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Service Relationship Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 315,
@@ -4092,7 +4092,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Value</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 316,
@@ -4105,7 +4105,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Risks</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 317,
@@ -4118,7 +4118,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Guiding Principles</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 318,
@@ -4131,7 +4131,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Focus on Value</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 319,
@@ -4144,7 +4144,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Warranty<b> is the assurance that a service will meet agreed requirements (such as availability, capacity, continuity, and security). <b>Start Where You Are</b> is correct because it describes whether the service is *fit for use* under agreed conditions."
+    "explanation": ""
   },
   {
     "id": 320,
@@ -4157,7 +4157,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Collaborate and Promote Visibility</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 321,
@@ -4170,7 +4170,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Keep It Simple and Practical</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 322,
@@ -4183,7 +4183,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>Automation</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 323,
@@ -4196,7 +4196,7 @@
     ],
     "correctAnswer": 0,
     "category": "Four Dimensions",
-    "explanation": "<b>Organizations and People</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 324,
@@ -4209,7 +4209,7 @@
     ],
     "correctAnswer": 1,
     "category": "Four Dimensions",
-    "explanation": "<b>Information and Technology</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 325,
@@ -4222,7 +4222,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Service Value System</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 326,
@@ -4235,7 +4235,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Value System",
-    "explanation": "<b>Engage, Plan, and Improve<b> are <b>Service Value Chain activities<b> used to convert inputs into outputs and form value streams. <b>Practice</b> is correct because these are the named SVC activities."
+    "explanation": ""
   },
   {
     "id": 327,
@@ -4248,7 +4248,7 @@
     ],
     "correctAnswer": 2,
     "category": "Supplier Management",
-    "explanation": "<b>Obtain/Build</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 328,
@@ -4261,7 +4261,7 @@
     ],
     "correctAnswer": 1,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>How do we get there?<b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 329,
@@ -4274,7 +4274,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "<b>Normal</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 330,
@@ -4287,7 +4287,7 @@
     ],
     "correctAnswer": 2,
     "category": "Change Control",
-    "explanation": "<b>A change that must be implemented as soon as possible because it is required to resolve an incident or security issue</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 331,
@@ -4300,7 +4300,7 @@
     ],
     "correctAnswer": 3,
     "category": "Change Control",
-    "explanation": "<b>Change Authority</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 332,
@@ -4313,7 +4313,7 @@
     ],
     "correctAnswer": 2,
     "category": "Incident Management",
-    "explanation": "<b>It can provide automated matching of incidents to problems or known errors</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 333,
@@ -4326,7 +4326,7 @@
     ],
     "correctAnswer": 0,
     "category": "Incident Management",
-    "explanation": "<b>Scripts for collecting initial information about incidents</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 334,
@@ -4339,7 +4339,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Desk",
-    "explanation": "<b>Problem</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 335,
@@ -4352,7 +4352,7 @@
     ],
     "correctAnswer": 0,
     "category": "Incident Management",
-    "explanation": "<b>Known error</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 336,
@@ -4365,7 +4365,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Request Management",
-    "explanation": "<b>It ensures that users continue to be productive when they need assistance from the service provider</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 337,
@@ -4378,7 +4378,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Request Management",
-    "explanation": "<b>Acquiring pre-approved service components to help fulfill service requests</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 338,
@@ -4391,7 +4391,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Desk",
-    "explanation": "<b>Service Desks should be designed based on your organization, its business processes, and the user requirements</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 339,
@@ -4404,7 +4404,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Service Desk</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 340,
@@ -4417,7 +4417,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Desk",
-    "explanation": "<b>Your supervisor's data is not based on business outcomes</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 341,
@@ -4430,7 +4430,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Level Management",
-    "explanation": "<b>Uses feedback from users about the service and requirements from customers to make the service better</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 342,
@@ -4443,7 +4443,7 @@
     ],
     "correctAnswer": 2,
     "category": "Problem Management",
-    "explanation": "A workaround can be documented as soon as it is known and useful—often right after the problem is logged—so that incident resolution can benefit immediately. <b>Engage</b> is correct because early documentation reduces impact while a permanent fix is developed."
+    "explanation": ""
   },
   {
     "id": 343,
@@ -4456,7 +4456,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Request Management",
-    "explanation": "<b>Initiating standard changes to fulfill service requests</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 344,
@@ -4469,7 +4469,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>A person who defines the requirements for a service and takes responsibility for the outcomes of service consumption</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 345,
@@ -4482,7 +4482,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Budget</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 346,
@@ -4495,7 +4495,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>Change</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 347,
@@ -4508,7 +4508,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Ensuring that accurate and reliable information about the configuration of services and the configuration items that support them are available when and where needed</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 348,
@@ -4521,7 +4521,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Request Management",
-    "explanation": "<b>Supporting the agreed quality of a service by handling all pre-defined, user-initiated service requests in an effective and user-friendly manner</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 349,
@@ -4534,7 +4534,7 @@
     ],
     "correctAnswer": 0,
     "category": "Information Security",
-    "explanation": "<b>Information Security Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 350,
@@ -4547,7 +4547,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>Service consumption</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 351,
@@ -4560,7 +4560,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>Utility</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 352,
@@ -4573,7 +4573,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Warranty</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 353,
@@ -4586,7 +4586,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Recommendations</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 354,
@@ -4599,7 +4599,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Warranty<b> is the assurance that a service will meet agreed requirements (such as availability, capacity, continuity, and security). <b>Start Where You Are</b> is correct because it describes whether the service is *fit for use* under agreed conditions."
+    "explanation": ""
   },
   {
     "id": 355,
@@ -4612,7 +4612,7 @@
     ],
     "correctAnswer": 2,
     "category": "Change Control",
-    "explanation": "<b>Service Level Management<b> uses techniques like service reviews and <b>event-based surveys<b> to understand customer satisfaction and whether service levels support desired outcomes. <b>Progress Iteratively with Feedback</b> is correct because SLM is responsible for measuring and improving the customer’s experience against agreed targets."
+    "explanation": ""
   },
   {
     "id": 356,
@@ -4625,7 +4625,7 @@
     ],
     "correctAnswer": 0,
     "category": "Continual Improvement",
-    "explanation": "<b>Think and work holistically<b> means considering end-to-end value and coordinating across all parts of the system (including the four dimensions). <b>Improve</b> is correct because it emphasizes whole-system coordination, not local optimization."
+    "explanation": ""
   },
   {
     "id": 357,
@@ -4638,7 +4638,7 @@
     ],
     "correctAnswer": 3,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>Where are we now?<b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 358,
@@ -4651,7 +4651,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>Take action</b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 359,
@@ -4664,7 +4664,7 @@
     ],
     "correctAnswer": 0,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>Did we get there?<b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 360,
@@ -4677,7 +4677,7 @@
     ],
     "correctAnswer": 1,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>Where are we now?<b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 361,
@@ -4690,7 +4690,7 @@
     ],
     "correctAnswer": 2,
     "category": "Problem Management",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>How do we keep the momentum going?<b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 362,
@@ -4703,7 +4703,7 @@
     ],
     "correctAnswer": 1,
     "category": "Incident Management",
-    "explanation": "<b>Formalized processes for logging incidents</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 363,
@@ -4716,7 +4716,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Incident</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 364,
@@ -4729,7 +4729,7 @@
     ],
     "correctAnswer": 1,
     "category": "Problem Management",
-    "explanation": "<b>Logging an incident</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 365,
@@ -4742,7 +4742,7 @@
     ],
     "correctAnswer": 3,
     "category": "Problem Management",
-    "explanation": "<b>Incident logging</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 366,
@@ -4755,7 +4755,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Request Management",
-    "explanation": "<b>It collects user-specific requirements, sets expectations, and provides status updates</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 367,
@@ -4768,7 +4768,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Request Management",
-    "explanation": "<b>Provide trend, quality, and feedback information about requests</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 368,
@@ -4781,7 +4781,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Desk",
-    "explanation": "<b>Knowledge base</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 369,
@@ -4794,7 +4794,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Desk",
-    "explanation": "<b>Centralized</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 370,
@@ -4807,7 +4807,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Level Management",
-    "explanation": "<b>Competitor's metrics</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 371,
@@ -4820,7 +4820,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Desk",
-    "explanation": "<b>Known error</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 372,
@@ -4833,7 +4833,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Level Management",
-    "explanation": "<b>Collects and processes feedback from customers and users</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 373,
@@ -4846,7 +4846,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Collaborate and Promote Visibility</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 374,
@@ -4859,7 +4859,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Think and Work Holistically</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 375,
@@ -4872,7 +4872,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Desk",
-    "explanation": "<b>Keep It Simple and Practical</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 376,
@@ -4885,7 +4885,7 @@
     ],
     "correctAnswer": 2,
     "category": "Relationship Management",
-    "explanation": "<b>Partners and Suppliers</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 377,
@@ -4898,7 +4898,7 @@
     ],
     "correctAnswer": 1,
     "category": "Four Dimensions",
-    "explanation": "<b>Activities that transform inputs into outputs</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 378,
@@ -4911,7 +4911,7 @@
     ],
     "correctAnswer": 0,
     "category": "Continual Improvement",
-    "explanation": "<b>Service Value System</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 379,
@@ -4924,7 +4924,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Value System",
-    "explanation": "<b>Engage, Plan, and Improve<b> are <b>Service Value Chain activities<b> used to convert inputs into outputs and form value streams. <b>Service relationships</b> is correct because these are the named SVC activities."
+    "explanation": ""
   },
   {
     "id": 380,
@@ -4937,7 +4937,7 @@
     ],
     "correctAnswer": 0,
     "category": "Release Management",
-    "explanation": "<b>Progress Iteratively with Feedback</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 381,
@@ -4950,7 +4950,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Collaborate and Promote Visibility</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 382,
@@ -4963,7 +4963,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Optimization</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 383,
@@ -4976,7 +4976,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "<b>Organization and people</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 384,
@@ -4989,7 +4989,7 @@
     ],
     "correctAnswer": 2,
     "category": "Four Dimensions",
-    "explanation": "<b>Value Streams and Processes</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 385,
@@ -5002,7 +5002,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Service Value System</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 386,
@@ -5015,7 +5015,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Value System",
-    "explanation": "<b>Engage, Plan, and Improve<b> are <b>Service Value Chain activities<b> used to convert inputs into outputs and form value streams. <b>Continual Improvement</b> is correct because these are the named SVC activities."
+    "explanation": ""
   },
   {
     "id": 387,
@@ -5028,7 +5028,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>A person who uses services</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 388,
@@ -5041,7 +5041,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Capabilities</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 389,
@@ -5054,7 +5054,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Any component that needs to be managed in order to deliver an IT service</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 390,
@@ -5067,7 +5067,7 @@
     ],
     "correctAnswer": 1,
     "category": "Incident Management",
-    "explanation": "<b>Unplanned</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 391,
@@ -5080,7 +5080,7 @@
     ],
     "correctAnswer": 2,
     "category": "Change Control",
-    "explanation": "<b>Ensuring that risks are properly assessed, authorizing changes to proceed and managing a change schedule in order to maximize the number of successful IT changes</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 392,
@@ -5093,7 +5093,7 @@
     ],
     "correctAnswer": 2,
     "category": "Release Management",
-    "explanation": "<b>Moving new or changed hardware, software, documentation, processes, or any other service component to live environments</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 393,
@@ -5106,7 +5106,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Level Management",
-    "explanation": "<b>Setting clear business-based targets for service performance so that the delivery of a service can be properly assessed, monitored, and managed against these targets</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 394,
@@ -5119,7 +5119,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>IT Asset Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 395,
@@ -5132,7 +5132,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Service provision</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 396,
@@ -5145,7 +5145,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Costs</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 397,
@@ -5158,7 +5158,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "An <b>output<b> is something produced by an activity (for example, a report, a deployed component, or a completed ticket). The P&L report is a deliverable created by the system, so it is an <b>Output</b>—it can then enable outcomes such as better financial decisions."
+    "explanation": ""
   },
   {
     "id": 398,
@@ -5171,7 +5171,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Guiding Principle</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 399,
@@ -5184,7 +5184,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Focus on Value</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 400,
@@ -5197,7 +5197,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Start Where You Are</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 401,
@@ -5210,7 +5210,7 @@
     ],
     "correctAnswer": 2,
     "category": "Relationship Management",
-    "explanation": "<b>Design and Transition</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 402,
@@ -5223,7 +5223,7 @@
     ],
     "correctAnswer": 2,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>Did we get there?<b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 403,
@@ -5236,7 +5236,7 @@
     ],
     "correctAnswer": 1,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>How do we get there?<b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 404,
@@ -5249,7 +5249,7 @@
     ],
     "correctAnswer": 3,
     "category": "Change Control",
-    "explanation": "<b>A change that is scheduled, assessed, and authorized using a standard process</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 405,
@@ -5262,7 +5262,7 @@
     ],
     "correctAnswer": 0,
     "category": "Change Control",
-    "explanation": "<b>Standard</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 406,
@@ -5275,7 +5275,7 @@
     ],
     "correctAnswer": 3,
     "category": "Incident Management",
-    "explanation": "<b>Use of specialized knowledge for complicated incidents</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 407,
@@ -5288,7 +5288,7 @@
     ],
     "correctAnswer": 0,
     "category": "Incident Management",
-    "explanation": "<b>Incident Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 408,
@@ -5301,7 +5301,7 @@
     ],
     "correctAnswer": 1,
     "category": "Incident Management",
-    "explanation": "<b>Escalation</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 409,
@@ -5314,7 +5314,7 @@
     ],
     "correctAnswer": 2,
     "category": "Problem Management",
-    "explanation": "<b>Incident Analysis</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 410,
@@ -5327,7 +5327,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Desk",
-    "explanation": "<b>Service Desks should have a practical understanding of users and their needs</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 411,
@@ -5340,7 +5340,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Desk",
-    "explanation": "<b>Virtual</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 412,
@@ -5353,7 +5353,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Request Management",
-    "explanation": "<b>Provides feedback from interactions with customers into new or changed services</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 413,
@@ -5366,7 +5366,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Level Management",
-    "explanation": "<b>To provide a representation of the actual customer's experience</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 414,
@@ -5379,7 +5379,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Service Level Agreement</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 415,
@@ -5392,7 +5392,7 @@
     ],
     "correctAnswer": 0,
     "category": "General Concepts",
-    "explanation": "<b>A set of specialized organizational capabilities for enabling value to customers</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 416,
@@ -5405,7 +5405,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Services</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 417,
@@ -5418,7 +5418,7 @@
     ],
     "correctAnswer": 0,
     "category": "Change Control",
-    "explanation": "<b>The addition, modification, or removal of anything that could have a direct or indirect effect on services</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 418,
@@ -5431,7 +5431,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Planning and managing the full lifecycle of all IT assets</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 419,
@@ -5444,7 +5444,7 @@
     ],
     "correctAnswer": 2,
     "category": "Continual Improvement",
-    "explanation": "<b>Aligning an organization's practices and services with changing business needs through the ongoing identification and improvement of all elements involved in the effective management of products and services</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 420,
@@ -5457,7 +5457,7 @@
     ],
     "correctAnswer": 0,
     "category": "Supplier Management",
-    "explanation": "<b>Supplier Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 421,
@@ -5470,7 +5470,7 @@
     ],
     "correctAnswer": 3,
     "category": "Incident Management",
-    "explanation": "A workaround can be documented as soon as it is known and useful—often right after the problem is logged—so that incident resolution can benefit immediately. <b>Problem</b> is correct because early documentation reduces impact while a permanent fix is developed."
+    "explanation": ""
   },
   {
     "id": 422,
@@ -5483,7 +5483,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Service Consumption</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 423,
@@ -5496,7 +5496,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Utility<b> is the functionality a service offers—whether it is *fit for purpose*. <b>Utility</b> best matches utility because it focuses on what the service enables the consumer to do (the performance it supports), rather than assurances like availability or capacity (warranty)."
+    "explanation": ""
   },
   {
     "id": 424,
@@ -5509,7 +5509,7 @@
     ],
     "correctAnswer": 3,
     "category": "Relationship Management",
-    "explanation": "<b>outcome</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 425,
@@ -5522,7 +5522,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>recommendations</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 426,
@@ -5535,7 +5535,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>value</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 427,
@@ -5548,7 +5548,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Start Where You Are</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 428,
@@ -5561,7 +5561,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Start where you are<b> means assessing the current state and reusing what works, using <b>measurement to support—rather than replace—direct observation<b>. <b>Think and Work Holistically</b> is correct because it reflects ITIL’s guidance on baselines and evidence."
+    "explanation": ""
   },
   {
     "id": 429,
@@ -5574,7 +5574,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Keep it simple and practical<b> recommends using the minimum number of steps and removing anything that does not add value. <b>Keep It Simple and Practical</b> is correct because it aligns directly with simplifying workflows."
+    "explanation": ""
   },
   {
     "id": 430,
@@ -5587,7 +5587,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "ITIL recommends <b>optimize first, then automate<b>. <b>Identify all the steps in the process, eliminate any unnecessary steps, and then automate the remaining steps in the process</b> is correct because automation should improve an already-simplified/optimized activity; automating waste just makes bad work faster."
+    "explanation": ""
   },
   {
     "id": 431,
@@ -5600,7 +5600,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Information and Technology</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 432,
@@ -5613,7 +5613,7 @@
     ],
     "correctAnswer": 2,
     "category": "Relationship Management",
-    "explanation": "<b>Partners and Suppliers</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 433,
@@ -5626,7 +5626,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Value System",
-    "explanation": "The <b>Service Value System (SVS)<b> describes how all components and activities work together to enable value creation. <b>Value</b> is correct because it matches the SVS definition, not a single practice or relationship concept."
+    "explanation": ""
   },
   {
     "id": 434,
@@ -5639,7 +5639,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Value System",
-    "explanation": "<b>Engage, Plan, and Improve<b> are <b>Service Value Chain activities<b> used to convert inputs into outputs and form value streams. <b>Guiding Principles</b> is correct because these are the named SVC activities."
+    "explanation": ""
   },
   {
     "id": 435,
@@ -5652,7 +5652,7 @@
     ],
     "correctAnswer": 2,
     "category": "IT Asset Management",
-    "explanation": "<b>Obtain/Build</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 436,
@@ -5665,7 +5665,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>How do we get there</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 437,
@@ -5678,7 +5678,7 @@
     ],
     "correctAnswer": 0,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>Take action</b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 438,
@@ -5691,7 +5691,7 @@
     ],
     "correctAnswer": 2,
     "category": "Change Control",
-    "explanation": "<b>Emergency</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 439,
@@ -5704,7 +5704,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "Service Request Management often fulfills requests using <b>standard changes<b>—pre-authorized, low-risk, repeatable changes with proven procedures. Therefore <b>A change that is routine in nature, is fully documented, and the risks are well understood</b> is most likely to be managed through Service Request Management."
+    "explanation": ""
   },
   {
     "id": 440,
@@ -5717,7 +5717,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "<b>Normal</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 441,
@@ -5730,7 +5730,7 @@
     ],
     "correctAnswer": 1,
     "category": "Incident Management",
-    "explanation": "<b>Detailed procedures on how to diagnose, investigate, and resolve incidents</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 442,
@@ -5743,7 +5743,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Incident Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 443,
@@ -5756,7 +5756,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Problem</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 444,
@@ -5769,7 +5769,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Workaround</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 445,
@@ -5782,7 +5782,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Desk",
-    "explanation": "<b>Remote access tools</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 446,
@@ -5795,7 +5795,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Desk",
-    "explanation": "This describes a <b>follow-the-sun<b> model: multiple locations in different time zones provide coverage by handing over work as each location closes. The correct answer is <b>Follow-the-sun</b>."
+    "explanation": ""
   },
   {
     "id": 447,
@@ -5808,7 +5808,7 @@
     ],
     "correctAnswer": 0,
     "category": "Service Level Management",
-    "explanation": "<b>Provides objectives for component and service performance for products and services</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 448,
@@ -5821,7 +5821,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Request Management",
-    "explanation": "<b>Communicate with consumers to understand their requirements</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 449,
@@ -5834,7 +5834,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Think and Work Holistically</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 450,
@@ -5847,7 +5847,7 @@
     ],
     "correctAnswer": 3,
     "category": "Incident Management",
-    "explanation": "<b>Anyone</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 451,
@@ -5860,7 +5860,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Value System",
-    "explanation": "<b>Engage, Plan, and Improve<b> are <b>Service Value Chain activities<b> used to convert inputs into outputs and form value streams. <b>Service Value Chain activities receive and provide triggers for further actions to be taken</b> is correct because these are the named SVC activities."
+    "explanation": ""
   },
   {
     "id": 452,
@@ -5873,7 +5873,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Desk",
-    "explanation": "<b>Deliver and Support</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 453,
@@ -5886,7 +5886,7 @@
     ],
     "correctAnswer": 3,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>How do we get there</b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 454,
@@ -5899,7 +5899,7 @@
     ],
     "correctAnswer": 2,
     "category": "Continual Improvement",
-    "explanation": "The <b>Continual Improvement model<b> provides a structured set of steps for planning and implementing improvements. <b>What is the vision</b> is correct because it’s the model (not the register or a value chain activity) that defines the step-by-step approach."
+    "explanation": ""
   },
   {
     "id": 455,
@@ -5912,7 +5912,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "<b>Normal</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 456,
@@ -5925,7 +5925,7 @@
     ],
     "correctAnswer": 2,
     "category": "Change Control",
-    "explanation": "<b>A change authority should be assigned for each type of change and change model</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 457,
@@ -5938,7 +5938,7 @@
     ],
     "correctAnswer": 3,
     "category": "Change Control",
-    "explanation": "Service Request Management often fulfills requests using <b>standard changes<b>—pre-authorized, low-risk, repeatable changes with proven procedures. Therefore <b>Standard changes are already pre-authorized</b> is most likely to be managed through Service Request Management."
+    "explanation": ""
   },
   {
     "id": 458,
@@ -5951,7 +5951,7 @@
     ],
     "correctAnswer": 2,
     "category": "Change Control",
-    "explanation": "<b>A change that must be implemented as soon as possible because it is required to resolve an incident or security issue</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 459,
@@ -5964,7 +5964,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Incident Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 460,
@@ -5977,7 +5977,7 @@
     ],
     "correctAnswer": 2,
     "category": "Relationship Management",
-    "explanation": "<b>Service Value System</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 461,
@@ -5990,7 +5990,7 @@
     ],
     "correctAnswer": 3,
     "category": "Incident Management",
-    "explanation": "<b>Obtain/Build</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 462,
@@ -6003,7 +6003,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Known error</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 463,
@@ -6016,7 +6016,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Request Management",
-    "explanation": "<b>automated</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 464,
@@ -6029,7 +6029,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Desk",
-    "explanation": "<b>Service Desks should have a practical understanding of the wider business</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 465,
@@ -6042,7 +6042,7 @@
     ],
     "correctAnswer": 2,
     "category": "Service Desk",
-    "explanation": "<b>Good workflow systems and escalation</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 466,
@@ -6055,7 +6055,7 @@
     ],
     "correctAnswer": 1,
     "category": "Service Level Management",
-    "explanation": "<b>Collects feedback during interactions and communicates service performance objectives to the operations and support teams</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 467,
@@ -6068,7 +6068,7 @@
     ],
     "correctAnswer": 2,
     "category": "General Concepts",
-    "explanation": "<b>Service Level Agreement</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 468,
@@ -6081,7 +6081,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Desk",
-    "explanation": "<b>Local</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 469,
@@ -6094,7 +6094,7 @@
     ],
     "correctAnswer": 1,
     "category": "IT Asset Management",
-    "explanation": "<b>Value</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 470,
@@ -6107,7 +6107,7 @@
     ],
     "correctAnswer": 3,
     "category": "General Concepts",
-    "explanation": "<b>Warranty<b> is the assurance that a service will meet agreed requirements (such as availability, capacity, continuity, and security). <b>Agreed</b> is correct because it describes whether the service is *fit for use* under agreed conditions."
+    "explanation": ""
   },
   {
     "id": 471,
@@ -6120,7 +6120,7 @@
     ],
     "correctAnswer": 1,
     "category": "Incident Management",
-    "explanation": "<b>An unplanned interruption to a service or reduction in the quality of a service</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 472,
@@ -6133,7 +6133,7 @@
     ],
     "correctAnswer": 3,
     "category": "Problem Management",
-    "explanation": "<b>Problem</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 473,
@@ -6146,7 +6146,7 @@
     ],
     "correctAnswer": 1,
     "category": "Release Management",
-    "explanation": "<b>Making new and changed services and features available for use</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 474,
@@ -6159,7 +6159,7 @@
     ],
     "correctAnswer": 0,
     "category": "Relationship Management",
-    "explanation": "<b>Relationship Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 475,
@@ -6172,7 +6172,7 @@
     ],
     "correctAnswer": 1,
     "category": "Change Control",
-    "explanation": "<b>Monitoring and Event Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 476,
@@ -6185,7 +6185,7 @@
     ],
     "correctAnswer": 3,
     "category": "Service Request Management",
-    "explanation": "<b>Service Request Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 477,
@@ -6198,7 +6198,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Service Relationship Management</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 478,
@@ -6211,7 +6211,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>A person who authorizes budget for service consumption</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 479,
@@ -6224,7 +6224,7 @@
     ],
     "correctAnswer": 1,
     "category": "General Concepts",
-    "explanation": "<b>Warranty</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 480,
@@ -6237,7 +6237,7 @@
     ],
     "correctAnswer": 3,
     "category": "Change Control",
-    "explanation": "<b>Never</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 481,
@@ -6250,7 +6250,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Progress iteratively with feedback<b> recommends delivering in smaller increments and learning through feedback to reduce risk and adapt. <b>Faster responses to customers and business needs</b> is correct because it matches iterative improvement and early learning."
+    "explanation": ""
   },
   {
     "id": 482,
@@ -6263,7 +6263,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Collaborate and Promote Visibility</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 483,
@@ -6276,7 +6276,7 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Think and Work Holistically</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 484,
@@ -6289,7 +6289,7 @@
     ],
     "correctAnswer": 2,
     "category": "Problem Management",
-    "explanation": "<b>Keep It Simple and Practical</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 485,
@@ -6302,7 +6302,7 @@
     ],
     "correctAnswer": 3,
     "category": "IT Asset Management",
-    "explanation": "<b>Optimize and Automate</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 486,
@@ -6315,7 +6315,7 @@
     ],
     "correctAnswer": 2,
     "category": "Four Dimensions",
-    "explanation": "<b>Organizations and People</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   },
   {
     "id": 487,
@@ -6328,6 +6328,6 @@
     ],
     "correctAnswer": 0,
     "category": "IT Asset Management",
-    "explanation": "<b>Information and Technology</b> is correct based on the ITIL 4 definition and intent in this scenario. It best matches what the question is describing, while the other options relate to different ITIL terms or practices."
+    "explanation": ""
   }
 ]

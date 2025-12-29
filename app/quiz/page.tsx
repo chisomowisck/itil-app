@@ -7,6 +7,7 @@ import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import UserProfile from '@/components/auth/UserProfile';
 import QuizSidebar from '@/components/quiz/QuizSidebar';
 import QuizLevelComplete from '@/components/quiz/QuizLevelComplete';
+import ExplanationBox from '@/components/ExplanationBox';
 import { useAuth } from '@/contexts/AuthContext';
 import { getQuizProgress, saveQuizProgress, QuizProgress, getAllQuestions, Question } from '@/lib/firebase/services';
 import { Timestamp } from 'firebase/firestore';
@@ -381,15 +382,9 @@ function QuizContent() {
                                 </div>
 
                                 {/* Explanation */}
-                                {showAnswer && (
+                                {showAnswer && currentQuestion.explanation && (
                                     <div className="px-8 pb-8 bg-slate-50/50 dark:bg-black/20 animate-in fade-in slide-in-from-top-4">
-                                        <div className="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-900/50 text-blue-900 dark:text-blue-200">
-                                            <div className="font-bold mb-1 flex items-center gap-2">
-                                                <div className="w-1 h-4 bg-blue-500 rounded-full"></div>
-                                                Explanation
-                                            </div>
-                                            <p className="text-sm leading-relaxed opacity-90">{currentQuestion.explanation}</p>
-                                        </div>
+                                        <ExplanationBox explanation={currentQuestion.explanation} />
                                     </div>
                                 )}
                             </div>
