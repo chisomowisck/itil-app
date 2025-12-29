@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { ArrowLeft, CheckCircle, XCircle, Flag, Star, Home, RotateCcw } from 'lucide-react';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import UserProfile from '@/components/auth/UserProfile';
+import ExplanationBox from '@/components/ExplanationBox';
 import { useAuth } from '@/contexts/AuthContext';
 import { getAllQuestions, Question, saveExamScore } from '@/lib/firebase/services';
 
@@ -25,6 +26,9 @@ function RetryQuizContent() {
     const [questions, setQuestions] = useState<Question[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedAnswers, setSelectedAnswers] = useState<(number | null)[]>([]);
+    const [checkedAnswers, setCheckedAnswers] = useState<boolean[]>([]);
+    const [showAnswer, setShowAnswer] = useState(false);
+    const [stats, setStats] = useState({ correct: 0, incorrect: 0 });
     const [showResults, setShowResults] = useState(false);
     const [loading, setLoading] = useState(true);
 
@@ -62,6 +66,7 @@ function RetryQuizContent() {
                 }
 
                 setSelectedAnswers(new Array(parsedSession.questionIds.length).fill(null));
+                setCheckedAnswers(new Array(parsedSession.questionIds.length).fill(false));
             } catch (error) {
                 console.error('Error loading retry session:', error);
                 router.push('/quiz/review');
@@ -73,11 +78,36 @@ function RetryQuizContent() {
         loadRetrySession();
     }, [user, retryType, router]);
 
+    // Sync showAnswer state when navigating between questions
+    useEffect(() => {
+        if (questions.length > 0 && currentIndex < checkedAnswers.length) {
+            setShowAnswer(checkedAnswers[currentIndex]);
+        }
+    }, [currentIndex, checkedAnswers, questions.length]);
+
     const handleAnswerSelect = (answerIndex: number) => {
-        if (showResults) return;
+        if (showResults || checkedAnswers[currentIndex]) return;
         const newAnswers = [...selectedAnswers];
         newAnswers[currentIndex] = answerIndex;
         setSelectedAnswers(newAnswers);
+        setShowAnswer(false);
+    };
+
+    const handleCheckAnswer = () => {
+        if (selectedAnswers[currentIndex] === null || checkedAnswers[currentIndex]) return;
+        
+        const isCorrect = selectedAnswers[currentIndex] === questions[currentIndex].correctAnswer;
+        setShowAnswer(true);
+        
+        const newChecked = [...checkedAnswers];
+        newChecked[currentIndex] = true;
+        setCheckedAnswers(newChecked);
+
+        if (isCorrect) {
+            setStats(prev => ({ ...prev, correct: prev.correct + 1 }));
+        } else {
+            setStats(prev => ({ ...prev, incorrect: prev.incorrect + 1 }));
+        }
     };
 
     const handleNext = () => {
@@ -155,9 +185,39 @@ function RetryQuizContent() {
 
     // Get retry type info
     const retryInfo = {
-        failed: { title: 'Retry Failed Questions', icon: XCircle, color: 'red', bgColor: 'bg-red-500' },
-        flagged: { title: 'Retry Flagged Questions', icon: Flag, color: 'orange', bgColor: 'bg-orange-500' },
-        important: { title: 'Retry Important Questions', icon: Star, color: 'yellow', bgColor: 'bg-yellow-500' }
+        failed: { 
+            title: 'Retry Failed Questions', 
+            icon: XCircle, 
+            color: 'red', 
+            bgColor: 'bg-red-500',
+            borderColor: 'border-red-500',
+            bgLight: 'bg-red-50',
+            bgDark: 'dark:bg-red-900/20',
+            textColor: 'text-red-600',
+            hoverBg: 'hover:bg-red-600'
+        },
+        flagged: { 
+            title: 'Retry Flagged Questions', 
+            icon: Flag, 
+            color: 'orange', 
+            bgColor: 'bg-orange-500',
+            borderColor: 'border-orange-500',
+            bgLight: 'bg-orange-50',
+            bgDark: 'dark:bg-orange-900/20',
+            textColor: 'text-orange-600',
+            hoverBg: 'hover:bg-orange-600'
+        },
+        important: { 
+            title: 'Retry Important Questions', 
+            icon: Star, 
+            color: 'yellow', 
+            bgColor: 'bg-yellow-500',
+            borderColor: 'border-yellow-500',
+            bgLight: 'bg-yellow-50',
+            bgDark: 'dark:bg-yellow-900/20',
+            textColor: 'text-yellow-600',
+            hoverBg: 'hover:bg-yellow-600'
+        }
     }[session.type];
 
     const Icon = retryInfo.icon;
@@ -172,7 +232,7 @@ function RetryQuizContent() {
                 <header className="bg-white dark:bg-zinc-900 border-b border-slate-200 dark:border-zinc-800 px-6 py-4">
                     <div className="max-w-4xl mx-auto flex items-center justify-between">
                         <div className="flex items-center gap-3">
-                            <Icon className={`w-6 h-6 text-${retryInfo.color}-600`} />
+                            <Icon className={`w-6 h-6 ${retryInfo.textColor}`} />
                             <h1 className="text-xl font-bold text-black dark:text-white">{retryInfo.title}</h1>
                         </div>
                         <div className="flex items-center gap-3">
@@ -223,9 +283,12 @@ function RetryQuizContent() {
                                     setShowResults(false);
                                     setCurrentIndex(0);
                                     setSelectedAnswers(new Array(questions.length).fill(null));
+                                    setCheckedAnswers(new Array(questions.length).fill(false));
+                                    setShowAnswer(false);
+                                    setStats({ correct: 0, incorrect: 0 });
                                     setSession({ ...session, startTime: Date.now() });
                                 }}
-                                className={`px-6 py-3 bg-${retryInfo.color}-500 text-white rounded-lg font-semibold hover:bg-${retryInfo.color}-600 transition-colors flex items-center justify-center gap-2`}
+                                className={`px-6 py-3 ${retryInfo.bgColor} text-white rounded-lg font-semibold ${retryInfo.hoverBg} transition-colors flex items-center justify-center gap-2`}
                             >
                                 <RotateCcw className="w-5 h-5" />
                                 Try Again
@@ -246,10 +309,20 @@ function RetryQuizContent() {
                         <Link href="/quiz/review" className="p-2 -ml-2 rounded-lg hover:bg-slate-100 dark:hover:bg-zinc-800">
                             <ArrowLeft className="w-5 h-5" />
                         </Link>
-                        <Icon className={`w-6 h-6 text-${retryInfo.color}-600`} />
+                        <Icon className={`w-6 h-6 ${retryInfo.textColor}`} />
                         <h1 className="text-xl font-bold text-black dark:text-white">{retryInfo.title}</h1>
                     </div>
                     <div className="flex items-center gap-4">
+                        <div className="flex items-center gap-4">
+                            <div className="text-center">
+                                <div className="text-xs text-slate-600 dark:text-slate-400">Correct</div>
+                                <div className="text-lg font-bold text-green-600 dark:text-green-500">{stats.correct}</div>
+                            </div>
+                            <div className="text-center">
+                                <div className="text-xs text-slate-600 dark:text-slate-400">Incorrect</div>
+                                <div className="text-lg font-bold text-red-600 dark:text-red-500">{stats.incorrect}</div>
+                            </div>
+                        </div>
                         <span className="text-sm font-semibold text-slate-600 dark:text-slate-400">
                             {answeredCount}/{questions.length} Answered
                         </span>
@@ -294,30 +367,64 @@ function RetryQuizContent() {
                         <div className="space-y-3">
                             {currentQuestion.options.map((option, idx) => {
                                 const isSelected = selectedAnswers[currentIndex] === idx;
+                                const isCorrectOption = idx === currentQuestion.correctAnswer;
+
+                                let className = 'w-full text-left p-4 rounded-lg border-2 transition-all ';
+                                
+                                if (showAnswer) {
+                                    if (isCorrectOption) {
+                                        className += 'border-green-600 dark:border-green-500 bg-green-50 dark:bg-green-900/30';
+                                    } else if (isSelected) {
+                                        className += 'border-red-500 dark:border-red-500 bg-red-50 dark:bg-red-900/30';
+                                    } else {
+                                        className += 'border-slate-200 dark:border-zinc-700 opacity-50 text-slate-500 dark:text-slate-400';
+                                    }
+                                } else {
+                                    className += isSelected
+                                        ? `${retryInfo.borderColor} ${retryInfo.bgLight} ${retryInfo.bgDark}`
+                                        : 'border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-slate-300 dark:hover:border-zinc-700';
+                                }
 
                                 return (
                                     <button
                                         key={idx}
                                         onClick={() => handleAnswerSelect(idx)}
-                                        className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
-                                            isSelected
-                                                ? `border-${retryInfo.color}-500 bg-${retryInfo.color}-50 dark:bg-${retryInfo.color}-900/20`
-                                                : 'border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:border-slate-300 dark:hover:border-zinc-700'
-                                        }`}
+                                        disabled={showAnswer}
+                                        className={className}
                                     >
                                         <div className="flex items-start gap-3">
                                             <div
                                                 className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 mt-0.5 ${
-                                                    isSelected
-                                                        ? `border-${retryInfo.color}-500`
-                                                        : 'border-slate-300 dark:border-zinc-700'
+                                                    showAnswer
+                                                        ? isCorrectOption
+                                                            ? 'border-green-600 dark:border-green-500'
+                                                            : isSelected
+                                                                ? 'border-red-500 dark:border-red-500'
+                                                                : 'border-slate-300 dark:border-zinc-700'
+                                                        : isSelected
+                                                            ? retryInfo.borderColor
+                                                            : 'border-slate-300 dark:border-zinc-700'
                                                 }`}
                                             >
-                                                {isSelected && (
+                                                {showAnswer && isCorrectOption && (
+                                                    <CheckCircle className="w-4 h-4 text-green-600 dark:text-green-500" />
+                                                )}
+                                                {showAnswer && isSelected && !isCorrectOption && (
+                                                    <XCircle className="w-4 h-4 text-red-600 dark:text-red-500" />
+                                                )}
+                                                {!showAnswer && isSelected && (
                                                     <div className={`w-3 h-3 rounded-full ${retryInfo.bgColor}`}></div>
                                                 )}
                                             </div>
-                                            <span className="text-sm text-slate-900 dark:text-white leading-relaxed">
+                                            <span className={`text-sm leading-relaxed ${
+                                                showAnswer
+                                                    ? isCorrectOption
+                                                        ? 'text-green-900 dark:text-green-300'
+                                                        : isSelected
+                                                            ? 'text-red-900 dark:text-red-300'
+                                                            : 'text-slate-500 dark:text-slate-400'
+                                                    : 'text-slate-900 dark:text-white'
+                                            }`}>
                                                 {option}
                                             </span>
                                         </div>
@@ -325,6 +432,42 @@ function RetryQuizContent() {
                                 );
                             })}
                         </div>
+
+                        {showAnswer && (
+                            <div className="space-y-4 mt-6">
+                                <div className={`p-4 rounded-xl ${selectedAnswers[currentIndex] === currentQuestion.correctAnswer ? 'bg-green-50 dark:bg-green-900/20' : 'bg-red-50 dark:bg-red-900/20'}`}>
+                                    <div className="flex items-center gap-2 mb-2">
+                                        {selectedAnswers[currentIndex] === currentQuestion.correctAnswer ? (
+                                            <>
+                                                <CheckCircle className="w-6 h-6 text-green-600 dark:text-green-500" />
+                                                <span className="font-semibold text-green-800 dark:text-green-400">Correct!</span>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <XCircle className="w-6 h-6 text-red-600 dark:text-red-500" />
+                                                <span className="font-semibold text-red-800 dark:text-red-400">Incorrect</span>
+                                            </>
+                                        )}
+                                    </div>
+                                    <p className="text-sm text-slate-700 dark:text-slate-300">
+                                        The correct answer is: <strong className="text-black dark:text-white">{currentQuestion.options[currentQuestion.correctAnswer]}</strong>
+                                    </p>
+                                </div>
+
+                                {currentQuestion.explanation && (
+                                    <ExplanationBox explanation={currentQuestion.explanation} />
+                                )}
+                            </div>
+                        )}
+
+                        {!showAnswer && selectedAnswers[currentIndex] !== null && (
+                            <button
+                                onClick={handleCheckAnswer}
+                                className="w-full bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-xl font-semibold hover:bg-slate-800 dark:hover:bg-slate-200 hover:shadow-md transition-all mt-6"
+                            >
+                                Check Answer
+                            </button>
+                        )}
                     </div>
 
                     {/* Navigation */}
@@ -344,7 +487,7 @@ function RetryQuizContent() {
                         {currentIndex === questions.length - 1 ? (
                             <button
                                 onClick={handleSubmit}
-                                disabled={answeredCount < questions.length}
+                                disabled={selectedAnswers.filter(a => a !== null).length < questions.length}
                                 className={`px-6 py-3 ${retryInfo.bgColor} text-white rounded-lg font-semibold hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed transition-all`}
                             >
                                 Submit
