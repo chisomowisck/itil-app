@@ -57,6 +57,7 @@ export interface ExamScore {
   importantCount: number;
   questionResults: QuestionResult[];
   createdAt?: Timestamp;
+  retryType?: 'failed' | 'flagged' | 'important'; // Track retry sessions
 }
 
 export interface QuizProgress {

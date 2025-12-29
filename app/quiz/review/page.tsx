@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ArrowLeft, CheckCircle, XCircle, Flag, Star, Filter, AlertCircle, Search, ChevronLeft, ChevronRight, ArrowUpDown } from 'lucide-react';
+import { useRouter } from 'next/navigation';
+import { ArrowLeft, CheckCircle, XCircle, Flag, Star, Filter, AlertCircle, Search, ChevronLeft, ChevronRight, ArrowUpDown, RotateCcw, Target, Zap, TrendingUp } from 'lucide-react';
 import ProtectedRoute from '@/components/auth/ProtectedRoute';
 import { useAuth } from '@/contexts/AuthContext';
 import { getQuizProgress, QuizProgress, getAllQuestions, Question } from '@/lib/firebase/services';
@@ -11,6 +12,7 @@ type FilterType = 'all' | 'correct' | 'incorrect' | 'flagged' | 'important';
 
 function QuizReviewContent() {
     const { user } = useAuth();
+    const router = useRouter();
     const [questions, setQuestions] = useState<Question[]>([]);
     const [progress, setProgress] = useState<QuizProgress | null>(null);
     const [loading, setLoading] = useState(true);
@@ -75,9 +77,42 @@ function QuizReviewContent() {
         );
     }
 
-    // Filter questions
+    // Calculate retry stats
     const answeredQuestionIds = Object.keys(progress.answers).map(Number);
+    const incorrectQuestions = answeredQuestionIds.filter(id => {
+        const q = questions.find(question => question.id === id);
+        if (!q) return false;
+        return progress.answers[id] !== q.correctAnswer;
+    });
+    const flaggedQuestions = progress.flaggedQuestions;
+    const importantQuestions = progress.importantQuestions;
 
+    // Handle retry navigation
+    const handleRetry = (type: 'failed' | 'flagged' | 'important') => {
+        let questionIds: number[] = [];
+
+        if (type === 'failed') {
+            questionIds = incorrectQuestions;
+        } else if (type === 'flagged') {
+            questionIds = flaggedQuestions;
+        } else if (type === 'important') {
+            questionIds = importantQuestions;
+        }
+
+        if (questionIds.length === 0) return;
+
+        // Store retry session in localStorage
+        localStorage.setItem('retrySession', JSON.stringify({
+            type,
+            questionIds,
+            startTime: Date.now()
+        }));
+
+        // Navigate to retry page
+        router.push(`/quiz/retry?type=${type}`);
+    };
+
+    // Filter questions
     const filteredQuestions = answeredQuestionIds.map(id => {
         const q = questions.find(question => question.id === id);
         if (!q) return null;
@@ -158,6 +193,100 @@ function QuizReviewContent() {
             </header>
 
             <main className="max-w-4xl mx-auto px-6 py-8">
+                {/* Retry Mastery Section */}
+                <div className="mb-8">
+                    <div className="flex items-center gap-2 mb-4">
+                        <TrendingUp className="w-5 h-5 text-blue-600" />
+                        <h2 className="text-lg font-bold text-black dark:text-white">Master Your Weak Areas</h2>
+                    </div>
+                    <p className="text-sm text-slate-600 dark:text-slate-400 mb-6">
+                        Focus on specific question types to improve your performance. Each retry session is tracked separately.
+                    </p>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        {/* Retry Failed Questions */}
+                        <button
+                            onClick={() => handleRetry('failed')}
+                            disabled={incorrectQuestions.length === 0}
+                            className="group relative overflow-hidden bg-gradient-to-br from-red-50 to-red-100 dark:from-red-900/20 dark:to-red-800/20 border-2 border-red-200 dark:border-red-800 rounded-xl p-6 text-left transition-all hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                        >
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform"></div>
+                            <div className="relative">
+                                <div className="w-12 h-12 bg-red-500 dark:bg-red-600 rounded-lg flex items-center justify-center mb-4">
+                                    <XCircle className="w-6 h-6 text-white" />
+                                </div>
+                                <h3 className="text-lg font-bold text-red-900 dark:text-red-100 mb-2">Retry Failed</h3>
+                                <p className="text-sm text-red-700 dark:text-red-300 mb-4">
+                                    Master the questions you got wrong
+                                </p>
+                                <div className="flex items-center justify-between">
+                                    <span className="text-2xl font-bold text-red-600 dark:text-red-400">
+                                        {incorrectQuestions.length}
+                                    </span>
+                                    <span className="text-xs font-semibold text-red-600 dark:text-red-400 uppercase tracking-wide">
+                                        Questions
+                                    </span>
+                                </div>
+                            </div>
+                        </button>
+
+                        {/* Retry Flagged Questions */}
+                        <button
+                            onClick={() => handleRetry('flagged')}
+                            disabled={flaggedQuestions.length === 0}
+                            className="group relative overflow-hidden bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 border-2 border-orange-200 dark:border-orange-800 rounded-xl p-6 text-left transition-all hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                        >
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform"></div>
+                            <div className="relative">
+                                <div className="w-12 h-12 bg-orange-500 dark:bg-orange-600 rounded-lg flex items-center justify-center mb-4">
+                                    <Flag className="w-6 h-6 text-white" />
+                                </div>
+                                <h3 className="text-lg font-bold text-orange-900 dark:text-orange-100 mb-2">Retry Flagged</h3>
+                                <p className="text-sm text-orange-700 dark:text-orange-300 mb-4">
+                                    Review questions you marked for later
+                                </p>
+                                <div className="flex items-center justify-between">
+                                    <span className="text-2xl font-bold text-orange-600 dark:text-orange-400">
+                                        {flaggedQuestions.length}
+                                    </span>
+                                    <span className="text-xs font-semibold text-orange-600 dark:text-orange-400 uppercase tracking-wide">
+                                        Questions
+                                    </span>
+                                </div>
+                            </div>
+                        </button>
+
+                        {/* Retry Important Questions */}
+                        <button
+                            onClick={() => handleRetry('important')}
+                            disabled={importantQuestions.length === 0}
+                            className="group relative overflow-hidden bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900/20 dark:to-yellow-800/20 border-2 border-yellow-200 dark:border-yellow-800 rounded-xl p-6 text-left transition-all hover:shadow-lg hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                        >
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform"></div>
+                            <div className="relative">
+                                <div className="w-12 h-12 bg-yellow-500 dark:bg-yellow-600 rounded-lg flex items-center justify-center mb-4">
+                                    <Star className="w-6 h-6 text-white" />
+                                </div>
+                                <h3 className="text-lg font-bold text-yellow-900 dark:text-yellow-100 mb-2">Retry Important</h3>
+                                <p className="text-sm text-yellow-700 dark:text-yellow-300 mb-4">
+                                    Practice questions you marked as key
+                                </p>
+                                <div className="flex items-center justify-between">
+                                    <span className="text-2xl font-bold text-yellow-600 dark:text-yellow-400">
+                                        {importantQuestions.length}
+                                    </span>
+                                    <span className="text-xs font-semibold text-yellow-600 dark:text-yellow-400 uppercase tracking-wide">
+                                        Questions
+                                    </span>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                {/* Divider */}
+                <div className="border-t border-slate-200 dark:border-zinc-800 my-8"></div>
+
                 {/* Controls Bar */}
                 <div className="flex flex-col md:flex-row gap-4 mb-8">
                     {/* Search */}
